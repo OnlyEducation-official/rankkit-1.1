@@ -1,15 +1,19 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
+import { ThemeProvider } from "@mui/material";
+import theme from "@/theme/theme";
+import { Roboto } from 'next/font/google';
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const roboto = Roboto({
+  weight: ['300', '400', '500', '700', '800', '900'],
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-roboto',
+  fallback: ['Roboto', 'sans-serif'],
+  preload: true,
+  adjustFontFallback: true,
 });
 
 export const metadata: Metadata = {
@@ -23,9 +27,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
+    <html lang="en" className={roboto.variable}>
+      <body style={{ fontFamily: 'var(--font-roboto), Roboto, Helvetica, Arial, sans-serif' }}>
+        <AppRouterCacheProvider options={{ key: 'css', enableCssLayer: true  }}>
+          <ThemeProvider theme={theme}>
+            {children}
+          </ThemeProvider>
+        </AppRouterCacheProvider>
       </body>
     </html>
   );
