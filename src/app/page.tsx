@@ -1,12 +1,10 @@
-import { Box } from "@mui/material";
+import { Box } from '@mui/material';
 
 export default function Home() {
   return (
-    <>
     <Box>
-      Home
-      hello world
+      Home hello world
+      <Box>Nested Box</Box>
     </Box>
-    </>
   );
 }
