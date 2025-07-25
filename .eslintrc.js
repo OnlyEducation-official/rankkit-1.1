@@ -5,12 +5,12 @@ module.exports = {
     ecmaVersion: 2020,
     sourceType: 'module',
     ecmaFeatures: { jsx: true },
-    project: './tsconfig.json'
+    project: './tsconfig.json',
   },
   env: {
     browser: true,
     node: true,
-    es2021: true
+    es2021: true,
   },
   extends: [
     'airbnb',
@@ -18,7 +18,7 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     'plugin:react/recommended',
     'plugin:jsx-a11y/recommended',
-    'plugin:prettier/recommended'
+    'plugin:prettier/recommended',
   ],
   plugins: ['@typescript-eslint', 'react', 'react-hooks', 'jsx-a11y'],
   rules: {
@@ -31,29 +31,29 @@ module.exports = {
         js: 'never',
         jsx: 'never',
         ts: 'never',
-        tsx: 'never'
-      }
+        tsx: 'never',
+      },
     ],
     '@typescript-eslint/no-unused-vars': ['warn'],
     'no-use-before-define': 'off',
-    '@typescript-eslint/no-use-before-define': ['error']
+    '@typescript-eslint/no-use-before-define': ['error'],
   },
   settings: {
     react: { version: 'detect' },
     'import/resolver': {
       typescript: {
         alwaysTryTypes: true,
-        project: './tsconfig.json'
-      }
-    }
+        project: './tsconfig.json',
+      },
+    },
   },
   ignorePatterns: ['.eslintrc.js'], // ✅ avoids linting this config file
   overrides: [
     {
       files: ['.eslintrc.js'],
       rules: {
-        '@typescript-eslint/no-var-requires': 'off'
-      }
-    }
-  ]
+        '@typescript-eslint/no-var-requires': 'off',
+      },
+    },
+  ],
 };
