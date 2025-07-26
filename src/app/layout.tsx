@@ -1,9 +1,7 @@
 import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
-import './globals.css';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
-import { ThemeProvider } from '@mui/material';
-import theme from '@/theme/theme';
+import MuiThemeProvider from './_components/MuiThemeProvider';
 
 const roboto = Roboto({
   weight: ['300', '400', '500', '700', '800', '900'],
@@ -29,7 +27,7 @@ export default function RootLayout({
     <html lang="en" className={roboto.variable}>
       <body style={{ fontFamily: 'var(--font-roboto), Roboto, Helvetica, Arial, sans-serif' }}>
         <AppRouterCacheProvider options={{ key: 'css', enableCssLayer: true }}>
-          <ThemeProvider theme={theme}>{children}</ThemeProvider>
+          <MuiThemeProvider>{children}</MuiThemeProvider>
         </AppRouterCacheProvider>
       </body>
     </html>
