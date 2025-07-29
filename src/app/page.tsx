@@ -1,10 +1,5 @@
-import { Box } from '@mui/material';
+import Homes from './_components/Home';
 
 export default function Home() {
-  return (
-    <Box>
-      Home hello world
-      <Box>Nested Box</Box>
-    </Box>
-  );
+  return <Homes />;
 }
