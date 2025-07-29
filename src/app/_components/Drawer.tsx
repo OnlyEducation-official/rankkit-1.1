@@ -11,17 +11,15 @@ import ListItemText from '@mui/material/ListItemText';
 import InboxIcon from '@mui/icons-material/MoveToInbox';
 import MailIcon from '@mui/icons-material/Mail';
 
-type Anchor = 'top' | 'left' | 'bottom' | 'right';
-
 export default function SidebarDrawer() {
   const [open, setOpen] = React.useState(false);
 
   const handleOpen = () => {
     setOpen(true);
   };
-  const handleClose = () => {
-    setOpen(true);
-  };
+  // const handleClose = () => {
+  //   setOpen(true);
+  // };
 
   const list = () => (
     <Box

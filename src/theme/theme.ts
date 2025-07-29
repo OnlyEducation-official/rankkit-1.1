@@ -18,7 +18,7 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: 'var(--font-roboto), Roboto, Helvetica, Arial, sans-serif',
+    fontFamily: 'var(--font-clash-display), sans-serif',
     h1: {
       fontSize: '50px',
     },
@@ -39,15 +39,19 @@ const theme = createTheme({
     },
     subtitle1: {
       fontSize: '20px',
+      fontWeight: 400,
     },
     subtitle2: {
       fontSize: '18px',
+      fontWeight: 400,
     },
     body1: {
       fontSize: '16px',
+      fontWeight: 400,
     },
     caption: {
       fontSize: '14px',
+      fontWeight: 400,
     },
   },
   components: {

@@ -1,17 +1,7 @@
 import type { Metadata } from 'next';
-import { Roboto } from 'next/font/google';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
 import MuiThemeProvider from './_components/MuiThemeProvider';
-
-const roboto = Roboto({
-  weight: ['300', '400', '500', '700', '800', '900'],
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-roboto',
-  fallback: ['Roboto', 'sans-serif'],
-  preload: true,
-  adjustFontFallback: true,
-});
+import clashDisplayFont from './fonts/clash-display';
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -24,8 +14,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={roboto.variable}>
-      <body style={{ fontFamily: 'var(--font-roboto), Roboto, Helvetica, Arial, sans-serif' }}>
+    <html lang="en" className={clashDisplayFont.variable}>
+      <body
+        style={{
+          fontFamily: 'var(--font-clash-display), sans-serif',
+        }}
+      >
         <AppRouterCacheProvider options={{ key: 'css', enableCssLayer: true }}>
           <MuiThemeProvider>{children}</MuiThemeProvider>
         </AppRouterCacheProvider>
