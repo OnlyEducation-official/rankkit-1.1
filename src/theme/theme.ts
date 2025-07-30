@@ -44,14 +44,17 @@ const theme = createTheme({
     subtitle2: {
       fontSize: '18px',
       fontWeight: 400,
+      fontFamily: 'var(--font-satoshi), sans-serif',
     },
     body1: {
       fontSize: '16px',
       fontWeight: 400,
+      fontFamily: 'var(--font-satoshi), sans-serif',
     },
     caption: {
       fontSize: '14px',
       fontWeight: 400,
+      fontFamily: 'var(--font-satoshi), sans-serif',
     },
   },
   components: {

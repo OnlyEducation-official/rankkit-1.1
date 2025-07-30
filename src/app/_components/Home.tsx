@@ -1,11 +1,10 @@
-/* eslint-disable jsx-a11y/media-has-caption */
-
 import { Box } from '@mui/material';
 import VideoSection from './VideoSection';
 import Header from './Header';
 import AllInOneSection from './allInOneIntro/AllInOneSection';
 import OurWork from './OurWork';
 import OurServicesCards from './OurServicesCards';
+import WhyRankkit from './WhyRankkit';
 
 export default function Homes() {
   return (
@@ -14,6 +13,7 @@ export default function Homes() {
       <VideoSection />
       <AllInOneSection />
       <OurServicesCards />
+      <WhyRankkit />
       <OurWork />
       <Box sx={{ height: '100vh', position: 'absolute' }}>jadhasfjh</Box>
     </Box>

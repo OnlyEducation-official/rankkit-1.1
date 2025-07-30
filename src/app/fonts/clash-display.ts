@@ -27,4 +27,16 @@ const clashDisplayFont = localFont({
   display: 'swap',
 });
 
+export const satoshiFont = localFont({
+  src: [
+    {
+      path: './Satoshi-Variable.woff2',
+      weight: '300 900',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-satoshi',
+  display: 'swap',
+});
+
 export default clashDisplayFont;
