@@ -4,7 +4,7 @@ import Header from './Header';
 import AllInOneSection from './allInOneIntro/AllInOneSection';
 import OurWork from './OurWork';
 import OurServicesCards from './OurServicesCards';
-import WhyRankkit from './WhyRankkit';
+import WhyRankkit from './whyRankkit/WhyRankkit';
 
 export default function Homes() {
   return (
@@ -14,7 +14,7 @@ export default function Homes() {
       <AllInOneSection />
       <OurServicesCards />
       <WhyRankkit />
-      <OurWork />
+      {/* <OurWork /> */}
       <Box sx={{ height: '100vh', position: 'absolute' }}>jadhasfjh</Box>
     </Box>
   );
