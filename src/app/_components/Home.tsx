@@ -5,6 +5,8 @@ import AllInOneSection from './allInOneIntro/AllInOneSection';
 import OurWork from './OurWork';
 import OurServicesCards from './OurServicesCards';
 import WhyRankkit from './WhyRankkit';
+import Footer from './Footer';
+import ContactForm from './ContactForm';
 
 export default function Homes() {
   return (
@@ -14,8 +16,10 @@ export default function Homes() {
       <AllInOneSection />
       <OurServicesCards />
       <WhyRankkit />
-      <OurWork />
-      <Box sx={{ height: '100vh', position: 'absolute' }}>jadhasfjh</Box>
+      {/* <OurWork /> */}
+      {/* <Box sx={{ height: '100vh', position: 'absolute' }}>jadhasfjh</Box> */}
+      <Footer />
+      {/* <ContactForm /> */}
     </Box>
   );
 }
