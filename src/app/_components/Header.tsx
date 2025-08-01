@@ -1,6 +1,6 @@
 'use client';
 
-import { Box, Button, Container, Drawer, Stack, Typography, useMediaQuery } from '@mui/material';
+import { Box, Button, Container, Stack, Typography, useMediaQuery } from '@mui/material';
 import Image from 'next/image';
 import React from 'react';
 import logo from '@/assets/images/logo1.jpg';

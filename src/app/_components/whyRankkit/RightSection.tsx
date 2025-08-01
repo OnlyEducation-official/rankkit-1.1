@@ -1,4 +1,4 @@
-import { Grid, Box, Stack, Typography } from '@mui/material';
+import { Grid, Stack, Typography } from '@mui/material';
 import Image from 'next/image';
 import React from 'react';
 import logo1 from '@/assets/images/home/whyRankkitLogo1.png';
