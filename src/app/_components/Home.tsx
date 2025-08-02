@@ -19,7 +19,6 @@ export default function Homes() {
       <WhyRankkit />
       <AiPowered />
       <OurWork />
-      {/* <Box sx={{ height: '100vh', position: 'absolute' }}>jadhasfjh</Box> */}
       <Footer />
     </Box>
   );
