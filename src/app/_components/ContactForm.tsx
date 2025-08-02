@@ -3,10 +3,11 @@
 'use client';
 
 import React from 'react';
-import { useForm, Controller } from 'react-hook-form';
-import { Box, Button, TextField, Typography } from '@mui/material';
+import { useForm, Controller, UseFormWatch } from 'react-hook-form';
+import { Box, Button, Stack, TextField, Typography } from '@mui/material';
 import { zodResolver } from '@hookform/resolvers/zod';
 import contactFormSchema, { ContactFormScehmaType } from '@/types/ContactForm';
+import SimpleTextField from '@/components/SimpleTextField';
 
 const services = [
   { id: 1, slug: 'seo', service: 'SEO' },
@@ -34,8 +35,51 @@ const hear = [
 //   message: '';
 // }
 
+function ServicesBtn({
+  allServices,
+  service,
+  watch,
+}: {
+  allServices: string[];
+  service: string;
+  watch: UseFormWatch<ContactFormScehmaType>;
+}) {
+  const handleBtnServices = (service: string) => {
+    const myServices = watch('services') as string[];
+    const checkServicesAvailable = myServices.findIndex((item) => item === service) ?? -1;
+    if (checkServicesAvailable === -1) {
+      myServices.push(service);
+      setValue('services', myServices);
+    } else {
+      myServices.splice(checkServicesAvailable, 1);
+      setValue('services', myServices);
+    }
+  };
+
+  return (
+    <Button
+      onClick={() => handleBtnServices(service)}
+      sx={{
+        backgroundColor: allServices?.includes(service) ? 'gray' : 'transparent',
+        color: allServices?.includes(service) ? 'white' : 'black',
+
+        border: '1px solid #ccc',
+        textTransform: 'none',
+        px: 2,
+        py: 1,
+        borderRadius: '100px',
+        width: 'fit-content',
+        fontWeight: 'semibold',
+        fontSize: 20,
+      }}
+    >
+      {service}
+    </Button>
+  );
+}
+
 export default function ContactForm() {
-  const { control, handleSubmit } = useForm<ContactFormScehmaType>({
+  const { control, handleSubmit, watch, setValue } = useForm<ContactFormScehmaType>({
     resolver: zodResolver(contactFormSchema),
     defaultValues: {
       name: '',
@@ -50,6 +94,18 @@ export default function ContactForm() {
 
   const onSubmit = (data: ContactFormScehmaType) => {
     console.log(data);
+  };
+
+  const handleBtnServices = (service: string) => {
+    const myServices = watch('services') as string[];
+    const checkServicesAvailable = myServices.findIndex((item) => item === service) ?? -1;
+    if (checkServicesAvailable === -1) {
+      myServices.push(service);
+      setValue('services', myServices);
+    } else {
+      myServices.splice(checkServicesAvailable, 1);
+      setValue('services', myServices);
+    }
   };
 
   return (
@@ -75,240 +131,45 @@ export default function ContactForm() {
         }}
       >
         {/* Name */}
-        <Controller
-          name="name"
-          control={control}
-          render={({ field }) => (
-            <TextField
-              {...field}
-              label="Your Name"
-              variant="standard"
-              fullWidth
-              InputLabelProps={{
-                sx: {
-                  fontSize: 20,
-                  fontWeight: 'bold',
-                  color: 'gray',
-                },
-              }}
-              InputProps={{
-                sx: {
-                  fontSize: field.value?.length > 0 ? 30 : 16, // Increase size after typing
-                  transition: 'font-size 0.3s ease',
-                },
-              }}
-            />
-          )}
-        />
-
-        <Typography
-          sx={{
-            marginTop: 1,
-          }}
-        />
-
-        {/* Phone */}
-        <Controller
-          name="orgname"
-          control={control}
-          render={({ field }) => (
-            <TextField
-              {...field}
-              label="Your Organization's Name"
-              variant="standard"
-              fullWidth
-              InputLabelProps={{
-                sx: {
-                  fontSize: 20,
-                  fontWeight: 'bold',
-                  color: 'gray',
-                },
-              }}
-              InputProps={{
-                sx: {
-                  fontSize: Number(field?.value?.length) > 0 ? 30 : 16, // Increase size after typing
-                  transition: 'font-size 0.3s ease',
-                },
-              }}
-            />
-          )}
-        />
-
-        <Typography
-          sx={{
-            marginTop: 1,
-          }}
-        />
-
-        {/* Phone */}
-        <Controller
-          name="phone"
-          control={control}
-          render={({ field }) => (
-            <TextField
-              {...field}
-              label="Phone Number"
-              variant="standard"
-              fullWidth
-              InputLabelProps={{
-                sx: {
-                  fontSize: 20,
-                  fontWeight: 'bold',
-                  color: 'gray',
-                },
-              }}
-              InputProps={{
-                sx: {
-                  fontSize: field.value?.length > 0 ? 30 : 16, // Increase size after typing
-                  transition: 'font-size 0.3s ease',
-                },
-              }}
-            />
-          )}
-        />
-
-        <Typography
-          sx={{
-            marginTop: 1,
-          }}
-        />
-
-        {/* Email */}
-        <Controller
-          name="email"
-          control={control}
-          render={({ field }) => (
-            <TextField
-              {...field}
-              label="Email"
-              variant="standard"
-              fullWidth
-              InputLabelProps={{
-                sx: {
-                  fontSize: 20,
-                  fontWeight: 'bold',
-                  color: 'gray',
-                },
-              }}
-              InputProps={{
-                sx: {
-                  fontSize: field.value?.length > 0 ? 30 : 16, // Increase size after typing
-                  transition: 'font-size 0.3s ease',
-                },
-              }}
-            />
-          )}
-        />
-
-        <Typography
-          sx={{
-            marginTop: 1,
-          }}
-        />
+        <Stack rowGap={5}>
+          <SimpleTextField control={control} name="name" label="Your Name" />
+          <SimpleTextField control={control} name="orgname" label="Your Organization's Name" />
+          <SimpleTextField control={control} name="phone" label="Phone Number" />
+          <SimpleTextField control={control} name="email" label="Email" />
+        </Stack>
 
         {/* Services Multi-Select */}
-        <Controller
-          name="services"
-          control={control}
-          render={({ field }) => {
-            const selectedServices = field.value;
+        {/* Select services */}
+        <Typography variant="body1" sx={{ mb: 3, fontSize: 30, fontWeight: 'bold' }}>
+          Which services are you interested in?
+        </Typography>
+        <Stack direction="row" gap={1.5}>
+          {services.map((service) => (
+            <Button
+              key={service.id}
+              onClick={() => handleBtnServices(service.slug)}
+              sx={{
+                backgroundColor: watch('services')?.includes(service.slug) ? 'gray' : 'transparent',
+                color: watch('services')?.includes(service.slug) ? 'white' : 'black',
 
-            const handleClick = (slug) => {
-              if (selectedServices.includes(slug)) {
-                field.onChange(selectedServices.filter((s) => s !== slug));
-              } else {
-                field.onChange([...selectedServices, slug]);
-              }
-            };
-.
-            const clearAll = () => field.onChange([]);
-
-            return (
-              <Box>
-                <Typography variant="body1" sx={{ mb: 3, fontSize: 30, fontWeight: 'bold' }}>
-                  Which services are you interested in?
-                </Typography>
-                <Box display="flex" flexWrap="wrap" gap={2}>
-                  {services.map((service) => (
-                    <Button
-                      key={service.id}
-                      onClick={() => handleClick(service.slug)}
-                      sx={{
-                        backgroundColor: selectedServices.includes(service.slug)
-                          ? 'gray'
-                          : 'transparent',
-                        color: selectedServices.includes(service.slug) ? 'white' : 'black',
-                        border: '1px solid #ccc',
-                        textTransform: 'none',
-                        px: 2,
-                        py: 1,
-                        borderRadius: '100px',
-                        fontWeight: 'semibold',
-                        fontSize: 20,
-                      }}
-                    >
-                      {service.service}
-                    </Button>
-                  ))}
-                  <Button
-                    variant="text"
-                    onClick={clearAll}
-                    sx={{
-                      textTransform: 'none',
-                      ml: 2,
-                      color: selectedServices.length > 0 ? 'black' : 'gray',
-                      border: '1px solid #ccc',
-                      borderRadius: '100px',
-                    }}
-                  >
-                    Clear All
-                  </Button>
-                </Box>
-              </Box>
-            );
-          }}
-        />
-
-        <Typography
-          sx={{
-            marginTop: 1,
-          }}
-        />
+                border: '1px solid #ccc',
+                textTransform: 'none',
+                px: 2,
+                py: 1,
+                borderRadius: '100px',
+                width: 'fit-content',
+                fontWeight: 'semibold',
+                fontSize: 20,
+              }}
+            >
+              {service.service}
+            </Button>
+          ))}
+        </Stack>
+        {/* Select services end */}
 
         {/* Message */}
-        <Controller
-          name="message"
-          control={control}
-          render={({ field }) => (
-            <TextField
-              {...field}
-              label="Message"
-              variant="standard"
-              fullWidth
-              multiline
-              rows={4}
-              InputLabelProps={{
-                sx: {
-                  fontSize: 20,
-                  fontWeight: 'bold',
-                  color: 'gray',
-                },
-              }}
-              InputProps={{
-                sx: {
-                  fontSize: field.value?.length > 0 ? 30 : 16, // Increase size after typing
-                  transition: 'font-size 0.3s ease',
-                },
-              }}
-            />
-          )}
-        />
-
-        <Typography
-          sx={{
-            marginTop: 1,
-          }}
-        />
+        <SimpleTextField control={control} name="message" label="Message" multiline rows={3} />
 
         <Controller
           name="hearAboutUs"

@@ -13,7 +13,7 @@ const contactFormSchema = z.object({
 
   orgname: z.string().optional(),
 
-  email: z.string().email('Invalid email address'),
+  email: z.email({ message: 'Invalid email address' }),
 
   services: z.array(z.string()).optional(),
 

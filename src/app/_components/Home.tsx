@@ -11,15 +11,15 @@ import ContactForm from './ContactForm';
 export default function Homes() {
   return (
     <Box>
-      {/* <Header />
+      <Header />
       <VideoSection />
       <AllInOneSection />
       <OurServicesCards />
-      <WhyRankkit /> */}
-      {/* <OurWork /> */}
+      <WhyRankkit />
+      <OurWork />
       {/* <Box sx={{ height: '100vh', position: 'absolute' }}>jadhasfjh</Box> */}
-      {/* <Footer /> */}
-      <ContactForm />
+      <Footer />
+      {/* <ContactForm /> */}
     </Box>
   );
 }
