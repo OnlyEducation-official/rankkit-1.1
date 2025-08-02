@@ -1,9 +1,14 @@
-import { Box, Button, Container, Stack, Typography } from '@mui/material';
+'use client';
+
+import { Box, Button, Container, Stack, Typography, useMediaQuery } from '@mui/material';
 import Image from 'next/image';
 import React from 'react';
 import logo from '@/assets/images/logo1.jpg';
+import Link from 'next/link';
+import SidebarDrawer from './Drawer';
 
 export default function Header() {
+  const isMobile = useMediaQuery('(max-width: 600px)');
   return (
     <Stack sx={{ display: 'flex', alignItems: 'center' }}>
       <Box
@@ -17,8 +22,8 @@ export default function Header() {
           py: 2,
           zIndex: 1000,
           paddingInline: 2,
-          borderBottomLeftRadius: { xs: '25px' },
-          borderBottomRightRadius: { xs: '25px' },
+          borderBottomLeftRadius: { sm: '25px' },
+          borderBottomRightRadius: { sm: '25px' },
         }}
       >
         <Container maxWidth="lg">
@@ -30,28 +35,34 @@ export default function Header() {
               </Box>
             </Stack>
 
-            {/* Nav Items */}
-            <Stack direction="row" spacing={4} alignItems="center">
-              <Typography variant="body2">About</Typography>
-              <Typography variant="body2">Services</Typography>
-              <Typography variant="body2">Case Studies</Typography>
-              <Button
-                variant="contained"
-                sx={{
-                  bgcolor: 'black',
-                  borderRadius: 2,
-                  px: 1,
-                  py: 0.5,
-                  fontSize: '13px',
-                  textTransform: 'none',
-                  '&:hover': {
-                    bgcolor: '#333',
-                  },
-                }}
-              >
-                Contact Us
-              </Button>
-            </Stack>
+            {/* Drawer for mobile */}
+            {isMobile && <SidebarDrawer />}
+            {/* Nav Items from tablet */}
+            {!isMobile && (
+              <Stack direction="row" spacing={4} alignItems="center">
+                <Typography variant="body2">About</Typography>
+                <Typography variant="body2">Services</Typography>
+                <Typography variant="body2">Case Studies</Typography>
+                <Button
+                  LinkComponent={Link}
+                  href="/contact-us"
+                  variant="contained"
+                  sx={{
+                    bgcolor: 'black',
+                    borderRadius: 2,
+                    px: 1,
+                    py: 0.5,
+                    fontSize: '13px',
+                    textTransform: 'none',
+                    '&:hover': {
+                      bgcolor: '#333',
+                    },
+                  }}
+                >
+                  Contact Us
+                </Button>
+              </Stack>
+            )}
           </Stack>
         </Container>
       </Box>

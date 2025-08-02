@@ -2,10 +2,12 @@ import { Box } from '@mui/material';
 import VideoSection from './VideoSection';
 import Header from './Header';
 import AllInOneSection from './allInOneIntro/AllInOneSection';
-import OurWork from './OurWork';
+// import OurWork from './OurWork';
 import OurServicesCards from './OurServicesCards';
-import WhyRankkit from './WhyRankkit';
+import AiPowered from './AiPowered';
 import Footer from './Footer';
+import WhyRankkit from './whyRankkit/WhyRankkit';
+import OurWork from './OurWork';
 
 export default function Homes() {
   return (
@@ -15,8 +17,9 @@ export default function Homes() {
       <AllInOneSection />
       <OurServicesCards />
       <WhyRankkit />
+      <AiPowered />
       <OurWork />
-      <Box sx={{ height: '100vh', position: 'absolute' }}>jadhasfjh</Box>
+      {/* <Box sx={{ height: '100vh', position: 'absolute' }}>jadhasfjh</Box> */}
       <Footer />
     </Box>
   );
