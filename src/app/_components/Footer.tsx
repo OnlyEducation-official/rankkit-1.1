@@ -1,14 +1,5 @@
-import {
-  Box,
-  Button,
-  Container,
-  Divider,
-  List,
-  ListItem,
-  ListItemText,
-  Typography,
-} from '@mui/material';
-import { Instagram, Facebook, Twitter, LocationCity } from '@mui/icons-material';
+import { Box, Container, Divider, Typography } from '@mui/material';
+import { Instagram, Facebook, Twitter } from '@mui/icons-material';
 import logo from '@/assets/images/logo1.jpg';
 import Image from 'next/image';
 
@@ -50,9 +41,7 @@ export default function Footer() {
             </Box>
           </Box>
           <Box sx={{ marginTop: { xs: '20px' } }}>
-            <Typography variant="Typography" fontWeight="bold">
-              Quick Links
-            </Typography>
+            <Typography fontWeight="bold">Quick Links</Typography>
             <Box
               sx={{
                 display: 'flex',
@@ -68,9 +57,7 @@ export default function Footer() {
             </Box>
           </Box>
           <Box sx={{ marginTop: { xs: '20px' }, maxWidth: '300px' }}>
-            <Typography variant="Typography" fontWeight="bold">
-              Services
-            </Typography>
+            <Typography fontWeight="bold">Services</Typography>
             <Box
               sx={{
                 display: 'flex',
@@ -87,9 +74,7 @@ export default function Footer() {
             </Box>
           </Box>
           <Box sx={{ marginTop: { xs: '20px' }, maxWidth: '273px' }}>
-            <Typography variant="Typography" fontWeight="bold">
-              Contact
-            </Typography>
+            <Typography fontWeight="bold">Contact</Typography>
             <Box
               sx={{
                 display: 'flex',

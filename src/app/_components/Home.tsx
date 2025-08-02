@@ -7,6 +7,7 @@ import OurServicesCards from './OurServicesCards';
 import AiPowered from './AiPowered';
 import Footer from './Footer';
 import WhyRankkit from './whyRankkit/WhyRankkit';
+import OurWork from './OurWork';
 
 export default function Homes() {
   return (
@@ -17,8 +18,8 @@ export default function Homes() {
       <OurServicesCards />
       <WhyRankkit />
       <AiPowered />
-      {/* <OurWork /> */}
-      <Box sx={{ height: '100vh', position: 'absolute' }}>jadhasfjh</Box>
+      <OurWork />
+      {/* <Box sx={{ height: '100vh', position: 'absolute' }}>jadhasfjh</Box> */}
       <Footer />
     </Box>
   );
