@@ -4,8 +4,9 @@ import Header from './Header';
 import AllInOneSection from './allInOneIntro/AllInOneSection';
 // import OurWork from './OurWork';
 import OurServicesCards from './OurServicesCards';
-import WhyRankkit from './whyRankkit/WhyRankkit';
 import AiPowered from './AiPowered';
+import Footer from './Footer';
+import WhyRankkit from './whyRankkit/WhyRankkit';
 
 export default function Homes() {
   return (
@@ -18,6 +19,7 @@ export default function Homes() {
       <AiPowered />
       {/* <OurWork /> */}
       <Box sx={{ height: '100vh', position: 'absolute' }}>jadhasfjh</Box>
+      <Footer />
     </Box>
   );
 }

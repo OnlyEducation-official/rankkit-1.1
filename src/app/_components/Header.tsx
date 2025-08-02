@@ -4,6 +4,7 @@ import { Box, Button, Container, Stack, Typography, useMediaQuery } from '@mui/m
 import Image from 'next/image';
 import React from 'react';
 import logo from '@/assets/images/logo1.jpg';
+import Link from 'next/link';
 import SidebarDrawer from './Drawer';
 
 export default function Header() {
@@ -43,6 +44,8 @@ export default function Header() {
                 <Typography variant="body2">Services</Typography>
                 <Typography variant="body2">Case Studies</Typography>
                 <Button
+                  LinkComponent={Link}
+                  href="/contact-us"
                   variant="contained"
                   sx={{
                     bgcolor: 'black',
