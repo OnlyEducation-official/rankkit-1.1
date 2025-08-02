@@ -1,9 +1,20 @@
 'use client';
 
-import { Box, Button, Typography, Paper, Container, Grid, useMediaQuery } from '@mui/material';
+import {
+  Box,
+  Button,
+  Typography,
+  Paper,
+  Container,
+  Grid,
+  useMediaQuery,
+  useTheme,
+  IconButton,
+} from '@mui/material';
 import Image from 'next/image';
-import { Dispatch, ReactNode, SetStateAction, useState } from 'react';
+import { Dispatch, ReactNode, SetStateAction, useRef, useState } from 'react';
 import AiImg from '@/assets/images/home/aiRankit.png';
+import { ChevronLeft, ChevronRight } from '@mui/icons-material';
 
 const features = [
   {
@@ -106,6 +117,21 @@ export default function AiPowered() {
   const [activeIndex, setActiveIndex] = useState(0);
   const xsSize = useMediaQuery('(max-width: 600px)');
 
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+
+  const scroll = (direction: 'left' | 'right') => {
+    const container = scrollRef.current;
+    if (!container) return;
+
+    const scrollAmount = container.clientWidth * 0.6;
+    container.scrollBy({
+      left: direction === 'left' ? -scrollAmount : scrollAmount,
+      behavior: 'smooth',
+    });
+  };
+
   return (
     <Container maxWidth="lg">
       <Box sx={{ paddingBlockEnd: 4 }}>
@@ -166,19 +192,89 @@ export default function AiPowered() {
           </Grid>
         </Grid>
       </Box>
-      <Grid container direction="row" spacing={2}>
-        {features.map((feature, index) => (
-          <Grid key={feature.id} size={{ xs: 12, md: 3 }}>
-            <CardButton
-              index={index}
-              feature={feature}
-              activeIndex={activeIndex}
-              setActiveIndex={setActiveIndex}
+      <Box sx={{ position: 'relative' }}>
+        {/* Left button (only on mobile) */}
+        {isMobile && (
+          <IconButton
+            onClick={() => scroll('left')}
+            sx={{
+              position: 'absolute',
+              top: '50%',
+              left: 0,
+              transform: 'translateY(-50%)',
+              zIndex: 1,
+              backgroundColor: 'white',
+              boxShadow: 1,
+            }}
+          >
+            <ChevronLeft />
+          </IconButton>
+        )}
+
+        {/* Scrollable container */}
+        <Box
+          ref={scrollRef}
+          sx={{
+            display: {
+              xs: 'flex',
+              sm: 'grid',
+            },
+            gridTemplateColumns: {
+              sm: 'repeat(auto-fill, minmax(250px, 1fr))',
+            },
+            overflowX: {
+              xs: 'auto',
+              sm: 'unset',
+            },
+            gap: 2,
+            py: 2,
+            px: isMobile ? 5 : 0,
+            scrollBehavior: 'smooth',
+          }}
+        >
+          {features.map((feature, index) => (
+            <Box
               key={feature.id}
-            />
-          </Grid>
-        ))}
-      </Grid>
+              sx={{
+                flex: {
+                  xs: '0 0 80%',
+                  sm: 'unset',
+                },
+                width: {
+                  xs: '80%',
+                  sm: '100%',
+                },
+                scrollSnapAlign: 'start',
+              }}
+            >
+              <CardButton
+                index={index}
+                feature={feature}
+                activeIndex={activeIndex}
+                setActiveIndex={setActiveIndex}
+              />
+            </Box>
+          ))}
+        </Box>
+
+        {/* Right button (only on mobile) */}
+        {isMobile && (
+          <IconButton
+            onClick={() => scroll('right')}
+            sx={{
+              position: 'absolute',
+              top: '50%',
+              right: 0,
+              transform: 'translateY(-50%)',
+              zIndex: 1,
+              backgroundColor: 'white',
+              boxShadow: 1,
+            }}
+          >
+            <ChevronRight />
+          </IconButton>
+        )}
+      </Box>
       <Box
         sx={{
           borderRadius: '25px',
