@@ -1,8 +1,12 @@
+/* eslint-disable react/jsx-props-no-spreading */
+
 'use client';
 
 import React from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { Box, Button, TextField, Typography } from '@mui/material';
+import { zodResolver } from '@hookform/resolvers/zod';
+import contactFormSchema, { ContactFormScehmaType } from '@/types/ContactForm';
 
 const services = [
   { id: 1, slug: 'seo', service: 'SEO' },
@@ -20,8 +24,19 @@ const hear = [
   { id: 6, slug: 'linkedin', hear: 'LinkedIn' },
 ];
 
+// interface ContactSubmit {
+//   name: '';
+//   phone: '';
+//   orgname: '';
+//   email: '';
+//   services: [];
+//   hearAboutUs: [];
+//   message: '';
+// }
+
 export default function ContactForm() {
-  const { control, handleSubmit } = useForm({
+  const { control, handleSubmit } = useForm<ContactFormScehmaType>({
+    resolver: zodResolver(contactFormSchema),
     defaultValues: {
       name: '',
       phone: '',
@@ -33,7 +48,7 @@ export default function ContactForm() {
     },
   });
 
-  const onSubmit = (data) => {
+  const onSubmit = (data: ContactFormScehmaType) => {
     console.log(data);
   };
 
@@ -111,7 +126,7 @@ export default function ContactForm() {
               }}
               InputProps={{
                 sx: {
-                  fontSize: field.value?.length > 0 ? 30 : 16, // Increase size after typing
+                  fontSize: Number(field?.value?.length) > 0 ? 30 : 16, // Increase size after typing
                   transition: 'font-size 0.3s ease',
                 },
               }}
@@ -205,7 +220,7 @@ export default function ContactForm() {
                 field.onChange([...selectedServices, slug]);
               }
             };
-
+.
             const clearAll = () => field.onChange([]);
 
             return (
