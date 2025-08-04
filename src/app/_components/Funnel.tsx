@@ -1,14 +1,10 @@
-import { Stack, Box, Button, Container, Typography, useMediaQuery } from '@mui/material';
+import { Stack, Box, Button, Container } from '@mui/material';
 import FunnelInfo from './funnelSection/funnelInfo';
 import FunnelVideoo from './funnelSection/funnelVideoo';
 // import CarouselFunnel from './funnelSection/carouselFunnel';
 import SplideCarousel from './funnelSection/carouselFunnel';
-import Corosoll from './funnelSection/Corosoll';
 
 export default function Funnel() {
-  const OPTIONS = { loop: true };
-  const SLIDE_COUNT = 5;
-  const SLIDES = Array.from(Array(SLIDE_COUNT).keys());
   return (
     <Container maxWidth="lg">
       <Stack
@@ -18,6 +14,7 @@ export default function Funnel() {
           color: 'white',
           width: '100%',
           borderRadius: '10px',
+          mb: 10,
         }}
       >
         <Box

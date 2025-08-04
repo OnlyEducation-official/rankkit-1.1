@@ -1,4 +1,4 @@
-import { Stack, Box, Button, Container, Typography, useMediaQuery } from '@mui/material';
+import { Stack, Box, Typography } from '@mui/material';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';

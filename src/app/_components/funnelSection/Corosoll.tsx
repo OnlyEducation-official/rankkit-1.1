@@ -3,11 +3,9 @@
 
 'use client';
 
-import { Box, Paper, Typography, Button, useTheme, alpha, Stack } from '@mui/material';
-import { useState, useEffect } from 'react';
+import { Box, Stack } from '@mui/material';
 
 // eslint-disable-next-line import/no-extraneous-dependencies
-import { type FancyboxOptions, Fancybox } from '@fancyapps/ui/dist/fancybox/';
 // eslint-disable-next-line import/no-extraneous-dependencies
 import '@fancyapps/ui/dist/fancybox/fancybox.css';
 import useFancybox from './useFancybox';

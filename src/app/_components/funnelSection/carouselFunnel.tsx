@@ -7,8 +7,7 @@
 
 import React from 'react';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
-import { Box, Paper, Typography, Button, useTheme, alpha } from '@mui/material';
-import Image from 'next/image';
+import { Box, Paper, useTheme } from '@mui/material';
 import useFancybox from './useFancybox';
 
 const DUMMY_CARDS = [
