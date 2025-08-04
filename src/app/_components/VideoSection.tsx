@@ -22,7 +22,6 @@ export default function VideoSection() {
       autoPlay
       loop
       muted
-      playsInline
       style={{
         width: '100%',
         height: isMobile ? '80dvh' : '100dvh',

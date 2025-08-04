@@ -8,6 +8,7 @@ import AiPowered from './AiPowered';
 import Footer from './Footer';
 import WhyRankkit from './whyRankkit/WhyRankkit';
 import OurWork from './OurWork';
+import Funnel from './Funnel';
 
 export default function Homes() {
   return (
@@ -20,6 +21,7 @@ export default function Homes() {
       <AiPowered />
       <OurWork />
       <Footer />
+      <Funnel />
     </Box>
   );
 }
