@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
-import { Controller, Control, FieldValues, RegisterOptions, FieldPath } from 'react-hook-form';
+import { Controller, Control, FieldValues, FieldPath } from 'react-hook-form';
 import { TextField, TextFieldProps } from '@mui/material';
 
 type SimpleTextFieldProps<TFieldValues extends FieldValues> = {
