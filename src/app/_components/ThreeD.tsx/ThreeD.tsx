@@ -11,12 +11,22 @@ export default function ThreeD() {
       <Box
         sx={{
           display: 'grid',
-          gridTemplateColumns: 'repeat(2, 1fr)',
-          gridTemplateRows: 'repeat(4, 320px)',
+          gridTemplateColumns: { xs: 'auto', sm: 'repeat(2, 1fr)' },
+          gridTemplateRows: {
+            xs: 'auto repeat(4, 250px)',
+            sm: 'auto repeat(3, 300px)',
+            md: 'repeat(4, 320px)',
+          },
           gap: 5,
         }}
       >
-        <Box sx={{ gridRow: '1', gridColumn: '1', textAlign: 'justify' }}>
+        <Box
+          sx={{
+            gridRow: '1',
+            gridColumn: { xs: '1', sm: '1 / span 2', md: '1' },
+            textAlign: 'justify',
+          }}
+        >
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam quo voluptates ut officiis,
           vero minima, placeat illo nihil culpa vitae incidunt in reprehenderit minus voluptate,
           debitis odit recusandae quas dolor excepturi eligendi laborum deserunt commodi illum! Odit
@@ -28,7 +38,12 @@ export default function ThreeD() {
           perferendis fugiat voluptatum obcaecati odit mollitia dolor.
         </Box>
         {/* second */}
-        <Box sx={{ gridRow: '1 / span 2', gridColumn: '2' }}>
+        <Box
+          sx={{
+            gridRow: { xs: '2 / span 2', sm: '2 / span 2', md: '1 / span 2' },
+            gridColumn: { xs: '1', sm: '1 / span 1', md: '2' },
+          }}
+        >
           <Box
             sx={{
               flex: 1,
@@ -36,7 +51,7 @@ export default function ThreeD() {
               borderRadius: 3,
               width: 1,
               height: 1,
-              aspectRatio: 0.56 / 1,
+              aspectRatio: { md: 0.56 / 1 },
             }}
           >
             <video
@@ -50,7 +65,7 @@ export default function ThreeD() {
           </Box>
         </Box>
         {/* Third */}
-        <Box sx={{ gridRow: '2 / span 2', gridColumn: '1' }}>
+        <Box sx={{ gridRow: '2 / span 2', gridColumn: '1', display: { xs: 'none', md: 'block' } }}>
           <Box
             sx={{
               flex: 1,
@@ -72,7 +87,12 @@ export default function ThreeD() {
           </Box>
         </Box>
         {/* Fourth */}
-        <Box sx={{ gridRow: '3 / span 2', gridColumn: '2' }}>
+        <Box
+          sx={{
+            gridRow: { xs: '4 / span 2', sm: '2 / span 2', md: '3 / span 2' },
+            gridColumn: { xs: '1', sm: '2 / span 1', md: '2' },
+          }}
+        >
           <Box
             sx={{
               flex: 1,
@@ -80,7 +100,7 @@ export default function ThreeD() {
               borderRadius: 3,
               width: 1,
               height: 1,
-              aspectRatio: 0.56 / 1,
+              aspectRatio: { md: 0.56 / 1 },
             }}
           >
             <video
@@ -94,7 +114,7 @@ export default function ThreeD() {
           </Box>
         </Box>
         {/* Fifth */}
-        <Box sx={{ gridRow: '4', gridColumn: '1' }}>
+        <Box sx={{ gridRow: '4', gridColumn: '1', display: { xs: 'none', md: 'block' } }}>
           <Box
             sx={{
               flex: 1,
