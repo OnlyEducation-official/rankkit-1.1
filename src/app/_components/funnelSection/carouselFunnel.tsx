@@ -3,6 +3,7 @@
 import React from 'react';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import { Box, Paper, useTheme } from '@mui/material';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow';
 import useFancybox from './useFancybox';
 
 const DUMMY_CARDS = [
@@ -105,7 +106,36 @@ function SplideCarousel() {
                 ref={fancyboxRef}
                 sx={{ width: '100%', height: { xs: 150, md: 200 }, position: 'relative', mb: 2 }}
               >
-                <a href={card.videoUrl} data-fancybox data-width="1500" data-height="900">
+                <a
+                  href={card.videoUrl}
+                  data-fancybox
+                  data-width="1500"
+                  data-height="900"
+                  style={{ textDecoration: 'none' }}
+                >
+                  <Box
+                    sx={{
+                      position: 'absolute',
+                      display: 'flex',
+                      justifyContent: 'center',
+                      alignItems: 'center',
+                      top: '90%',
+                      left: '40%',
+                    }}
+                  >
+                    <PlayArrowIcon
+                      sx={{
+                        zIndex: 100,
+                        textDecoration: 'none',
+                        color: 'white',
+                        border: '1px solid gray',
+                        borderRadius: '100%',
+                        fontSize: '50px',
+                        backgroundColor: 'black',
+                        opacity: 0.7,
+                      }}
+                    />
+                  </Box>
                   <img src={card.coverImage} alt="Video poster" width="310" height="500" />
                 </a>
               </Box>
