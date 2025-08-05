@@ -10,6 +10,7 @@ import WhyRankkit from './whyRankkit/WhyRankkit';
 import OurWork from './OurWork';
 import Funnel from './Funnel';
 import ThreeD from './ThreeD.tsx/ThreeD';
+import FaqHomeSection from './FaqHomeSection';
 
 export default function Index() {
   return (
@@ -22,6 +23,7 @@ export default function Index() {
       <WhyRankkit />
       <Funnel />
       <AiPowered />
+      <FaqHomeSection />
       {/* <OurWork /> */}
       <Footer />
     </Box>
