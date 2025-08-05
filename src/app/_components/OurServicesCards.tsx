@@ -1,9 +1,8 @@
 'use client';
 
-import { Box, Button, Card, Container, Grid, Stack, Typography } from '@mui/material';
+import { Box, Card, Container, Grid, Stack, Typography } from '@mui/material';
 import Image from 'next/image';
 import React from 'react';
-import EastIcon from '@mui/icons-material/East';
 import webIcon from '@/assets/images/services-logo/webIcon.png';
 import brandingIcon from '@/assets/images/services-logo/brandingIcon.png';
 import creatorNestIcon from '@/assets/images/services-logo/creatorNestIcon.png';
@@ -93,9 +92,19 @@ export default function OurServicesCards() {
                 border: '1px solid #00000066',
                 display: 'flex',
                 flexDirection: 'column',
-                justifyContent: 'space-between',
+                // justifyContent: 'space-between',
                 gap: gaps.md.med,
                 height: { sm: 1 },
+                cursor: 'pointer',
+                transition: 'all 0.3s ease-in-out',
+                '&:hover': {
+                  background: 'linear-gradient(90deg, #FC5A4A 0%, #021266 100%)',
+                  scale: '1.03',
+                  '& *': {
+                    color: '#fff',
+                    filter: 'brightness(0) invert(1)',
+                  },
+                },
               }}
             >
               <Box>
@@ -127,27 +136,6 @@ export default function OurServicesCards() {
               <Typography variant="body1" sx={{ color: 'grey.900' }}>
                 {card.description}
               </Typography>
-
-              <Button
-                variant="contained"
-                disableElevation
-                sx={{
-                  px: 2,
-                  borderRadius: '20px',
-                  background: 'linear-gradient(90deg, #FC5A4A 0%, #021266 100%)',
-                  color: '#fff',
-                  fontWeight: '600',
-                  textTransform: 'none',
-                  fontSize: '14px',
-                  width: 'fit-content',
-                  '&:hover': {
-                    background: 'linear-gradient(90deg, #e14c3c 0%, #021266 100%)',
-                  },
-                }}
-                endIcon={<EastIcon />}
-              >
-                Read More
-              </Button>
             </Card>
           </Grid>
         ))}

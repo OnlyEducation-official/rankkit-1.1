@@ -2,14 +2,14 @@ import { Box } from '@mui/material';
 import VideoSection from './VideoSection';
 import Header from './Header';
 import AllInOneSection from './allInOneIntro/AllInOneSection';
-// import OurWork from './OurWork';
 import OurServicesCards from './OurServicesCards';
 import AiPowered from './AiPowered';
 import Footer from './Footer';
 import WhyRankkit from './whyRankkit/WhyRankkit';
-import OurWork from './OurWork';
+// import OurWork from './OurWork';
 import Funnel from './Funnel';
 import ThreeD from './ThreeD.tsx/ThreeD';
+import FaqHomeSection from './FaqHomeSection';
 import StudioMain from './studioMain';
 
 export default function Index() {
@@ -18,14 +18,15 @@ export default function Index() {
       <Header />
       <VideoSection />
       <AllInOneSection />
+      <StudioMain />
       <OurServicesCards />
-      {/* <ThreeD /> */}
+      <ThreeD />
       <WhyRankkit />
-      <Funnel />
       <AiPowered />
+      <Funnel />
+      <FaqHomeSection />
       {/* <OurWork /> */}
       <Footer />
-      <StudioMain />
     </Box>
   );
 }

@@ -1,5 +1,4 @@
-import { Box, Container, Stack, Typography } from '@mui/material';
-import Image from 'next/image';
+import { Box, Stack, Typography } from '@mui/material';
 
 export default function StudioTop() {
   const heroPointer = [
@@ -26,11 +25,23 @@ export default function StudioTop() {
       }}
     >
       <Box sx={{ width: { xs: '100%', md: '35%' } }}>
-        <Typography variant="h2" sx={{ fontWeight: 'bold' }}>
-          Our Studio
+        <Typography variant="h2" sx={{ fontWeight: '600', color: 'error.main' }}>
+          <Box component="span" sx={{ color: 'primary.main' }}>
+            Our
+          </Box>{' '}
+          Studio
         </Typography>
-        <Typography variant="h5" sx={{ paddingLeft: { xs: 0, md: 3 }, fontWeight: 'bold' }}>
-          Where Raw Ideas Meet <br /> <span>Real Execution.</span>
+        <Typography
+          variant="h5"
+          sx={{ paddingLeft: { xs: 0, md: 3 }, fontWeight: '600', paddingBlockStart: 1.5 }}
+        >
+          <Box component="span" sx={{ color: 'primary.main' }}>
+            Where Raw Ideas Meet{' '}
+          </Box>
+          <br />{' '}
+          <Box component="span" sx={{ color: 'error.main' }}>
+            Real Execution.
+          </Box>
         </Typography>
 
         {/* Changed parent Typography to Box */}
@@ -58,6 +69,8 @@ export default function StudioTop() {
           width: { xs: '100%', md: '65%' },
           height: { xs: '250px', sm: 'auto', md: 'auto' },
           position: 'relative',
+          boxShadow: '4px 4px 6px rgba(0, 0, 0, 0.5)',
+          borderRadius: '25px',
         }}
       >
         <iframe

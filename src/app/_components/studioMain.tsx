@@ -5,8 +5,8 @@ import StudioBottom from './ourStudio/studioBottom';
 export default function StudioMain() {
   return (
     <Container maxWidth="lg">
-      <Stack>
-        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+      <Stack sx={{ paddingBlockStart: 10 }}>
+        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
           <Box>
             <StudioTop />
           </Box>

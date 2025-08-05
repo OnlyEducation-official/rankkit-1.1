@@ -9,12 +9,17 @@ export default function Funnel() {
     <Container maxWidth="lg">
       <Stack
         sx={{
-          backgroundColor: '#0C0C70',
+          // backgroundColor: '#0C0C70',
+          backgroundColor: 'white',
           padding: { xs: 2, sm: 3, md: 5 },
-          color: 'white',
+          color: 'black',
           width: '100%',
           borderRadius: '10px',
           mb: 10,
+          boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.3)',
+          paddingInline: 4,
+          paddingBlock: 5,
+          backdropFilter: 'blur(50px)',
         }}
       >
         <Box
@@ -26,8 +31,8 @@ export default function Funnel() {
           <Button
             sx={{
               border: '1px solid hsla(0, 0%, 100%, .04)',
-              backgroundColor: 'hsla(0, 0%, 100%, .04)',
-              color: 'white',
+              backgroundColor: 'hsla(0, 100%, 50%, 0.26)',
+              color: 'black',
               fontWeight: 'semibold',
               fontSize: { xs: '15px', md: '20px' },
               borderRadius: '2vw',

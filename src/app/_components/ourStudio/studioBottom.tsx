@@ -1,4 +1,4 @@
-import { Box, Container, Stack, Typography } from '@mui/material';
+import { Box, Stack } from '@mui/material';
 import Image from 'next/image';
 
 export default function StudioBottom() {
@@ -7,7 +7,7 @@ export default function StudioBottom() {
       sx={{
         display: 'flex',
         flexDirection: { xs: 'column', sm: 'row', md: 'row' },
-        gap: 2,
+        gap: 4,
       }}
     >
       <Box

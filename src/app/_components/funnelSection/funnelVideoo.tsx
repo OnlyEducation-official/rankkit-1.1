@@ -1,6 +1,6 @@
 'use client';
 
-import { Stack, Box, CardMedia, useMediaQuery, useTheme } from '@mui/material';
+import { Stack, Box, useMediaQuery, useTheme } from '@mui/material';
 
 export default function FunnelVideoo() {
   const theme = useTheme();
@@ -24,7 +24,7 @@ export default function FunnelVideoo() {
             objectFit: 'cover',
           }}
         >
-          <source src="/videos/funnelVideo.mp4" type="video/mp4" />
+          <source src="/videos/funnelv.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         {/* <CardMedia
