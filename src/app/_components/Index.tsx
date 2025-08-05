@@ -10,6 +10,7 @@ import WhyRankkit from './whyRankkit/WhyRankkit';
 import OurWork from './OurWork';
 import Funnel from './Funnel';
 import ThreeD from './ThreeD.tsx/ThreeD';
+import StudioMain from './studioMain';
 
 export default function Index() {
   return (
@@ -18,12 +19,13 @@ export default function Index() {
       <VideoSection />
       <AllInOneSection />
       <OurServicesCards />
-      <ThreeD />
+      {/* <ThreeD /> */}
       <WhyRankkit />
       <Funnel />
       <AiPowered />
       {/* <OurWork /> */}
       <Footer />
+      <StudioMain />
     </Box>
   );
 }

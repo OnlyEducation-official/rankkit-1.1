@@ -9,7 +9,7 @@ export default function Funnel() {
     <Container maxWidth="lg">
       <Stack
         sx={{
-          backgroundColor: '#0c1528',
+          backgroundColor: '#0C0C70',
           padding: { xs: 2, sm: 3, md: 5 },
           color: 'white',
           width: '100%',
