@@ -1,8 +1,3 @@
-/* eslint-disable import/no-unresolved */
-/* eslint-disable import/extensions */
-/* eslint-disable import/no-extraneous-dependencies */
-// src/app/_components/SplideCarousel.tsx
-
 'use client';
 
 import React from 'react';
