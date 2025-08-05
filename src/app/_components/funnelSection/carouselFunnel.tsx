@@ -9,21 +9,33 @@ import useFancybox from './useFancybox';
 const DUMMY_CARDS = [
   {
     id: 1,
-    videoUrl: 'https://backend.realatte.com/uploads/reel8_c39f398558.mp4',
-    coverImage:
-      'https://realatte.com/_next/image?url=https%3A%2F%2Fbackend.realatte.com%2Fuploads%2Freel8_f3c47323bf.png&w=2048&q=75',
+    videoUrl: '/videos/1.mp4',
+    coverImage: '/videos/1.jpg',
   },
   {
     id: 2,
-    videoUrl: 'https://backend.realatte.com/uploads/reel4_cd4ecc07b2.mp4',
-    coverImage:
-      'https://realatte.com/_next/image?url=https%3A%2F%2Fbackend.realatte.com%2Fuploads%2Freel4_9082f8fe17.png&w=2048&q=75',
+    videoUrl: '/videos/2.mp4',
+    coverImage: '/videos/2.jpg',
   },
   {
     id: 3,
-    videoUrl: 'https://backend.realatte.com/uploads/reel5_b8d40ef4dd.mp4',
-    coverImage:
-      'https://realatte.com/_next/image?url=https%3A%2F%2Fbackend.realatte.com%2Fuploads%2Freel5_99ae013600.png&w=2048&q=75',
+    videoUrl: '/videos/3.mp4',
+    coverImage: '/videos/3.jpg',
+  },
+  {
+    id: 4,
+    videoUrl: '/videos/4.mp4',
+    coverImage: '/videos/4.jpg',
+  },
+  {
+    id: 5,
+    videoUrl: '/videos/5.mp4',
+    coverImage: '/videos/5.jpg',
+  },
+  {
+    id: 6,
+    videoUrl: '/videos/6.mp4',
+    coverImage: '/videos/6.jpg',
   },
 ];
 
@@ -86,15 +98,6 @@ function SplideCarousel() {
             <Paper
               elevation={6}
               sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'flex-start',
-                minHeight: { xs: 300, sm: 350, md: 400 },
-                borderRadius: 3,
-                overflow: 'hidden',
-                position: 'relative',
-                bgcolor: 'background.paper',
-                border: `1px solid ${theme.palette.divider}`,
                 transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
                 '&:hover': {
                   transform: 'translateY(-5px)',
@@ -104,13 +107,18 @@ function SplideCarousel() {
             >
               <Box
                 ref={fancyboxRef}
-                sx={{ width: '100%', height: { xs: 150, md: 200 }, position: 'relative', mb: 2 }}
+                sx={{
+                  width: '100%',
+                  height: { xs: '100%', md: '100%' },
+                  position: 'relative',
+                  mb: 2,
+                }}
               >
                 <a
                   href={card.videoUrl}
                   data-fancybox
-                  data-width="1500"
-                  data-height="900"
+                  data-width="50%"
+                  data-height="60%"
                   style={{ textDecoration: 'none' }}
                 >
                   <Box
@@ -119,7 +127,7 @@ function SplideCarousel() {
                       display: 'flex',
                       justifyContent: 'center',
                       alignItems: 'center',
-                      top: '90%',
+                      top: '50%',
                       left: '40%',
                     }}
                   >
@@ -136,7 +144,7 @@ function SplideCarousel() {
                       }}
                     />
                   </Box>
-                  <img src={card.coverImage} alt="Video poster" width="310" height="500" />
+                  <img src={card.coverImage} alt="Video poster" width="100%" height="100%" />
                 </a>
               </Box>
             </Paper>
