@@ -8,6 +8,7 @@ import { Box, Button, Stack, Typography } from '@mui/material';
 import { zodResolver } from '@hookform/resolvers/zod';
 import contactFormSchema, { ContactFormScehmaType } from '@/types/ContactForm';
 import SimpleTextField from '@/components/SimpleTextField';
+import PhoneInputField from '@/components/GlobalPhoneField';
 import ServicesBtn from './ServicesBtn';
 
 const services = [
@@ -70,7 +71,7 @@ export default function ContactForm() {
         <Stack rowGap={5}>
           <SimpleTextField control={control} name="name" label="Your Name" />
           <SimpleTextField control={control} name="orgname" label="Your Organization's Name" />
-          <SimpleTextField control={control} name="phone" label="Phone Number" />
+          <PhoneInputField control={control} name="phone" label="Phone Number" />
           <SimpleTextField control={control} name="email" label="Email" />
         </Stack>
 
