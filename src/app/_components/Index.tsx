@@ -1,4 +1,4 @@
-import { Box } from '@mui/material';
+import { Box, Stack } from '@mui/material';
 import VideoSection from './VideoSection';
 import Header from './Header';
 import AllInOneSection from './allInOneIntro/AllInOneSection';
@@ -14,9 +14,11 @@ import StudioMain from './studioMain';
 
 export default function Index() {
   return (
-    <Box>
-      <Header />
-      <VideoSection />
+    <Stack gap={20}>
+      <Box>
+        <Header />
+        <VideoSection />
+      </Box>
       <AllInOneSection />
       <StudioMain />
       <OurServicesCards />
@@ -27,6 +29,6 @@ export default function Index() {
       <FaqHomeSection />
       {/* <OurWork /> */}
       <Footer />
-    </Box>
+    </Stack>
   );
 }

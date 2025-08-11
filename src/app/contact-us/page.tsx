@@ -1,14 +1,19 @@
-import { Grid } from '@mui/material';
+import { Container, Grid } from '@mui/material';
 import React from 'react';
 import ContactForm from './_components/ContactForm';
+import RightSectionContactForm from './_components/RightSection';
 
 export default function page() {
   return (
-    <Grid container>
-      <Grid size={6}>
-        <ContactForm />
+    <Container maxWidth="lg">
+      <Grid container>
+        <Grid size={6}>
+          <ContactForm />
+        </Grid>
+        <Grid size={6}>
+          <RightSectionContactForm />
+        </Grid>
       </Grid>
-      <Grid size={6} />
-    </Grid>
+    </Container>
   );
 }

@@ -3,8 +3,13 @@ import React from 'react';
 
 export default function ThreeD() {
   return (
-    <Container maxWidth="lg" sx={{ mt: 10 }}>
-      <Typography variant="h1" fontWeight={600} color="primary.main" sx={{ mb: 5 }}>
+    <Container maxWidth="lg">
+      <Typography
+        variant="h1"
+        fontWeight={600}
+        color="primary.main"
+        sx={{ marginBlockEnd: { xs: '30px', md: 5 } }}
+      >
         Our 3D designers impacts
       </Typography>
       {/* grid */}

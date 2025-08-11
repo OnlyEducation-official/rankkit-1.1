@@ -15,7 +15,6 @@ export default function Funnel() {
           color: 'black',
           width: '100%',
           borderRadius: '10px',
-          mb: 10,
           boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.3)',
           paddingInline: 4,
           paddingBlock: 5,

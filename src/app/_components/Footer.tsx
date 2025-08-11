@@ -1,7 +1,7 @@
 import { Box, Container, Divider, Typography } from '@mui/material';
 import { Instagram, Facebook, Twitter } from '@mui/icons-material';
-import logo from '@/assets/images/logo1.jpg';
 import Image from 'next/image';
+import logo from '@/assets/images/logo2.png';
 
 export default function Footer() {
   return (
@@ -10,7 +10,7 @@ export default function Footer() {
         backgroundColor: '#bebebe96',
         color: 'black',
         padding: '20px',
-        marginTop: '100px',
+        marginBlockStart: '64px',
       }}
     >
       <Container maxWidth="xl">
@@ -21,14 +21,16 @@ export default function Footer() {
             justifyContent: 'space-around',
           }}
         >
-          <Box sx={{ maxWidth: '300px' }}>
-            <Box sx={{ gap: '20px', fontWeight: 'normal' }}>
-              <Box sx={{ position: 'relative', width: '95px', aspectRatio: 3.66 / 1 }}>
-                <Image src={logo} alt="RankKit Logo" />
+          <Box sx={{ maxWidth: '300px', marginTop: '20px' }}>
+            <Box display="flex" flexDirection="column" sx={{ gap: '16px', fontWeight: 'normal' }}>
+              <Box sx={{ position: 'relative', width: '185px', aspectRatio: 4.2 / 1 }}>
+                <Image src={logo} fill alt="RankKit Logo" style={{ objectFit: 'contain' }} />
               </Box>
 
               <Typography variant="body1">Cinematic content Meets Digital Strategy</Typography>
-              <p>We combine storytelling and data-driven marketing to elevate your brand.</p>
+              <Typography variant="body1">
+                We combine storytelling and data-driven marketing to elevate your brand.
+              </Typography>
               <Box
                 sx={{
                   display: 'flex',

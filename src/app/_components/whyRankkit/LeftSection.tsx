@@ -21,7 +21,7 @@ const gaps = {
 
 export default function LeftSection() {
   return (
-    <Box sx={{ position: 'sticky', top: 80 }}>
+    <Box sx={{ position: 'sticky', top: 100 }}>
       <Typography
         variant="h2"
         fontWeight={600}

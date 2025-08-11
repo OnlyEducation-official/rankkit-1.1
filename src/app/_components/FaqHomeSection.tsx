@@ -12,7 +12,7 @@ import MuiAccordionSummary, {
 } from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
-import { Box, Container } from '@mui/material';
+import { Container } from '@mui/material';
 
 const faqData = [
   {
@@ -128,7 +128,6 @@ export default function FaqHomeSection() {
 
   return (
     <Container maxWidth="lg">
-      <Box sx={{ marginTop: 10 }} />
       <Typography variant="h1" fontWeight={600} color="primary.main" paddingBlockEnd={4}>
         Frequently Asked Questions
       </Typography>
