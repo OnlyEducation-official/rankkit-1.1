@@ -51,7 +51,7 @@ export default function ContactForm() {
         display: 'flex',
         flexDirection: 'row',
         width: '100%',
-        height: '100vh', // optional if you want full screen height
+        // height: '100vh', // optional if you want full screen height
       }}
     >
       {/* Left Form Box */}
@@ -63,12 +63,12 @@ export default function ContactForm() {
           flexDirection: 'column',
           gap: 3,
           flex: 1, // 50% width
-          p: 10,
+          paddingInlineEnd: 10,
           borderRight: '1px solid #eee', // optional separator
         }}
       >
         {/* Name */}
-        <Stack rowGap={5}>
+        <Stack rowGap={5} sx={{ paddingBlockStart: '130px' }}>
           <SimpleTextField control={control} name="name" label="Your Name" />
           <SimpleTextField control={control} name="orgname" label="Your Organization's Name" />
           <PhoneInputField control={control} name="phone" label="Phone Number" />
@@ -109,7 +109,12 @@ export default function ContactForm() {
         </Stack>
 
         {/* Submit Button */}
-        <Button type="submit" variant="contained" color="primary">
+        <Button
+          type="submit"
+          variant="contained"
+          color="primary"
+          sx={{ typography: 'subtitle1', fontWeight: 600, marginBlockStart: 3 }}
+        >
           Submit
         </Button>
       </Box>

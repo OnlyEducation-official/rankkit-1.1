@@ -21,6 +21,9 @@ const theme = createTheme({
     fontFamily: 'var(--font-clash-display), sans-serif',
     h1: {
       fontSize: '50px',
+      '@media (max-width:900px)': {
+        fontSize: '40px',
+      },
     },
     h2: {
       fontSize: '44px',

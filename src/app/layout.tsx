@@ -13,8 +13,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  header,
+  footer,
 }: Readonly<{
   children: React.ReactNode;
+  header: React.ReactNode;
+  footer: React.ReactNode;
 }>) {
   return (
     <html lang="en" className={`${clashDisplayFont.variable}`}>
@@ -24,7 +28,11 @@ export default function RootLayout({
         }}
       >
         <AppRouterCacheProvider options={{ key: 'css', enableCssLayer: true }}>
-          <MuiThemeProvider>{children}</MuiThemeProvider>
+          <MuiThemeProvider>
+            {header}
+            {children}
+            {footer}
+          </MuiThemeProvider>
         </AppRouterCacheProvider>
       </body>
     </html>

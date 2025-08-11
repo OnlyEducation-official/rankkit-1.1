@@ -134,7 +134,7 @@ export default function AiPowered() {
 
   return (
     <Container maxWidth="lg">
-      <Box sx={{ paddingBlockEnd: 4 }}>
+      <Box>
         <Typography
           variant="h2"
           sx={{ paddingBlockEnd: 5, fontWeight: 600, color: 'primary.main' }}
