@@ -16,7 +16,7 @@ export default function Index() {
   return (
     <Stack gap={20}>
       <Box>
-        <Header />
+        {/* <Header /> */}
         <VideoSection />
       </Box>
       <AllInOneSection />
@@ -28,7 +28,7 @@ export default function Index() {
       <Funnel />
       <FaqHomeSection />
       {/* <OurWork /> */}
-      <Footer />
+      {/* <Footer /> */}
     </Stack>
   );
 }

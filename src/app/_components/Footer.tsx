@@ -10,7 +10,7 @@ export default function Footer() {
         backgroundColor: '#bebebe96',
         color: 'black',
         padding: '20px',
-        marginBlockStart: '64px',
+        marginBlockStart: '160px',
       }}
     >
       <Container maxWidth="xl">
