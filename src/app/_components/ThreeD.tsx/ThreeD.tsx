@@ -32,15 +32,14 @@ export default function ThreeD() {
             textAlign: 'justify',
           }}
         >
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam quo voluptates ut officiis,
-          vero minima, placeat illo nihil culpa vitae incidunt in reprehenderit minus voluptate,
-          debitis odit recusandae quas dolor excepturi eligendi laborum deserunt commodi illum! Odit
-          maxime quis incidunt non ea amet, reprehenderit deserunt, nostrum sequi fugit repellat
-          ipsum dolore quia nihil ratione commodi voluptatibus a. voluptatibus laborum reprehenderit
-          omnis? Quo et corporis, suscipit totam? Quo et corporis, suscipit totam? Quo et corporis,
-          suscipit totam ? Quo et corporis, suscipit totam qui earum repudiandae dolorum aut quam
-          placeat facere quod in deleniti, tempora voluptate molestias! Maxime sed adipisci
-          perferendis fugiat voluptatum obcaecati odit mollitia dolor.
+          We bring imagination to life through precision, creativity, and cutting-edge technology.
+          Our 3D design solutions help brands tell their story in the most engaging way — from
+          high-end product reveals to immersive architectural walkthroughs and animations that
+          simplify complex ideas. By blending photorealism with strategic storytelling, we create
+          visuals that not only look stunning but also drive results. Our work spans industries,
+          helping clients market products more effectively, accelerate approvals, and create
+          experiences that stand out in a crowded digital space. With every project, we push the
+          limits of digital visualization, turning ideas into impactful realities.
         </Box>
         {/* second */}
         <Box
