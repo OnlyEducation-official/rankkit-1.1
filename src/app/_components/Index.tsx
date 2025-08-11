@@ -14,7 +14,7 @@ import StudioMain from './studioMain';
 
 export default function Index() {
   return (
-    <Stack gap={20}>
+    <Stack gap={20} sx={{ marginBlockEnd: '160px' }}>
       <Box>
         {/* <Header /> */}
         <VideoSection />

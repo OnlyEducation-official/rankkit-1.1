@@ -114,7 +114,7 @@ export default function ThreeD() {
               autoPlay
               muted
             >
-              <source src="/videos/cosmix.mp4" type="video/mp4" />
+              <source src="/videos/comix-vertical.mp4" type="video/mp4" />
             </video>
           </Box>
         </Box>
@@ -136,7 +136,7 @@ export default function ThreeD() {
               autoPlay
               muted
             >
-              <source src="/videos/watch.mp4" type="video/mp4" />
+              <source src="/videos/cosmix.mp4" type="video/mp4" />
             </video>
           </Box>
         </Box>

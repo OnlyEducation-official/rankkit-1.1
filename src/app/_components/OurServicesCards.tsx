@@ -68,7 +68,12 @@ export default function OurServicesCards() {
   return (
     <Container maxWidth="lg">
       <Grid size={12}>
-        <Typography variant="h1" fontWeight={600} textAlign="start" sx={{ color: 'primary.main' }}>
+        <Typography
+          variant="h1"
+          fontWeight={600}
+          textAlign="start"
+          sx={{ color: 'primary.main', marginBlockEnd: { xs: '30px', md: 5 } }}
+        >
           Our Services
         </Typography>
       </Grid>

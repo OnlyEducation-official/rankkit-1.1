@@ -1,4 +1,4 @@
-import { Stack, Box, Button, Container } from '@mui/material';
+import { Stack, Box, Button, Container, Typography } from '@mui/material';
 import FunnelInfo from './funnelSection/funnelInfo';
 import FunnelVideoo from './funnelSection/funnelVideoo';
 // import CarouselFunnel from './funnelSection/carouselFunnel';
@@ -7,21 +7,8 @@ import SplideCarousel from './funnelSection/carouselFunnel';
 export default function Funnel() {
   return (
     <Container maxWidth="lg">
-      <Stack
-        sx={{
-          // backgroundColor: '#0C0C70',
-          backgroundColor: 'white',
-          padding: { xs: 2, sm: 3, md: 5 },
-          color: 'black',
-          width: '100%',
-          borderRadius: '10px',
-          boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.3)',
-          paddingInline: 4,
-          paddingBlock: 5,
-          backdropFilter: 'blur(50px)',
-        }}
-      >
-        <Box
+      <Stack>
+        {/* <Box
           sx={{
             alignItems: 'center',
             textAlign: 'center',
@@ -40,13 +27,21 @@ export default function Funnel() {
           >
             MID FUNNEL INFLUENCE
           </Button>
-        </Box>
+        </Box> */}
+        <Typography
+          variant="h1"
+          fontWeight={600}
+          color="primary.main"
+          sx={{ marginBlockEnd: { xs: '30px', md: 5 } }}
+        >
+          Where Talent Meets Visual Impact
+        </Typography>
         <Box
           sx={{
             display: 'flex',
             flexDirection: { xs: 'column-reverse', sm: 'row', md: 'row' },
             justifyContent: 'space-around',
-            paddingTop: 5,
+            // paddingTop: 5,
           }}
         >
           <Box>

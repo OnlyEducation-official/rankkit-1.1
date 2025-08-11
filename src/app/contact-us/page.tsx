@@ -6,7 +6,7 @@ import RightSectionContactForm from './_components/RightSection';
 export default function page() {
   return (
     <Container maxWidth="lg">
-      <Grid container>
+      <Grid container sx={{ marginBlockEnd: '160px' }}>
         <Grid size={6}>
           <ContactForm />
         </Grid>
