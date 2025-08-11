@@ -18,8 +18,8 @@ export default function FunnelVideoo() {
           loop
           muted
           style={{
-            width: isMobile ? '30dvh' : '40dvh',
-            height: isMobile ? '35dvh' : '40dvh',
+            width: isMobile ? '30dvh' : '55dvh',
+            height: isMobile ? '35dvh' : '55dvh',
             aspectRatio: isMobile ? 4 / 5 : 16 / 9,
             objectFit: 'cover',
           }}

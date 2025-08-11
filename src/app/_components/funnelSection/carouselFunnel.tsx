@@ -87,7 +87,7 @@ function SplideCarousel() {
         width: '100%',
         maxWidth: '1400px',
         mx: 'auto',
-        my: 6,
+        marginBlockStart: 6,
         position: 'relative',
         px: { xs: 2, sm: 4, md: 6 },
       }}

@@ -32,7 +32,11 @@ export default function Header() {
         <Stack direction="row" alignItems="center" justifyContent="space-between">
           {/* Logo */}
           <Stack direction="row" spacing={1} alignItems="center">
-            <Box sx={{ position: 'relative', width: '135px', aspectRatio: 4.2 / 1 }}>
+            <Box
+              component={Link}
+              href="/"
+              sx={{ position: 'relative', width: '135px', aspectRatio: 4.2 / 1 }}
+            >
               <Image src={logo} fill alt="RankKit Logo" style={{ objectFit: 'contain' }} />
             </Box>
           </Stack>
@@ -42,9 +46,51 @@ export default function Header() {
           {/* Nav Items from tablet */}
           {!isMobile && (
             <Stack direction="row" spacing={4} alignItems="center">
-              <Typography variant="body1">About</Typography>
-              <Typography variant="body1">Services</Typography>
-              <Typography variant="body1">Case Studies</Typography>
+              <Typography
+                variant="body1"
+                component={Link}
+                href="/about-us"
+                sx={{
+                  textDecoration: 'none',
+                  color: 'inherit',
+                  '&:hover': {
+                    textDecoration: 'none',
+                    color: 'inherit',
+                  },
+                }}
+              >
+                About
+              </Typography>
+              <Typography
+                variant="body1"
+                component={Link}
+                href="/services"
+                sx={{
+                  textDecoration: 'none',
+                  color: 'inherit',
+                  '&:hover': {
+                    textDecoration: 'none',
+                    color: 'inherit',
+                  },
+                }}
+              >
+                Services
+              </Typography>
+              <Typography
+                variant="body1"
+                component={Link}
+                href="/case-studies"
+                sx={{
+                  textDecoration: 'none',
+                  color: 'inherit',
+                  '&:hover': {
+                    textDecoration: 'none',
+                    color: 'inherit',
+                  },
+                }}
+              >
+                Case Studies
+              </Typography>
               <Button
                 LinkComponent={Link}
                 href="/contact-us"

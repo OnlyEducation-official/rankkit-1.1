@@ -2,6 +2,7 @@ import { Box, Container, Divider, Typography } from '@mui/material';
 import { Instagram, Facebook, Twitter } from '@mui/icons-material';
 import Image from 'next/image';
 import logo from '@/assets/images/logo2.png';
+import Link from 'next/link';
 
 export default function Footer() {
   return (
@@ -10,7 +11,6 @@ export default function Footer() {
         backgroundColor: '#bebebe96',
         color: 'black',
         padding: '20px',
-        marginBlockStart: '160px',
       }}
     >
       <Container maxWidth="xl">
@@ -23,7 +23,11 @@ export default function Footer() {
         >
           <Box sx={{ maxWidth: '300px', marginTop: '20px' }}>
             <Box display="flex" flexDirection="column" sx={{ gap: '16px', fontWeight: 'normal' }}>
-              <Box sx={{ position: 'relative', width: '185px', aspectRatio: 4.2 / 1 }}>
+              <Box
+                sx={{ position: 'relative', width: '185px', aspectRatio: 4.2 / 1 }}
+                component={Link}
+                href="/"
+              >
                 <Image src={logo} fill alt="RankKit Logo" style={{ objectFit: 'contain' }} />
               </Box>
 

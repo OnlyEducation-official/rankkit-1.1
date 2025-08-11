@@ -12,33 +12,40 @@ export default function FunnelInfo() {
   const funnelList = [
     {
       id: 1,
-      name: 'Dynamic Retargeting with Custom Messaging',
+      name: 'Wide network of professional models for fashion, lifestyle, and commercial shoots.',
     },
     {
       id: 2,
-      name: 'WhatsApp AI Assistants',
+      name: 'Tailored talent selection to perfectly match your brand’s identity and audience.',
     },
     {
       id: 3,
-      name: 'Microsites & Project Landing Pages',
+      name: 'Experienced in diverse media formats — from photo shoots to video campaigns.',
     },
     {
       id: 4,
-      name: 'Exclusive Pre-Booking Webinars & Q&A Sessions',
+      name: 'High-quality content creation designed for maximum engagement on all platforms.',
     },
     {
-      id: 0,
-      name: 'Google My Business & Maps Optimization',
+      id: 5,
+      name: 'Seamless coordination from casting to final delivery for stress-free production.',
+    },
+    {
+      id: 6,
+      name: 'Proven track record of impactful brand collaborations across industries.',
     },
   ];
 
   return (
     <Stack>
       <Box>
-        <h3>Turning Interest into Site Visits</h3>
+        <Typography variant="h4" fontWeight={600} marginBlockEnd={1}>
+          Professional Models, Powerful Brand Stories
+        </Typography>
         <Typography sx={{ paddingLeft: 0 }}>
-          Now that we’ve caught their attention, it’s time to nurture leads and push them closer to
-          a decision.
+          We collaborate with a diverse roster of professional models to bring brands to life
+          through authentic, captivating visuals. Our talent partnerships ensure every campaign
+          connects with the right audience and leaves a lasting impression.
         </Typography>
 
         <List sx={{ listStyleType: 'disc', paddingLeft: 2 }}>
