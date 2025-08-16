@@ -1,33 +1,12 @@
-import { Stack, Box, Button, Container, Typography } from '@mui/material';
+import { Stack, Box, Container, Typography } from '@mui/material';
 import FunnelInfo from './funnelSection/funnelInfo';
 import FunnelVideoo from './funnelSection/funnelVideoo';
-// import CarouselFunnel from './funnelSection/carouselFunnel';
 import SplideCarousel from './funnelSection/carouselFunnel';
 
 export default function Funnel() {
   return (
     <Container maxWidth="lg">
       <Stack>
-        {/* <Box
-          sx={{
-            alignItems: 'center',
-            textAlign: 'center',
-          }}
-        >
-          <Button
-            sx={{
-              border: '1px solid hsla(0, 0%, 100%, .04)',
-              backgroundColor: 'hsla(0, 100%, 50%, 0.26)',
-              color: 'black',
-              fontWeight: 'semibold',
-              fontSize: { xs: '15px', md: '20px' },
-              borderRadius: '2vw',
-              padding: '5px 15px',
-            }}
-          >
-            MID FUNNEL INFLUENCE
-          </Button>
-        </Box> */}
         <Typography
           variant="h1"
           fontWeight={600}
