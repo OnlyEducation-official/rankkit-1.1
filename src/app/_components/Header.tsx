@@ -1,11 +1,12 @@
 'use client';
 
-import { Box, Button, Container, Stack, Typography, useMediaQuery } from '@mui/material';
+import { Box, Button, Container, Stack, Tooltip, Typography, useMediaQuery } from '@mui/material';
 import Image from 'next/image';
 import React from 'react';
 import logo from '@/assets/images/logo2.png';
 import Link from 'next/link';
 import SidebarDrawer from './Drawer';
+import DropdownMenu from './DropdownMenu';
 
 export default function Header() {
   const isMobile = useMediaQuery('(max-width: 600px)');
@@ -61,35 +62,35 @@ export default function Header() {
               >
                 About
               </Typography>
+              <DropdownMenu
+                lists={[
+                  { text: 'Web development', href: '/services/web-development' },
+                  { text: 'Branding & Multimedia', href: '/services/branding-and-multimedia' },
+                  { text: 'CreatorNest', href: '/services/creator-nest' },
+                  { text: 'Media Production', href: '/services/media-production' },
+                  { text: 'SEO Services', href: '/services/seo-services' },
+                  { text: 'Digital Marketing', href: '/services/digital-marketing' },
+                ]}
+                // label="Industries"
+              />
               <Typography
+                component={Tooltip}
+                title="Coming soon!"
+                arrow
                 variant="body1"
-                component={Link}
-                href="/services"
+                // component={Link}
+                // href="/case-studies"
                 sx={{
                   textDecoration: 'none',
                   color: 'inherit',
+                  cursor: 'pointer',
                   '&:hover': {
                     textDecoration: 'none',
                     color: 'inherit',
                   },
                 }}
               >
-                Services
-              </Typography>
-              <Typography
-                variant="body1"
-                component={Link}
-                href="/case-studies"
-                sx={{
-                  textDecoration: 'none',
-                  color: 'inherit',
-                  '&:hover': {
-                    textDecoration: 'none',
-                    color: 'inherit',
-                  },
-                }}
-              >
-                Case Studies
+                Studio
               </Typography>
               <Button
                 LinkComponent={Link}
