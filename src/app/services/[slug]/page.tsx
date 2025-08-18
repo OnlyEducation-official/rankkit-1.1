@@ -39,7 +39,7 @@ export type ServiceType = {
   };
 };
 
-type servicePages =
+export type servicePages =
   | 'web-development'
   | 'branding-and-multimedia'
   | 'creator-nest'
