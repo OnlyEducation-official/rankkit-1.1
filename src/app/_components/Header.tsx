@@ -1,6 +1,6 @@
 'use client';
 
-import { Box, Button, Container, Stack, Tooltip, Typography, useMediaQuery } from '@mui/material';
+import { Box, Button, Container, Stack, Typography, useMediaQuery } from '@mui/material';
 import Image from 'next/image';
 import React from 'react';
 import logo from '@/assets/images/logo2.png';
@@ -74,12 +74,9 @@ export default function Header() {
                 // label="Industries"
               />
               <Typography
-                component={Tooltip}
-                title="Coming soon!"
-                arrow
                 variant="body1"
-                // component={Link}
-                // href="/case-studies"
+                component={Link}
+                href="/studio"
                 sx={{
                   textDecoration: 'none',
                   color: 'inherit',
