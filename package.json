@@ -24,6 +24,7 @@
     "embla-carousel-react": "^8.6.0",
     "framer-motion": "^12.23.12",
     "libphonenumber-js": "^1.12.10",
+    "lucide-react": "^0.539.0",
     "mui-tel-input": "^9.0.1",
     "next": "15.4.3",
     "react": "19.1.0",
