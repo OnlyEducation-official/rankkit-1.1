@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Box, Typography, Container, Grid, Button, Stack } from '@mui/material';
 import { Play, Camera, Mic, Video, Edit, Lightbulb } from 'lucide-react';
 import { v4 as uuidv4 } from 'uuid';
+import Link from 'next/link';
 
 export default function StudioAdvantage() {
   const [scrollY, setScrollY] = useState(0);
@@ -177,6 +178,8 @@ export default function StudioAdvantage() {
               </Grid>
 
               <Button
+                LinkComponent={Link}
+                href="/studio"
                 sx={{
                   backgroundColor: 'white',
                   color: '#021266',
@@ -184,6 +187,7 @@ export default function StudioAdvantage() {
                   px: 4,
                   py: 2,
                   fontWeight: 700,
+                  width: 'fit-content',
                   fontSize: '18px',
                   border: 'none',
                   cursor: 'pointer',
