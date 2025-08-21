@@ -1,6 +1,8 @@
 import React from 'react';
 import { Box, Typography, Button } from '@mui/material';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
+import multiSetupImg from '@/assets/images/services-logo/multiSetupImg.png';
 
 const MotionBox = motion(Box);
 
@@ -120,16 +122,23 @@ function MultipleSetups() {
             },
           }}
         >
-          <Typography
-            variant="h4"
+          <Box
             sx={{
-              color: '#64748b',
-              fontWeight: 600,
-              textAlign: 'center',
+              width: '100%',
+              height: '100%',
+              background: 'linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              borderRadius: '16px',
             }}
           >
-            Wall Setup Gallery
-          </Typography>
+            <Image
+              src={multiSetupImg}
+              alt="Studio Interior"
+              style={{ height: '100%', width: '100%', borderRadius: '16px' }}
+            />
+          </Box>
         </MotionBox>
       </Box>
     </Box>

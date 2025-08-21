@@ -18,6 +18,7 @@ function HeroSection() {
         alignItems: 'center',
         overflow: 'hidden',
         paddingBlockEnd: '30px',
+        paddingBlockStart: '100px',
       }}
     >
       {/* Background Pattern */}
@@ -144,7 +145,7 @@ function HeroSection() {
               },
             }}
           >
-            {['+950 sq.ft', '+8 wall setups', '3 paper backdrops', 'Vanity room'].map((badge) => (
+            {['+1200 sq.ft', '+8 wall setups', '3 paper backdrops', 'Vanity room'].map((badge) => (
               <Chip
                 key={uuidv4()}
                 label={badge}

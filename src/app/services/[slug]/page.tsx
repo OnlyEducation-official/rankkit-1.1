@@ -7,6 +7,14 @@ import seoService from '@/assets/images/services-logo/seo-service.png';
 import digitalMarketingService from '@/assets/images/services-logo/digital-marketing-service.png';
 import { StaticImageData } from 'next/image';
 import { notFound } from 'next/navigation';
+import webDevCover from '@/assets/images/services-logo/web-dev-cover.png';
+import brandCover1 from '@/assets/images/services-logo/brand-cover-1.png';
+import brandCover2 from '@/assets/images/services-logo/brand-cover-2.png';
+import cnestCover from '@/assets/images/services-logo/creator-nest-cover.png';
+import seoCover1 from '@/assets/images/services-logo/seo-cover-1.png';
+import seoCover2 from '@/assets/images/services-logo/seo-cover-2.png';
+import digiCover1 from '@/assets/images/services-logo/digi-cover-1.png';
+import digiCover2 from '@/assets/images/services-logo/digi-cover-2.png';
 import DynamicService from './_components/DynamicService';
 
 export type ServiceType = {
@@ -17,6 +25,15 @@ export type ServiceType = {
     };
     description: string[];
     image: StaticImageData;
+  };
+  cover?: {
+    full?: {
+      img: StaticImageData;
+    };
+    half?: {
+      img1: StaticImageData;
+      img2: StaticImageData;
+    };
   };
   quotes: {
     text: string;
@@ -62,6 +79,11 @@ const service: Service = {
         'Every project is mobile-first, SEO-ready, and optimized for performance. From custom PWAs to headless CMS solutions, we deliver technology that grows with you.',
       ],
       image: webDevService,
+    },
+    cover: {
+      full: {
+        img: webDevCover,
+      },
     },
     quotes: [
       {
@@ -122,6 +144,12 @@ const service: Service = {
       ],
       image: brandingService,
     },
+    cover: {
+      half: {
+        img1: brandCover1,
+        img2: brandCover2,
+      },
+    },
     quotes: [
       {
         text: 'Logos fade. Stories last. Branding is what people remember.',
@@ -175,6 +203,11 @@ const service: Service = {
         'From professional studio content to platform-specific strategies, we make your work stand out. With growth roadmaps and monetization plans.',
       ],
       image: creatorNestService,
+    },
+    cover: {
+      full: {
+        img: cnestCover,
+      },
     },
     quotes: [
       {
@@ -230,6 +263,10 @@ const service: Service = {
       ],
       image: mediaProductionService,
     },
+    // coverImg: {
+    //   img1: mediaProductionService,
+    //   img2: mediaProductionService,
+    // },
     quotes: [
       {
         text: 'Every frame should sell a story. Every story should sell your brand.',
@@ -283,6 +320,12 @@ const service: Service = {
         'Our approach covers on-page, off-page, and technical optimization, backed by keyword research and local SEO Ensuring higher rankings and more targeted traffic.',
       ],
       image: seoService,
+    },
+    cover: {
+      half: {
+        img1: seoCover1,
+        img2: seoCover2,
+      },
     },
     quotes: [
       {
@@ -338,6 +381,12 @@ const service: Service = {
       ],
       image: digitalMarketingService,
     },
+    cover: {
+      half: {
+        img1: digiCover1,
+        img2: digiCover2,
+      },
+    },
     quotes: [
       {
         text: 'Ads are easy. Conversions are strategy.',
@@ -385,5 +434,5 @@ const service: Service = {
 export default async function page({ params }: { params: Promise<{ slug: servicePages }> }) {
   const { slug } = await params;
   if (!service[slug]) notFound();
-  return <DynamicService service={service[slug]} />;
+  return <DynamicService service={service[slug]} slug={slug} />;
 }

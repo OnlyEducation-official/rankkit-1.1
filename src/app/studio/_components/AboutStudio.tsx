@@ -2,6 +2,8 @@ import React from 'react';
 import { Box, Typography, Button } from '@mui/material';
 import { motion } from 'framer-motion';
 import { v4 as uuidv4 } from 'uuid';
+import Image from 'next/image';
+import studioInterior from '@/assets/images/services-logo/studioInterior.png';
 
 const MotionBox = motion(Box);
 const MotionTypography = motion(Typography);
@@ -241,10 +243,8 @@ function AboutStudio() {
           viewport={{ once: true }}
           sx={{
             position: 'relative',
-            height: {
-              xs: '300px',
-              md: '500px',
-            },
+            width: 1,
+            aspectRatio: '1 / 1.35',
             borderRadius: '16px',
             overflow: 'hidden',
             boxShadow: '0 20px 40px rgba(0, 0, 0, 0.1)',
@@ -264,18 +264,11 @@ function AboutStudio() {
               justifyContent: 'center',
             }}
           >
-            <Typography
-              variant="h4"
-              sx={{
-                color: '#64748b',
-                fontWeight: 600,
-                textAlign: 'center',
-              }}
-            >
-              Studio Interior
-              <br />
-              Professional Setup
-            </Typography>
+            <Image
+              src={studioInterior}
+              alt="Studio Interior"
+              style={{ height: '100%', width: '100%' }}
+            />
           </Box>
 
           {/* Decorative Elements */}
