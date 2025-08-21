@@ -14,27 +14,27 @@ const DUMMY_CARDS = [
   },
   {
     id: 2,
-    videoUrl: '/videos/2.mp4',
+    videoUrl: '/videos/2.webm',
     coverImage: '/videos/2.jpg',
   },
   {
     id: 3,
-    videoUrl: '/videos/3.mp4',
+    videoUrl: '/videos/3.webm',
     coverImage: '/videos/3.jpg',
   },
   {
     id: 4,
-    videoUrl: '/videos/4.mp4',
+    videoUrl: '/videos/4.webm',
     coverImage: '/videos/4.jpg',
   },
   {
     id: 5,
-    videoUrl: '/videos/5.mp4',
+    videoUrl: '/videos/5.webm',
     coverImage: '/videos/5.jpg',
   },
   {
     id: 6,
-    videoUrl: '/videos/6.mp4',
+    videoUrl: '/videos/6.webm',
     coverImage: '/videos/6.jpg',
   },
 ];

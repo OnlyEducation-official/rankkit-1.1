@@ -24,7 +24,7 @@ export default function FunnelVideoo() {
             objectFit: 'cover',
           }}
         >
-          <source src="/videos/funnelv.mp4" type="video/mp4" />
+          <source src="/videos/funnelv.webm" type="video/webm" />
           Your browser does not support the video tag.
         </video>
         {/* <CardMedia

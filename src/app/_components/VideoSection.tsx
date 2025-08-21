@@ -15,7 +15,7 @@ export default function VideoSection() {
 
   if (!hydrated) return null; // Or show a loader
 
-  const videoSrc = isMobile ? '/videos/cover_mobile.mp4' : '/videos/cover_desktop.mp4';
+  const videoSrc = isMobile ? '/videos/cover_mobile.webm' : '/videos/cover_desktop.webm';
 
   return (
     <video
@@ -29,7 +29,7 @@ export default function VideoSection() {
         objectFit: 'cover',
       }}
     >
-      <source src={videoSrc} type="video/mp4" />
+      <source src={videoSrc} type="video/webm" />
       Your browser does not support the video tag.
     </video>
   );
