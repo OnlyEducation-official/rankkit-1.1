@@ -47,7 +47,7 @@ export default function Header() {
           {/* Nav Items from tablet */}
           {!isMobile && (
             <Stack direction="row" spacing={4} alignItems="center">
-              <Typography
+              {/* <Typography
                 variant="body1"
                 component={Link}
                 href="/about-us"
@@ -61,7 +61,7 @@ export default function Header() {
                 }}
               >
                 About
-              </Typography>
+              </Typography> */}
               <DropdownMenu
                 lists={[
                   { text: 'Web development', href: '/services/web-development' },
