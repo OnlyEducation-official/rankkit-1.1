@@ -1,7 +1,7 @@
 'use client';
 
-import { Box, CircularProgress, Stack, Typography } from '@mui/material';
-import { lazy, Suspense, useState } from 'react';
+import { Box, Stack } from '@mui/material';
+import { lazy, Suspense } from 'react';
 import VideoSection from './VideoSection';
 // import AllInOneSection from './allInOneIntro/AllInOneSection';
 // import OurServicesCards from './OurServicesCards';
