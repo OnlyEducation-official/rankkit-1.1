@@ -1,6 +1,8 @@
+'use client';
+
 import { Box, CircularProgress, Stack, Typography } from '@mui/material';
-// import VideoSection from './VideoSection';
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useState } from 'react';
+import VideoSection from './VideoSection';
 // import AllInOneSection from './allInOneIntro/AllInOneSection';
 // import OurServicesCards from './OurServicesCards';
 // import AiPowered from './AiPowered';
@@ -11,7 +13,7 @@ import { lazy, Suspense } from 'react';
 // import FaqHomeSection from './FaqHomeSection';
 // import StudioMain from './studioMain';
 
-const VideoSection = lazy(() => import('./VideoSection'));
+// const VideoSection = lazy(() => import('./VideoSection'));
 const AllInOneSection = lazy(() => import('./allInOneIntro/AllInOneSection'));
 const OurServicesCards = lazy(() => import('./OurServicesCards'));
 const AiPowered = lazy(() => import('./AiPowered'));
@@ -21,33 +23,13 @@ const ThreeD = lazy(() => import('./ThreeD.tsx/ThreeD'));
 const FaqHomeSection = lazy(() => import('./FaqHomeSection'));
 const StudioMain = lazy(() => import('./studioMain'));
 
-export function LoadingPage() {
-  return (
-    <Box
-      sx={{
-        minHeight: '100vh',
-        display: 'flex',
-        flexDirection: 'column',
-        alignItems: 'center',
-        justifyContent: 'center',
-        bgcolor: '#f9fafb', // light background
-        color: '#333',
-      }}
-    >
-      <CircularProgress sx={{ mb: 2 }} />
-      <Typography variant="h6">Loading, please wait...</Typography>
-    </Box>
-  );
-}
-
 export default function Index() {
   return (
     <Stack gap={20} sx={{ marginBlockEnd: '160px' }}>
-      <Box sx={{ height: { md: '100vh' } }}>
+      <Box sx={{ height: { xs: '80dvh', md: '100dvh' }, marginBlockStart: { xs: '85px', md: 0 } }}>
         {/* <Header /> */}
-        <Suspense fallback={<LoadingPage />}>
-          <VideoSection />
-        </Suspense>
+
+        <VideoSection />
       </Box>
       <Suspense fallback="...Loading">
         <AllInOneSection />

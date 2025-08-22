@@ -14,9 +14,10 @@ export default function FunnelVideoo() {
         }}
       >
         <video
-          autoPlay
           loop
+          autoPlay
           muted
+          playsInline
           style={{
             width: isMobile ? '30dvh' : '55dvh',
             height: isMobile ? '35dvh' : '55dvh',

@@ -1,4 +1,6 @@
 import { Box, Stack, Typography } from '@mui/material';
+import Image from 'next/image';
+import studioImg1 from '@/assets/images/studioImg1.png';
 
 export default function StudioTop() {
   const heroPointer = [
@@ -73,7 +75,8 @@ export default function StudioTop() {
           borderRadius: '25px',
         }}
       >
-        <iframe
+        <Image alt="studio_img" src={studioImg1} style={{ height: '100%', width: '100%' }} />
+        {/* <iframe
           title="title"
           width="100%"
           height="100%"
@@ -83,7 +86,7 @@ export default function StudioTop() {
           scrolling="no"
           src="https://kuula.co/share/h8jS0?logo=1&info=1&fs=1&vr=0&thumbs=1"
           style={{ borderRadius: '25px' }}
-        />
+        /> */}
       </Box>
     </Stack>
   );

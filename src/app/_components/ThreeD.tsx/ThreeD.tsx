@@ -63,6 +63,7 @@ export default function ThreeD() {
               style={{ height: '100%', width: '100%', objectFit: 'cover' }}
               autoPlay
               muted
+              playsInline
             >
               <source src="/videos/watch.webm" type="video/webm" />
             </video>
@@ -85,6 +86,7 @@ export default function ThreeD() {
               style={{ height: '100%', width: '100%', objectFit: 'cover' }}
               autoPlay
               muted
+              playsInline
             >
               <source src="/videos/poster.webm" type="video/webm" />
             </video>
@@ -112,6 +114,7 @@ export default function ThreeD() {
               style={{ height: '100%', width: '100%', objectFit: 'cover' }}
               autoPlay
               muted
+              playsInline
             >
               <source src="/videos/comix-vertical.webm" type="video/webm" />
             </video>
@@ -134,6 +137,7 @@ export default function ThreeD() {
               style={{ height: '100%', width: '100%', objectFit: 'cover' }}
               autoPlay
               muted
+              playsInline
             >
               <source src="/videos/cosmix-landscape.webm" type="video/webm" />
             </video>

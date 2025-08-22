@@ -1,8 +1,16 @@
 'use client';
 
-import { Box, Button, Container, Stack, Typography, useMediaQuery } from '@mui/material';
+import {
+  Box,
+  Button,
+  CircularProgress,
+  Container,
+  Stack,
+  Typography,
+  useMediaQuery,
+} from '@mui/material';
 import Image from 'next/image';
-import React from 'react';
+import React, { Suspense } from 'react';
 import logo from '@/assets/images/logo2.png';
 import Link from 'next/link';
 import SidebarDrawer from './Drawer';
@@ -41,13 +49,18 @@ export default function Header() {
               <Image src={logo} fill alt="RankKit Logo" style={{ objectFit: 'contain' }} />
             </Box>
           </Stack>
-
-          {/* Drawer for mobile */}
-          {isMobile && <SidebarDrawer />}
-          {/* Nav Items from tablet */}
-          {!isMobile && (
-            <Stack direction="row" spacing={4} alignItems="center">
-              {/* <Typography
+          <Suspense fallback={<CircularProgress />}>
+            {/* Drawer for mobile */}
+            {isMobile && <SidebarDrawer />}
+            {/* Nav Items from tablet */}
+            {!isMobile && (
+              <Stack
+                direction="row"
+                spacing={4}
+                alignItems="center"
+                sx={{ display: { xs: 'none', sm: 'flex' } }}
+              >
+                {/* <Typography
                 variant="body1"
                 component={Link}
                 href="/about-us"
@@ -62,55 +75,57 @@ export default function Header() {
               >
                 About
               </Typography> */}
-              <DropdownMenu
-                lists={[
-                  { text: 'Web development', href: '/services/web-development' },
-                  { text: 'Branding & Multimedia', href: '/services/branding-and-multimedia' },
-                  { text: 'CreatorNest', href: '/services/creator-nest' },
-                  { text: 'Media Production', href: '/services/media-production' },
-                  { text: 'SEO Services', href: '/services/seo-services' },
-                  { text: 'Digital Marketing', href: '/services/digital-marketing' },
-                ]}
-                // label="Industries"
-              />
-              <Typography
-                variant="body1"
-                component={Link}
-                href="/studio"
-                sx={{
-                  textDecoration: 'none',
-                  color: 'inherit',
-                  cursor: 'pointer',
-                  '&:hover': {
+                <DropdownMenu
+                  lists={[
+                    { text: 'Web development', href: '/services/web-development' },
+                    { text: 'Branding & Multimedia', href: '/services/branding-and-multimedia' },
+                    { text: 'CreatorNest', href: '/services/creator-nest' },
+                    { text: 'Media Production', href: '/services/media-production' },
+                    { text: 'SEO Services', href: '/services/seo-services' },
+                    { text: 'Digital Marketing', href: '/services/digital-marketing' },
+                  ]}
+                  // label="Industries"
+                />
+                <Typography
+                  variant="body1"
+                  component={Link}
+                  href="/studio"
+                  sx={{
                     textDecoration: 'none',
                     color: 'inherit',
-                  },
-                }}
-              >
-                Studio
-              </Typography>
-              <Button
-                LinkComponent={Link}
-                href="/contact-us"
-                variant="contained"
-                sx={{
-                  bgcolor: 'black',
-                  borderRadius: 2,
-                  px: 3.5,
-                  py: 1.25,
-                  typography: 'body1',
-                  fontWeight: 600,
-                  textTransform: 'none',
-                  '&:hover': {
-                    bgcolor: '#333',
-                  },
-                }}
-              >
-                Contact Us
-              </Button>
-            </Stack>
-          )}
+                    cursor: 'pointer',
+                    '&:hover': {
+                      textDecoration: 'none',
+                      color: 'inherit',
+                    },
+                  }}
+                >
+                  Studio
+                </Typography>
+                <Button
+                  LinkComponent={Link}
+                  href="/contact-us"
+                  variant="contained"
+                  sx={{
+                    bgcolor: 'black',
+                    borderRadius: 2,
+                    px: 3.5,
+                    py: 1.25,
+                    typography: 'body1',
+                    fontWeight: 600,
+                    textTransform: 'none',
+                    '&:hover': {
+                      bgcolor: '#333',
+                    },
+                  }}
+                >
+                  Contact Us
+                </Button>
+              </Stack>
+            )}
+          </Suspense>
         </Stack>
+
         {/* </Container> */}
       </Container>
     </Stack>
