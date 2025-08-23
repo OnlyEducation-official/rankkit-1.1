@@ -22,6 +22,7 @@ const sideBarData = [
   { text: 'Media Production', href: '/services/media-production' },
   { text: 'SEO Services', href: '/services/seo-services' },
   { text: 'Digital Marketing', href: '/services/digital-marketing' },
+  { text: 'Social Media Management', href: '/services/social-media-management' },
 ];
 
 export default function SidebarDrawer() {
