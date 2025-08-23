@@ -51,45 +51,7 @@ function Gallery() {
           >
             See our studio in action across different types of shoots
           </Typography>
-
-          <Box
-            sx={{
-              display: 'flex',
-              justifyContent: 'center',
-              gap: '12px',
-              marginBottom: '48px',
-              flexWrap: 'wrap',
-            }}
-          >
-            {filters.map((filter) => (
-              <Chip
-                key={filter}
-                label={filter}
-                onClick={() => setActiveFilter(filter)}
-                sx={{
-                  padding: '8px 24px',
-                  backgroundColor: activeFilter === filter ? '#0c0c70' : 'transparent',
-                  color: activeFilter === filter ? 'white' : '#64748b',
-                  border: '1px solid #e2e8f0',
-                  fontSize: '0.875rem',
-                  fontWeight: 500,
-                  cursor: 'pointer',
-                  '&:hover': {
-                    backgroundColor: activeFilter === filter ? '#0c0c70' : '#f1f5f9',
-                  },
-                }}
-              />
-            ))}
-          </Box>
         </MotionBox>
-
-        <Grid container spacing={2}>
-          {Array.from({ length: 12 }).map(() => (
-            <Grid size={4} key={uuidv4()} sx={{ bgcolor: 'red' }}>
-              a
-            </Grid>
-          ))}
-        </Grid>
 
         <Box
           sx={{
@@ -105,7 +67,7 @@ function Gallery() {
         >
           {imgData.map((item, index) => (
             <MotionBox
-              key={index}
+              key={uuidv4()}
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: (index + 1) * 0.1, duration: 0.6 }}
@@ -117,7 +79,7 @@ function Gallery() {
                 borderRadius: 2,
                 bgcolor: '#f1f5f9',
                 cursor: 'pointer',
-                aspectRatio: '1.29 / 1', // width controls height here
+                aspectRatio: '1 / 1.29', // width controls height here
               }}
             >
               <Image
