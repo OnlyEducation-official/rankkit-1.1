@@ -1,6 +1,8 @@
 import React from 'react';
 import { Box, Typography, Button } from '@mui/material';
 import { motion } from 'framer-motion';
+import vanityRoom from '@/assets/images/services-logo/vanityRoom.png';
+import Image from 'next/image';
 
 const MotionBox = motion(Box);
 
@@ -43,27 +45,40 @@ function VanityRoom() {
               xs: '300px',
               md: '400px',
             },
-            background: 'linear-gradient(135deg, #fbbf24, #f59e0b)',
+            backgroundColor: 'transparent',
             borderRadius: '16px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             order: {
               xs: 1,
-              md: 1,
+              md: 2,
             },
           }}
         >
-          <Typography
-            variant="h4"
+          <Box
             sx={{
-              color: 'white',
-              fontWeight: 600,
-              textAlign: 'center',
+              width: '100%',
+              height: '100%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              borderRadius: '16px',
+              aspectRatio: '0.84 / 1',
             }}
           >
-            Vanity Room Setup
-          </Typography>
+            <Image
+              src={vanityRoom}
+              alt="Studio Interior"
+              style={{
+                height: '100%',
+                aspectRatio: '0.84 / 1',
+                width: '100%',
+                borderRadius: '16px',
+                objectFit: 'contain',
+              }}
+            />
+          </Box>
         </MotionBox>
         <MotionBox
           initial={{ opacity: 0, x: -50 }}

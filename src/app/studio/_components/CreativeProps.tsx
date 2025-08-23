@@ -1,6 +1,8 @@
 import React from 'react';
 import { Box, Typography, Button } from '@mui/material';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
+import props from '@/assets/images/services-logo/props.png';
 
 const MotionBox = motion(Box);
 
@@ -109,28 +111,40 @@ function CreativeProps() {
               xs: '300px',
               md: '400px',
             },
-            backgroundColor: 'white',
+            backgroundColor: 'transparent',
             borderRadius: '16px',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
-            boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
             order: {
               xs: 1,
               md: 2,
             },
           }}
         >
-          <Typography
-            variant="h4"
+          <Box
             sx={{
-              color: '#64748b',
-              fontWeight: 600,
-              textAlign: 'center',
+              width: '100%',
+              height: '100%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              borderRadius: '16px',
+              // aspectRatio: '0.84 / 1',
             }}
           >
-            Props Collection
-          </Typography>
+            <Image
+              src={props}
+              alt="Studio Interior"
+              style={{
+                height: '100%',
+                // aspectRatio: '0.84 / 1',
+                width: '100%',
+                borderRadius: '16px',
+                objectFit: 'contain',
+              }}
+            />
+          </Box>
         </MotionBox>
       </Box>
     </Box>
