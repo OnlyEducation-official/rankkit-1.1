@@ -75,6 +75,22 @@ export default function Header() {
               >
                 About
               </Typography> */}
+                <Typography
+                  variant="body1"
+                  component={Link}
+                  href="/"
+                  sx={{
+                    textDecoration: 'none',
+                    color: 'inherit',
+                    cursor: 'pointer',
+                    '&:hover': {
+                      textDecoration: 'none',
+                      color: 'inherit',
+                    },
+                  }}
+                >
+                  Home
+                </Typography>
                 <DropdownMenu
                   lists={[
                     { text: 'Web development', href: '/services/web-development' },
