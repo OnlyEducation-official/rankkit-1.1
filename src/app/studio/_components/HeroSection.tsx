@@ -1,12 +1,16 @@
+/* eslint-disable react/jsx-boolean-value */
 import React from 'react';
 import { Box, Typography, Button, Chip } from '@mui/material';
 import { motion } from 'framer-motion';
 import { v4 as uuidv4 } from 'uuid';
+import { Link } from 'react-scroll';
+import { getWhatsAppInfo } from '@/components/whatsappInfo';
 
 const MotionBox = motion(Box);
 const MotionTypography = motion(Typography);
 
 function HeroSection() {
+  const whatsappInfo = getWhatsAppInfo({ btnName: 'Book the studio' });
   return (
     <Box
       component="section"
@@ -182,6 +186,10 @@ function HeroSection() {
             }}
           >
             <Button
+              LinkComponent="a"
+              href={`https://wa.me/${whatsappInfo.number}?text=${encodeURIComponent(whatsappInfo.message)}`}
+              target="_blank"
+              rel="noopener noreferrer"
               variant="contained"
               size="large"
               sx={{
@@ -198,24 +206,26 @@ function HeroSection() {
             >
               Book the Studio
             </Button>
-
-            <Button
-              variant="outlined"
-              size="large"
-              sx={{
-                padding: '16px 32px',
-                color: 'white',
-                borderColor: 'white',
-                fontSize: '1rem',
-                fontWeight: 600,
-                '&:hover': {
+            <Link to="facilities" smooth={true} duration={500} offset={-40}>
+              <Button
+                type="button"
+                variant="outlined"
+                size="large"
+                sx={{
+                  padding: '16px 32px',
+                  color: 'white',
                   borderColor: 'white',
-                  backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                },
-              }}
-            >
-              See Facilities
-            </Button>
+                  fontSize: '1rem',
+                  fontWeight: 600,
+                  '&:hover': {
+                    borderColor: 'white',
+                    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                  },
+                }}
+              >
+                See Facilities
+              </Button>
+            </Link>
           </MotionBox>
         </MotionBox>
 

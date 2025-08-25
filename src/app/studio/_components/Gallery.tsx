@@ -3,7 +3,6 @@
 import { Box, Typography, Button } from '@mui/material';
 import { motion } from 'framer-motion';
 import { v4 as uuidv4 } from 'uuid';
-import Link from 'next/link';
 import Image from 'next/image';
 // gallery 1 to 8
 import gallery1 from '@/assets/images/gallery/gallery1.png';
@@ -14,14 +13,16 @@ import gallery5 from '@/assets/images/gallery/gallery5.png';
 import gallery6 from '@/assets/images/gallery/gallery6.png';
 import gallery7 from '@/assets/images/gallery/gallery7.png';
 import gallery8 from '@/assets/images/gallery/gallery8.png';
+import { getWhatsAppInfo } from '@/components/whatsappInfo';
 
 const MotionBox = motion(Box);
 
 const imgData = [gallery1, gallery2, gallery3, gallery4, gallery5, gallery6, gallery7, gallery8];
 
 function Gallery() {
+  const whatsappInfo = getWhatsAppInfo({ btnName: 'Book your slot' });
   return (
-    <Box component="section" sx={{ padding: '80px 24px', backgroundColor: 'white' }}>
+    <Box id="gallery" component="section" sx={{ padding: '80px 24px', backgroundColor: 'white' }}>
       <Box sx={{ maxWidth: '1200px', margin: '0 auto' }}>
         <MotionBox
           initial={{ opacity: 0, y: 30 }}
@@ -96,8 +97,10 @@ function Gallery() {
 
         <Box sx={{ textAlign: 'center' }}>
           <Button
-            LinkComponent={Link}
-            href="/contact-us"
+            LinkComponent="a"
+            href={`https://wa.me/${whatsappInfo.number}?text=${encodeURIComponent(whatsappInfo.message)}`}
+            target="_blank"
+            rel="noopener noreferrer"
             variant="contained"
             size="large"
             sx={{

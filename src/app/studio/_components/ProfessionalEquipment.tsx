@@ -1,7 +1,13 @@
 import React from 'react';
-import { Box, Typography, Button, Chip } from '@mui/material';
+import { Box, Typography, Chip, Grid } from '@mui/material';
 import { motion } from 'framer-motion';
 import { v4 as uuidv4 } from 'uuid';
+import props1 from '@/assets/images/props/props1.png';
+import props2 from '@/assets/images/props/props2.png';
+import props3 from '@/assets/images/props/props3.png';
+import props4 from '@/assets/images/props/props4.png';
+import props5 from '@/assets/images/props/props5.png';
+import Image from 'next/image';
 
 const MotionBox = motion(Box);
 
@@ -69,17 +75,18 @@ function ProfessionalEquipment() {
               />
             ))}
           </Box>
-          <Button
-            variant="contained"
-            size="large"
-            sx={{
-              padding: '16px 32px',
-              backgroundColor: '#0c0c70',
-              '&:hover': { backgroundColor: '#090960' },
-            }}
-          >
-            Request Full Gear List
-          </Button>
+
+          <Grid container spacing={0.5}>
+            {[props1, props2, props3, props4, props5].map((item) => (
+              <Grid
+                size={{ xs: 12, sm: 6, md: 2.4 }}
+                key={uuidv4()}
+                sx={{ aspectRatio: '0.56 / 1', width: '100%' }}
+              >
+                <Image src={item} alt="props" style={{ width: '100%', height: '100%' }} />
+              </Grid>
+            ))}
+          </Grid>
         </MotionBox>
       </Box>
     </Box>
