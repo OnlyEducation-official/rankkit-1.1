@@ -9,7 +9,6 @@ import FeatureBanner from './FeatureBanner';
 import FacilitiesOverview from './FacilitiesOverview';
 import MultipleSetups from './MultipleSetups';
 import PaperDropWalls from './PaperDropWalls';
-import GreenScreenZone from './GreenScreenZone';
 import VanityRoom from './VanityRoom';
 import ProfessionalEquipment from './ProfessionalEquipment';
 import CreativeProps from './CreativeProps';
@@ -37,7 +36,7 @@ export default function StudioIndex() {
       <FacilitiesOverview />
       <MultipleSetups />
       <PaperDropWalls />
-      <GreenScreenZone />
+      {/* <GreenScreenZone /> */}
       <VanityRoom />
       <ProfessionalEquipment />
       <CreativeProps />

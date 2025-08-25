@@ -164,10 +164,10 @@ function AboutStudio() {
               }}
             >
               {[
-                '+950 Total Sq. Ft. of pillarless open space',
+                '+1200 Total Sq. Ft. of pillarless open space',
                 '+8 Creative wall setups including movable walls',
-                '+3 Roll-down backdrops & a green screen zone',
-                '+1 Private vanity room with dressing & make-up facilities',
+                '+8 Roll-down backdrops & a green screen zone',
+                'Private vanity room with dressing & private washroom',
               ].map((feature) => (
                 <Box
                   key={uuidv4()}

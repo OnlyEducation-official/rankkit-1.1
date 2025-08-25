@@ -20,7 +20,6 @@ import DropdownMenu from './DropdownMenu';
 export default function Header() {
   const isMobile = useMediaQuery('(max-width: 600px)');
   const pathname = usePathname();
-  console.log('urlsss', pathname);
 
   return (
     <Stack sx={{ display: 'flex', alignItems: 'center' }}>
@@ -75,7 +74,8 @@ export default function Header() {
                       textDecoration: 'none',
                       // color: 'inherit',
                     },
-                    color: url.length === 1 ? 'red !important' : 'red !important',
+                    color: pathname === '/' ? 'primary.main' : 'common.black',
+                    fontWeight: pathname === '/' ? 600 : 500,
                   }}
                 >
                   Home
@@ -92,22 +92,38 @@ export default function Header() {
                   ]}
                   // label="Industries"
                 />
+                {/* <Badge
+                  slotProps={{
+                    badge: {
+                      sx: {
+                        bgcolor: 'error.main',
+                        fontWeight: 600,
+                        color: 'common.white',
+                        marginBlockStart: '-5px',
+                        fontSize: '11px',
+                      },
+                    },
+                  }}
+                  badgeContent="new"
+                > */}
                 <Typography
                   variant="body1"
                   component={Link}
                   href="/studio"
                   sx={{
                     textDecoration: 'none',
-                    color: 'inherit',
+                    color: pathname === '/studio' ? 'primary.main' : 'common.black',
+                    fontWeight: pathname === '/studio' ? 600 : 500,
                     cursor: 'pointer',
                     '&:hover': {
                       textDecoration: 'none',
-                      color: 'inherit',
+                      color: pathname === '/studio' ? 'primary.main' : 'common.black',
                     },
                   }}
                 >
                   Studio
                 </Typography>
+                {/* </Badge> */}
                 <Button
                   LinkComponent={Link}
                   href="/contact-us"

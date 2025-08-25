@@ -1,5 +1,6 @@
 import { Box, Paper, Typography } from '@mui/material';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import React from 'react';
 
 export default function DropdownMenu({
@@ -12,6 +13,7 @@ export default function DropdownMenu({
 }) {
   const [open, setOpen] = React.useState(false);
   const closeTimer = React.useRef<NodeJS.Timeout | null>(null);
+  const pathname = usePathname();
 
   const handleMouseEnter = () => {
     // Cancel any pending close
@@ -36,7 +38,13 @@ export default function DropdownMenu({
         href="/services"
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
-        sx={{ margin: 0, cursor: 'pointer', textDecoration: 'none', color: 'common.black' }}
+        sx={{
+          margin: 0,
+          cursor: 'pointer',
+          textDecoration: 'none',
+          color: pathname === '/services' ? 'primary.main' : 'common.black',
+          fontWeight: pathname === '/services' ? 600 : 500,
+        }}
       >
         Services
       </Typography>
@@ -77,11 +85,11 @@ export default function DropdownMenu({
 
                   paddingBlock: 1.25,
                   paddingInline: 2.5,
-                  fontWeight: 500,
+                  fontWeight: pathname === item.href ? 600 : 500,
                   //   paddingBlock: 1,
                   width: 1,
                   textDecoration: 'none',
-                  color: 'common.black',
+                  color: pathname === item.href ? 'primary.main' : 'common.black',
                   '&:hover': { bgcolor: 'primary.main', color: 'white' },
                 }}
               >
