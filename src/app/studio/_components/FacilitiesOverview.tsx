@@ -48,6 +48,7 @@ function FacilitiesOverview() {
 
   return (
     <Box
+      id="facilities"
       component="section"
       sx={{
         padding: '80px 24px',

@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, Typography, Button } from '@mui/material';
 import { motion } from 'framer-motion';
 import { v4 as uuidv4 } from 'uuid';
+import { Link } from 'react-scroll';
 
 const MotionBox = motion(Box);
 const MotionButton = motion(Button);
@@ -77,24 +78,26 @@ function FeatureBanner() {
             environment.
           </Typography>
 
-          <MotionButton
-            variant="contained"
-            size="large"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            sx={{
-              padding: '18px 36px',
-              backgroundColor: '#ec2a33',
-              fontSize: '1.125rem',
-              fontWeight: 600,
-              boxShadow: '0 6px 20px rgba(236, 42, 51, 0.3)',
-              '&:hover': {
-                backgroundColor: '#d12030',
-              },
-            }}
-          >
-            View Sample Sets
-          </MotionButton>
+          <Link to="gallery" smooth duration={500} offset={-40}>
+            <MotionButton
+              variant="contained"
+              size="large"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              sx={{
+                padding: '18px 36px',
+                backgroundColor: '#ec2a33',
+                fontSize: '1.125rem',
+                fontWeight: 600,
+                boxShadow: '0 6px 20px rgba(236, 42, 51, 0.3)',
+                '&:hover': {
+                  backgroundColor: '#d12030',
+                },
+              }}
+            >
+              View Sample Sets
+            </MotionButton>
+          </Link>
         </MotionBox>
 
         {/* Visual Elements */}

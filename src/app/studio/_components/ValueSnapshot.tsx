@@ -102,7 +102,6 @@ function ValueSnapshot() {
                 boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
                 border: '1px solid #e2e8f0',
                 transition: 'all 0.3s ease',
-                cursor: 'pointer',
                 borderRadius: '16px',
               }}
             >
