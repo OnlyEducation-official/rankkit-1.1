@@ -84,12 +84,10 @@ function SplideCarousel() {
   return (
     <Box
       sx={{
-        width: '100%',
-        maxWidth: '1400px',
+        maxWidth: '100%',
         mx: 'auto',
         marginBlockStart: 6,
         position: 'relative',
-        px: { xs: 2, sm: 4, md: 6 },
       }}
     >
       <Splide options={splideOptions} className="my-splide-carousel" ref={fancyboxRef}>

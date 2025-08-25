@@ -1,92 +1,96 @@
+/* eslint-disable import/extensions */
+/* eslint-disable import/no-unresolved */
+// StudioTop.tsx
+
+'use client';
+
 import { Box, Stack, Typography } from '@mui/material';
-import Image from 'next/image';
-import studioImg1 from '@/assets/images/studioImg1.png';
+import Panorama from '../MyPanoramaComponent';
 
 export default function StudioTop() {
   const heroPointer = [
-    {
-      id: 1,
-      name: 'Lights roll and stories unfold.',
-    },
-    {
-      id: 2,
-      name: 'Cuts aren’t just edits, they’re brand-defining moments.',
-    },
-    {
-      id: 3,
-      name: 'Campaigns are not just produced, they’re engineered for impact',
-    },
+    { id: 1, name: 'Lights roll and stories unfold.' },
+    { id: 2, name: 'Cuts aren’t just edits, they’re brand-defining moments.' },
+    { id: 3, name: 'Campaigns are not just produced, they’re engineered for impact' },
   ];
 
   return (
     <Stack
       sx={{
         display: 'flex',
-        flexDirection: { xs: 'column', sm: 'row' },
+        flexDirection: { xs: 'column', md: 'row' },
         gap: 5,
+        alignItems: { xs: 'stretch', md: 'flex-start' },
       }}
     >
-      <Box sx={{ width: { xs: '100%', md: '35%' } }}>
-        <Typography variant="h2" sx={{ fontWeight: '600', color: 'error.main' }}>
+      <Box sx={{ width: { xs: '100%', md: '38%' } }}>
+        <Typography variant="h2" sx={{ fontWeight: 600, color: 'error.main' }}>
           <Box component="span" sx={{ color: 'primary.main' }}>
             Our
           </Box>{' '}
           Studio
         </Typography>
+
         <Typography
           variant="h5"
-          sx={{ paddingLeft: { xs: 0, md: 3 }, fontWeight: '600', paddingBlockStart: 1.5 }}
+          sx={{ pl: { xs: 0, md: 3 }, fontWeight: 600, pt: 1.5, lineHeight: 1.25 }}
         >
           <Box component="span" sx={{ color: 'primary.main' }}>
             Where Raw Ideas Meet{' '}
           </Box>
-          <br />{' '}
+          <br />
           <Box component="span" sx={{ color: 'error.main' }}>
             Real Execution.
           </Box>
         </Typography>
 
-        {/* Changed parent Typography to Box */}
-        <Box sx={{ paddingLeft: { xs: 0, md: 3 } }}>
-          <Typography>
-            {' '}
-            {/* This Typography is now a sibling of another block element */}
+        <Box sx={{ pl: { xs: 0, md: 3 }, mt: 2 }}>
+          <Typography paragraph>
             Step inside our production house — not just a studio, but the heartbeat of every
             campaign we craft.
           </Typography>
-          <Typography>
+          <Typography paragraph>
             This is where brands are born, shaped, and scaled. It’s a creative lab, a collaborative
             zone, and a launchpad for ideas that don’t just look good — they convert, connect, and
             command attention.
           </Typography>
-          <ul>
-            {heroPointer.map((pointer) => (
-              <li key={pointer.id}>{pointer.name}</li>
+
+          <Box component="ul" sx={{ pl: 3, m: 0 }}>
+            {heroPointer.map((p) => (
+              <Box key={p.id} component="li" sx={{ mb: 0.75 }}>
+                {p.name}
+              </Box>
             ))}
-          </ul>
+          </Box>
         </Box>
       </Box>
+
       <Box
         sx={{
-          width: { xs: '100%', md: '65%' },
-          height: { xs: '250px', sm: 'auto', md: 'auto' },
+          width: { xs: '100%', md: '62%' },
+          borderRadius: 3,
+          overflow: 'hidden',
+          boxShadow: '0 8px 24px rgba(0,0,0,0.15)',
           position: 'relative',
-          boxShadow: '4px 4px 6px rgba(0, 0, 0, 0.5)',
-          borderRadius: '25px',
+
+          // Responsive sizing rules:
+          // - On phones, use a wide aspect (16/9) with a sensible min height
+          // - On tablets, slightly taller
+          // - On desktops, balanced portrait-ish 5/4 with max-height guard
+          aspectRatio: { xs: '16 / 9', sm: '4 / 3', md: '5 / 4' },
+          minHeight: { xs: 260, sm: 360, md: 420 },
+          maxHeight: { md: 620 },
         }}
       >
-        <Image alt="studio_img" src={studioImg1} style={{ height: '100%', width: '100%' }} />
-        {/* <iframe
-          title="title"
-          width="100%"
+        {/* Panorama will fill this frame (height: 100%) */}
+        <Panorama
+          src="https://cdn.rawgit.com/mistic100/Photo-Sphere-Viewer/3.1.0/example/Bryce-Canyon-National-Park-Mark-Doliner.jpg"
+          caption="Studio — 360° view"
           height="100%"
-          frameBorder="0"
-          allow="xr-spatial-tracking; gyroscope; accelerometer"
-          allowFullScreen
-          scrolling="no"
-          src="https://kuula.co/share/h8jS0?logo=1&info=1&fs=1&vr=0&thumbs=1"
-          style={{ borderRadius: '25px' }}
-        /> */}
+          rounded={0}
+          navbar={['move', 'fullscreen', 'caption']}
+          lockZoom
+        />
       </Box>
     </Stack>
   );

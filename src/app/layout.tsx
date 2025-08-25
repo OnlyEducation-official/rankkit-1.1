@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 /* eslint-disable import/no-extraneous-dependencies */
 import type { Metadata } from 'next';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
@@ -5,6 +6,10 @@ import MuiThemeProvider from './_components/MuiThemeProvider';
 import clashDisplayFont from './fonts/clash-display';
 import '@splidejs/react-splide/css';
 import '@fancyapps/ui/dist/fancybox/fancybox.css';
+// app/layout.tsx
+// If you use these plugins:
+import '@photo-sphere-viewer/markers-plugin/index.css';
+import '@photo-sphere-viewer/core/index.css';
 
 export const metadata: Metadata = {
   title: 'Create Next App',

@@ -1,7 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
-import { Box, Typography, Button, Chip, Grid } from '@mui/material';
+import { Box, Typography, Button } from '@mui/material';
 import { motion } from 'framer-motion';
 import { v4 as uuidv4 } from 'uuid';
 import Link from 'next/link';
@@ -21,9 +20,6 @@ const MotionBox = motion(Box);
 const imgData = [gallery1, gallery2, gallery3, gallery4, gallery5, gallery6, gallery7, gallery8];
 
 function Gallery() {
-  const [activeFilter, setActiveFilter] = useState('All');
-  const filters = ['All', 'Fashion', 'Product', 'Video', 'Podcast'];
-
   return (
     <Box component="section" sx={{ padding: '80px 24px', backgroundColor: 'white' }}>
       <Box sx={{ maxWidth: '1200px', margin: '0 auto' }}>
