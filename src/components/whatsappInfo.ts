@@ -1,9 +1,11 @@
-type whatsappBtnName = 'Book the studio' | 'Book your slot';
+type whatsappBtnName = 'Book the studio' | 'Book your slot' | 'Check Availability';
 const whatsappMessage: Record<whatsappBtnName, string> = {
   'Book the studio': `Hello, I’d like to book the studio.  
 Please share the available slots, pricing, and booking process.`,
   'Book your slot': `Hello, I’d like to book my slot at the studio. 
 Could you please share the available timings and booking details?`,
+  'Check Availability': `Hello, I’d like to check the availability of the studio. 
+Could you please share the open slots?`,
 };
 export function getWhatsAppInfo({ btnName }: { btnName: whatsappBtnName }) {
   return {

@@ -23,7 +23,7 @@ export default function FunnelVideoo() {
             height: isMobile ? '35dvh' : '55dvh',
             aspectRatio: isMobile ? 4 / 5 : 16 / 9,
             objectFit: 'cover',
-            boxShadow: '2px 1px 10px 1px #6338ffff',
+            boxShadow: '1px 1px 10px 0px #0800f321',
             borderRadius: '15px',
           }}
         >

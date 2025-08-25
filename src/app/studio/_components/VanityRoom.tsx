@@ -1,10 +1,19 @@
 import React from 'react';
-import { Box, Typography, Button } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
 import vanityRoom from '@/assets/images/services-logo/vanityRoom.png';
 import Image from 'next/image';
+import { v4 as uuidv4 } from 'uuid';
 
 const MotionBox = motion(Box);
+
+const listsData = [
+  'Illuminated mirrors for perfect touch-ups.',
+  'Comfortable seating for talent and crew.',
+  'Dedicated changing area for convenience.',
+  'Private and exclusive space to stay camera-ready.',
+  'On-demand access throughout the shoot.',
+];
 
 function VanityRoom() {
   return (
@@ -78,28 +87,18 @@ function VanityRoom() {
             Private vanity with illuminated mirrors, comfortable seating, and a changing area—so
             talent stays camera-ready at all times.
           </Typography>
-          <Box
-            sx={{
-              textAlign: {
-                xs: 'center',
-                md: 'left',
-              },
-            }}
-          >
-            <Button
-              variant="contained"
-              size="large"
-              sx={{
-                padding: '16px 32px',
-                backgroundColor: '#f59e0b',
-                '&:hover': {
-                  backgroundColor: '#d97706',
-                },
-              }}
-            >
-              See Amenities
-            </Button>
-          </Box>
+          <ul>
+            {listsData.map((list) => (
+              <Typography
+                component="li"
+                variant="body1"
+                key={uuidv4()}
+                sx={{ marginBlockEnd: '2px' }}
+              >
+                {list}
+              </Typography>
+            ))}
+          </ul>
         </MotionBox>
         <MotionBox
           initial={{ opacity: 0, x: 50 }}
