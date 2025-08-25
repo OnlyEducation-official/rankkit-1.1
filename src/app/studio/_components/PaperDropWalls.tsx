@@ -9,6 +9,7 @@ const MotionBox = motion(Box);
 function PaperDropWalls() {
   return (
     <Box
+      id="paper-drops"
       component="section"
       sx={{
         padding: {

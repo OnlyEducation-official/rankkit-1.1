@@ -1,10 +1,19 @@
 import React from 'react';
-import { Box, Typography, Button } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import props from '@/assets/images/services-logo/props.png';
+import { v4 as uuidv4 } from 'uuid';
 
 const MotionBox = motion(Box);
+
+const listsData = [
+  'Curated collection of décor, plants, figurines, and unique items.',
+  'Adds depth, character, and storytelling to every shoot.',
+  'Ready-to-use props that save setup time.',
+  'Perfect for brand shoots, lifestyle content, and product displays.',
+  'Mix and match for endless creative combinations.',
+];
 
 function CreativeProps() {
   return (
@@ -78,28 +87,18 @@ function CreativeProps() {
             A curated library of props—vases, décor pieces, figurines, plants, and thematic items—to
             add character and depth to every frame.
           </Typography>
-          <Box
-            sx={{
-              textAlign: {
-                xs: 'center',
-                md: 'left',
-              },
-            }}
-          >
-            <Button
-              variant="contained"
-              size="large"
-              sx={{
-                padding: '16px 32px',
-                backgroundColor: '#ec2a33',
-                '&:hover': {
-                  backgroundColor: '#d12030',
-                },
-              }}
-            >
-              Browse Props
-            </Button>
-          </Box>
+          <ul>
+            {listsData.map((list) => (
+              <Typography
+                component="li"
+                variant="body1"
+                key={uuidv4()}
+                sx={{ marginBlockEnd: '2px' }}
+              >
+                {list}
+              </Typography>
+            ))}
+          </ul>
         </MotionBox>
         <MotionBox
           initial={{ opacity: 0, x: 50 }}

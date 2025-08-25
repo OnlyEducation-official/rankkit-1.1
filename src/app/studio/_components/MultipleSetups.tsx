@@ -1,10 +1,19 @@
 import React from 'react';
-import { Box, Typography, Button } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import multiSetupImg from '@/assets/images/services-logo/multiSetupImg.png';
+// uuid
+import { v4 as uuidv4 } from 'uuid';
 
 const MotionBox = motion(Box);
+
+const listData = [
+  'Ready-to-shoot walls with different moods & styles.',
+  'Ideal for photoshoots, video content, podcasts, ads, and reels.',
+  'Saves time on set design while maximizing creative output.',
+  'One studio, multiple backdrops, endless possibilities.',
+];
 
 function MultipleSetups() {
   return (
@@ -78,28 +87,19 @@ function MultipleSetups() {
             Versatile wall setups, from modern minimal to themed looks. Each wall is styled and
             ready to shoot—saving time and boosting variety.
           </Typography>
-          <Box
-            sx={{
-              textAlign: {
-                xs: 'center',
-                md: 'left',
-              },
-            }}
-          >
-            <Button
-              variant="contained"
-              size="large"
-              sx={{
-                padding: '16px 32px',
-                backgroundColor: '#ec2a33',
-                '&:hover': {
-                  backgroundColor: '#d12030',
-                },
-              }}
-            >
-              See All Wall Looks
-            </Button>
-          </Box>
+
+          <ul>
+            {listData.map((list) => (
+              <Typography
+                component="li"
+                variant="body1"
+                key={uuidv4()}
+                sx={{ marginBlockEnd: '2px' }}
+              >
+                {list}
+              </Typography>
+            ))}
+          </ul>
         </MotionBox>
         <MotionBox
           initial={{ opacity: 0, x: 50 }}

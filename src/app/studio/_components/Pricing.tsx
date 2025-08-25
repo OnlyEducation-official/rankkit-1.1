@@ -2,9 +2,12 @@ import React from 'react';
 import { Box, Typography, Button, Card, CardContent } from '@mui/material';
 import { motion } from 'framer-motion';
 import { v4 as uuidv4 } from 'uuid';
+import Link from 'next/link';
+import { getWhatsAppInfo } from '@/components/whatsappInfo';
 
 const MotionBox = motion(Box);
 const MotionCard = motion(Card);
+const whatsappInfo = getWhatsAppInfo({ btnName: 'Check Availability' });
 
 function Pricing() {
   const rates = [
@@ -329,6 +332,10 @@ function Pricing() {
               }}
             >
               <Button
+                LinkComponent="a"
+                href={`https://wa.me/${whatsappInfo.number}?text=${encodeURIComponent(whatsappInfo.message)}`}
+                target="_blank"
+                rel="noopener noreferrer"
                 variant="contained"
                 size="large"
                 sx={{
@@ -344,6 +351,8 @@ function Pricing() {
                 Check Availability
               </Button>
               <Button
+                LinkComponent={Link}
+                href="/contact-us"
                 variant="outlined"
                 size="large"
                 sx={{
