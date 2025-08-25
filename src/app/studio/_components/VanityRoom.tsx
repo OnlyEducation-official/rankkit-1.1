@@ -16,7 +16,7 @@ function VanityRoom() {
           xs: '60px 24px',
           md: '80px 24px',
         },
-        backgroundColor: '#f8fafc',
+        backgroundColor: 'common.white',
       }}
     >
       <Box
@@ -35,51 +35,6 @@ function VanityRoom() {
           alignItems: 'center',
         }}
       >
-        <MotionBox
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          sx={{
-            height: {
-              xs: '300px',
-              md: '400px',
-            },
-            backgroundColor: 'transparent',
-            borderRadius: '16px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            order: {
-              xs: 1,
-              md: 2,
-            },
-          }}
-        >
-          <Box
-            sx={{
-              width: '100%',
-              height: '100%',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              borderRadius: '16px',
-              aspectRatio: '0.84 / 1',
-            }}
-          >
-            <Image
-              src={vanityRoom}
-              alt="Studio Interior"
-              style={{
-                height: '100%',
-                aspectRatio: '0.84 / 1',
-                width: '100%',
-                borderRadius: '16px',
-                objectFit: 'contain',
-              }}
-            />
-          </Box>
-        </MotionBox>
         <MotionBox
           initial={{ opacity: 0, x: -50 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -144,6 +99,51 @@ function VanityRoom() {
             >
               See Amenities
             </Button>
+          </Box>
+        </MotionBox>
+        <MotionBox
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
+          sx={{
+            height: {
+              xs: '300px',
+              md: '400px',
+            },
+            backgroundColor: 'transparent',
+            borderRadius: '16px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            order: {
+              xs: 1,
+              md: 2,
+            },
+          }}
+        >
+          <Box
+            sx={{
+              width: '100%',
+              height: '100%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              borderRadius: '16px',
+              aspectRatio: '0.84 / 1',
+            }}
+          >
+            <Image
+              src={vanityRoom}
+              alt="Studio Interior"
+              style={{
+                height: '100%',
+                aspectRatio: '0.84 / 1',
+                width: '100%',
+                borderRadius: '16px',
+                objectFit: 'contain',
+              }}
+            />
           </Box>
         </MotionBox>
       </Box>

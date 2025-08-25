@@ -11,9 +11,10 @@ import Image from 'next/image';
 import logo from '@/assets/images/logo.svg';
 import CloseIcon from '@mui/icons-material/Close';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 
 const sideBarData = [
+  { text: 'Home', href: '/' },
   { text: 'Studio', href: '/studio' },
   { text: 'Services', href: '/services' },
   { text: 'Web development', href: '/services/web-development' },
@@ -22,11 +23,13 @@ const sideBarData = [
   { text: 'Media Production', href: '/services/media-production' },
   { text: 'SEO Services', href: '/services/seo-services' },
   { text: 'Digital Marketing', href: '/services/digital-marketing' },
+  { text: 'Social Media Management', href: '/services/social-media-management' },
 ];
 
 export default function SidebarDrawer() {
   const [open, setOpen] = React.useState(false);
   const router = useRouter();
+  const pathname = usePathname();
 
   const handleOpen = () => {
     setOpen(true);
@@ -57,7 +60,21 @@ export default function SidebarDrawer() {
         {sideBarData.map((item) => (
           <ListItem key={item.text} disablePadding>
             <ListItemButton href={item.href}>
-              <ListItemText primary={item.text} />
+              <ListItemText
+                primary={item.text}
+                // sx={{
+                // }}
+                slotProps={{
+                  primary: {
+                    sx: {
+                      color: pathname === item.href ? 'primary.main' : 'common.black',
+                      fontWeight: pathname === item.href ? 600 : 500,
+                    },
+                  },
+                  // root: {
+                  // },
+                }}
+              />
             </ListItemButton>
           </ListItem>
         ))}
@@ -89,7 +106,12 @@ export default function SidebarDrawer() {
               handleClose();
               router.push('/contact-us');
             }}
-            sx={{ cursor: 'pointer', textDecoration: 'none', color: '#000000de' }}
+            sx={{
+              cursor: 'pointer',
+              // textDecoration: 'none',
+              color: '#000000de',
+              textDecoration: 'underline',
+            }}
           >
             Contact Us
           </Box>

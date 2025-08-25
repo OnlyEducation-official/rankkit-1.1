@@ -47,10 +47,10 @@ export default function Index() {
         <WhyRankkit />
       </Suspense>
       <Suspense fallback="...Loading">
-        <AiPowered />
+        <Funnel />
       </Suspense>
       <Suspense fallback="...Loading">
-        <Funnel />
+        <AiPowered />
       </Suspense>
       <Suspense fallback="...Loading">
         <FaqHomeSection />

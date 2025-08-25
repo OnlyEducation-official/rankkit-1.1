@@ -54,7 +54,6 @@ export default function ContactForm() {
         // height: '100vh', // optional if you want full screen height
       }}
     >
-      {/* Left Form Box */}
       <Box
         component="form"
         onSubmit={handleSubmit(onSubmit)}
@@ -64,18 +63,16 @@ export default function ContactForm() {
           gap: 3,
           flex: 1, // 50% width
           paddingInlineEnd: 10,
-          borderRight: '1px solid #eee', // optional separator
+          borderRight: '1px solid #eee',
         }}
       >
-        {/* Name */}
-        <Stack rowGap={5} sx={{ paddingBlockStart: '130px' }}>
+        <Stack rowGap={5} sx={{ paddingBlockStart: '20px' }}>
           <SimpleTextField control={control} name="name" label="Your Name" />
           <SimpleTextField control={control} name="orgname" label="Your Organization's Name" />
           <PhoneInputField control={control} name="phone" label="Phone Number" />
           <SimpleTextField control={control} name="email" label="Email" />
         </Stack>
 
-        {/* Select services */}
         <Typography variant="body1" sx={{ mb: 3, fontSize: 30, fontWeight: 'bold' }}>
           Which services are you interested in?
         </Typography>
@@ -90,12 +87,9 @@ export default function ContactForm() {
             />
           ))}
         </Stack>
-        {/* Select services end */}
 
-        {/* Message */}
         <SimpleTextField control={control} name="message" label="Message" multiline rows={3} />
 
-        {/* Hear about us */}
         <Stack direction="row" gap={1.5} sx={{ flexWrap: 'wrap' }}>
           {hear.map((obj) => (
             <ServicesBtn
@@ -108,7 +102,6 @@ export default function ContactForm() {
           ))}
         </Stack>
 
-        {/* Submit Button */}
         <Button
           type="submit"
           variant="contained"

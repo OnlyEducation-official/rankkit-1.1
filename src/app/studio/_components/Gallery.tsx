@@ -1,17 +1,25 @@
 'use client';
 
-import React, { useState } from 'react';
-import { Box, Typography, Button, Chip } from '@mui/material';
+import { Box, Typography, Button } from '@mui/material';
 import { motion } from 'framer-motion';
 import { v4 as uuidv4 } from 'uuid';
 import Link from 'next/link';
+import Image from 'next/image';
+// gallery 1 to 8
+import gallery1 from '@/assets/images/gallery/gallery1.png';
+import gallery2 from '@/assets/images/gallery/gallery2.png';
+import gallery3 from '@/assets/images/gallery/gallery3.png';
+import gallery4 from '@/assets/images/gallery/gallery4.png';
+import gallery5 from '@/assets/images/gallery/gallery5.png';
+import gallery6 from '@/assets/images/gallery/gallery6.png';
+import gallery7 from '@/assets/images/gallery/gallery7.png';
+import gallery8 from '@/assets/images/gallery/gallery8.png';
 
 const MotionBox = motion(Box);
 
-function Gallery() {
-  const [activeFilter, setActiveFilter] = useState('All');
-  const filters = ['All', 'Fashion', 'Product', 'Video', 'Podcast'];
+const imgData = [gallery1, gallery2, gallery3, gallery4, gallery5, gallery6, gallery7, gallery8];
 
+function Gallery() {
   return (
     <Box component="section" sx={{ padding: '80px 24px', backgroundColor: 'white' }}>
       <Box sx={{ maxWidth: '1200px', margin: '0 auto' }}>
@@ -39,36 +47,6 @@ function Gallery() {
           >
             See our studio in action across different types of shoots
           </Typography>
-
-          <Box
-            sx={{
-              display: 'flex',
-              justifyContent: 'center',
-              gap: '12px',
-              marginBottom: '48px',
-              flexWrap: 'wrap',
-            }}
-          >
-            {filters.map((filter) => (
-              <Chip
-                key={filter}
-                label={filter}
-                onClick={() => setActiveFilter(filter)}
-                sx={{
-                  padding: '8px 24px',
-                  backgroundColor: activeFilter === filter ? '#0c0c70' : 'transparent',
-                  color: activeFilter === filter ? 'white' : '#64748b',
-                  border: '1px solid #e2e8f0',
-                  fontSize: '0.875rem',
-                  fontWeight: 500,
-                  cursor: 'pointer',
-                  '&:hover': {
-                    backgroundColor: activeFilter === filter ? '#0c0c70' : '#f1f5f9',
-                  },
-                }}
-              />
-            ))}
-          </Box>
         </MotionBox>
 
         <Box
@@ -79,32 +57,39 @@ function Gallery() {
               sm: 'repeat(2, 1fr)',
               md: 'repeat(4, 1fr)',
             },
-            gap: '24px',
-            marginBottom: '48px',
+            gap: 3,
+            mb: 6,
           }}
         >
-          {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
+          {imgData.map((item, index) => (
             <MotionBox
               key={uuidv4()}
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ delay: item * 0.1, duration: 0.6 }}
+              transition={{ delay: (index + 1) * 0.1, duration: 0.6 }}
               viewport={{ once: true }}
               whileHover={{ scale: 1.05 }}
               sx={{
-                height: '300px',
-                backgroundColor: '#f1f5f9',
-                borderRadius: '12px',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                cursor: 'pointer',
+                position: 'relative', // needed for Image fill
                 overflow: 'hidden',
+                borderRadius: 2,
+                bgcolor: '#f1f5f9',
+                cursor: 'pointer',
+                aspectRatio: '1 / 1.29', // width controls height here
               }}
             >
-              <Typography variant="body1" sx={{ color: '#64748b', fontWeight: 600 }}>
-                Studio Shot {item}
-              </Typography>
+              <Image
+                alt="studio_gallery"
+                src={item}
+                fill // <-- key: fill the container
+                // sizes="(max-width:900px) 50vw, (max-width:1200px) 25vw, 20vw"
+                style={{
+                  objectFit: 'cover', // cover without distortion
+                  objectPosition: 'center',
+                  display: 'block',
+                }}
+                priority={false}
+              />
             </MotionBox>
           ))}
         </Box>

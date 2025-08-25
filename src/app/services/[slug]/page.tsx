@@ -5,6 +5,7 @@ import creatorNestService from '@/assets/images/services-logo/creator-nest-servi
 import mediaProductionService from '@/assets/images/services-logo/media-production-service.png';
 import seoService from '@/assets/images/services-logo/seo-service.png';
 import digitalMarketingService from '@/assets/images/services-logo/digital-marketing-service.png';
+import socialMediaService from '@/assets/images/services-logo/social-media-services.png';
 import { StaticImageData } from 'next/image';
 import { notFound } from 'next/navigation';
 import webDevCover from '@/assets/images/services-logo/web-dev-cover.png';
@@ -15,6 +16,8 @@ import seoCover1 from '@/assets/images/services-logo/seo-cover-1.png';
 import seoCover2 from '@/assets/images/services-logo/seo-cover-2.png';
 import digiCover1 from '@/assets/images/services-logo/digi-cover-1.png';
 import digiCover2 from '@/assets/images/services-logo/digi-cover-2.png';
+import socialMediaCover1 from '@/assets/images/services-logo/socialMediaCover1.png';
+import socialMediaCover2 from '@/assets/images/services-logo/socialMediaCover2.png';
 import DynamicService from './_components/DynamicService';
 
 export type ServiceType = {
@@ -50,7 +53,7 @@ export type ServiceType = {
       points: string[];
     };
     price: {
-      value: number;
+      value: string;
       description?: string;
     };
   };
@@ -62,6 +65,7 @@ export type servicePages =
   | 'creator-nest'
   | 'media-production'
   | 'seo-services'
+  | 'social-media-management'
   | 'digital-marketing';
 export type Service = {
   [K in servicePages]: ServiceType;
@@ -127,7 +131,7 @@ const service: Service = {
         ],
       },
       price: {
-        value: 9999,
+        value: '9,999',
         description: 'Get started with professional web development today',
       },
     },
@@ -188,7 +192,7 @@ const service: Service = {
         ],
       },
       price: {
-        value: 9999,
+        value: '14,999',
       },
     },
   },
@@ -247,7 +251,7 @@ const service: Service = {
         ],
       },
       price: {
-        value: 9999,
+        value: '29,999',
       },
     },
   },
@@ -305,7 +309,7 @@ const service: Service = {
         ],
       },
       price: {
-        value: 9999,
+        value: '7,999',
       },
     },
   },
@@ -365,7 +369,7 @@ const service: Service = {
         ],
       },
       price: {
-        value: 9999,
+        value: '12,999',
       },
     },
   },
@@ -425,7 +429,67 @@ const service: Service = {
         ],
       },
       price: {
-        value: 9999,
+        value: '24,999',
+      },
+    },
+  },
+  'social-media-management': {
+    hero: {
+      title: {
+        blue: 'Social Media',
+        red: 'Management',
+      },
+      description: [
+        `We help your brand shine online with impactful social media strategies.`,
+        'From content calendars to creative design, ad management, and community building, we ensure your brand voice connects, engages, and grows across every platform.',
+      ],
+      image: socialMediaService,
+    },
+    cover: {
+      half: {
+        img1: socialMediaCover1,
+        img2: socialMediaCover2,
+      },
+    },
+    quotes: [
+      {
+        text: 'Ads are easy. Conversions are strategy.',
+        author: 'Performance Marketing Review',
+      },
+      {
+        text: 'We don’t chase clicks—we create customers.',
+        author: 'Growth Hacking Insights',
+      },
+      {
+        text: 'Digital marketing isn’t about reach. It’s about resonance.',
+        author: 'Engagement Strategy Journal',
+      },
+      {
+        text: 'Data gives direction. Creativity makes it move.',
+        author: 'Campaign Intelligence Report',
+      },
+      {
+        text: 'Our campaigns don’t just run—they run growth engines.',
+        author: 'Marketing Innovation Forum',
+      },
+    ],
+    subServices: {
+      firstSubServices: {
+        points: [
+          'Tailored content strategy & monthly calendars',
+          'Engaging post designs, reels & stories',
+          'Community management & audience engagement',
+        ],
+      },
+      secondSubServices: {
+        points: [
+          'Social media ads (Meta, Instagram, LinkedIn, YouTube)',
+          'Analytics & performance reporting with insights to refine campaigns ',
+          'Influencer & collaboration strategy to build credibility and expand audience reach.',
+        ],
+      },
+      price: {
+        value: '19,999',
       },
     },
   },

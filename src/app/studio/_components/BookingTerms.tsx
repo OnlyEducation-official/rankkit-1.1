@@ -19,25 +19,25 @@ function BookingTerms() {
       id: 'panel1',
       title: 'Booking & Payment',
       content:
-        '100% advance payment required to confirm booking. Payment can be made via bank transfer, UPI, or card. Booking confirmation will be sent within 24 hours of payment.',
+        'Extra hours are charged pro-rata at the standard hourly rate (e.g., if booked 6 hrs @ ₹2,000/hr and you extend by 4 hrs, the extra is ₹2,000/hr, not ₹1,800/hr). A 10-minute grace period applies; beyond this, a full additional hour is charged. Extra time must be requested at least 30 minutes before the scheduled end, and is possible only if no other client bookings are affected. Payment for additional hours must be made before continuing the shoot.',
     },
     {
       id: 'panel2',
       title: 'Cancellation Policy',
       content:
-        'Cancellations made 48 hours prior to shoot date are eligible for 80% refund. Cancellations within 48 hours are non-refundable. Weather-related cancellations are handled case by case.',
+        'Payments made in advance are non-refundable if pre-booked dates or time slots are altered or cancelled by the client. The booking date may be altered up to 2 weeks prior to the scheduled shoot. The finalized time slot may be altered up to 2 weeks prior to the booking date.',
     },
     {
       id: 'panel3',
       title: 'Studio Usage',
       content:
-        'Studio time includes setup and breakdown. Overtime charges apply beyond booked hours. Props and equipment usage included in rental. External equipment allowed with prior approval.',
+        'Maximum crew of 12–15 people allowed, including artists. The studio must be returned in the same condition as at the time of booking. Staff assistance is limited to hygiene and moving props; personal tasks (e.g., serving tea or fetching water) are not included. One parking space is provided for the primary booker; additional parking is available outside the premises. The studio is on the 17th floor; lift and stairs are available for moving equipment. The studio is not responsible for disputes or delays caused by authorities, police, BMC, or union members.',
     },
     {
       id: 'panel4',
       title: 'Equipment & Damage',
       content:
-        'Any damage to studio property will be charged separately. Handle all equipment with care. Studio assistant available for technical support at additional cost.',
+        'Activities involving nailing, sticking, or painting require prior approval. Any damage requires full restoration, including repainting with the specified Royal Colour shade; even a single nail hole may require repainting the entire wall. Any damage to studio property or props must be compensated by the client/production team. The studio cannot be held liable for injuries or accidents due to unforeseen events, including natural disasters (Acts of God).',
     },
   ];
 

@@ -145,23 +145,25 @@ function HeroSection() {
               },
             }}
           >
-            {['+1200 sq.ft', '+8 wall setups', '3 paper backdrops', 'Vanity room'].map((badge) => (
-              <Chip
-                key={uuidv4()}
-                label={badge}
-                sx={{
-                  backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                  border: '1px solid rgba(255, 255, 255, 0.2)',
-                  fontSize: '0.875rem',
-                  fontWeight: 500,
-                  color: 'white',
-                  backdropFilter: 'blur(10px)',
-                  '& .MuiChip-label': {
+            {['+1200 sq.ft', '+8 wall setups', '+8 paper backdrops', 'Vanity room', 'Pantry'].map(
+              (badge) => (
+                <Chip
+                  key={uuidv4()}
+                  label={badge}
+                  sx={{
+                    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                    border: '1px solid rgba(255, 255, 255, 0.2)',
+                    fontSize: '0.875rem',
+                    fontWeight: 500,
                     color: 'white',
-                  },
-                }}
-              />
-            ))}
+                    backdropFilter: 'blur(10px)',
+                    '& .MuiChip-label': {
+                      color: 'white',
+                    },
+                  }}
+                />
+              ),
+            )}
           </MotionBox>
 
           {/* CTA Buttons */}

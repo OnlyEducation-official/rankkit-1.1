@@ -13,11 +13,14 @@ import Image from 'next/image';
 import React, { Suspense } from 'react';
 import logo from '@/assets/images/logo2.png';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import SidebarDrawer from './Drawer';
 import DropdownMenu from './DropdownMenu';
 
 export default function Header() {
   const isMobile = useMediaQuery('(max-width: 600px)');
+  const pathname = usePathname();
+
   return (
     <Stack sx={{ display: 'flex', alignItems: 'center' }}>
       <Container
@@ -60,21 +63,23 @@ export default function Header() {
                 alignItems="center"
                 sx={{ display: { xs: 'none', sm: 'flex' } }}
               >
-                {/* <Typography
-                variant="body1"
-                component={Link}
-                href="/about-us"
-                sx={{
-                  textDecoration: 'none',
-                  color: 'inherit',
-                  '&:hover': {
+                <Typography
+                  variant="body1"
+                  component={Link}
+                  href="/"
+                  sx={{
                     textDecoration: 'none',
-                    color: 'inherit',
-                  },
-                }}
-              >
-                About
-              </Typography> */}
+                    cursor: 'pointer',
+                    '&:hover': {
+                      textDecoration: 'none',
+                      // color: 'inherit',
+                    },
+                    color: pathname === '/' ? 'primary.main' : 'common.black',
+                    fontWeight: pathname === '/' ? 600 : 500,
+                  }}
+                >
+                  Home
+                </Typography>
                 <DropdownMenu
                   lists={[
                     { text: 'Web development', href: '/services/web-development' },
@@ -83,25 +88,42 @@ export default function Header() {
                     { text: 'Media Production', href: '/services/media-production' },
                     { text: 'SEO Services', href: '/services/seo-services' },
                     { text: 'Digital Marketing', href: '/services/digital-marketing' },
+                    { text: 'Social Media Management', href: '/services/social-media-management' },
                   ]}
                   // label="Industries"
                 />
+                {/* <Badge
+                  slotProps={{
+                    badge: {
+                      sx: {
+                        bgcolor: 'error.main',
+                        fontWeight: 600,
+                        color: 'common.white',
+                        marginBlockStart: '-5px',
+                        fontSize: '11px',
+                      },
+                    },
+                  }}
+                  badgeContent="new"
+                > */}
                 <Typography
                   variant="body1"
                   component={Link}
                   href="/studio"
                   sx={{
                     textDecoration: 'none',
-                    color: 'inherit',
+                    color: pathname === '/studio' ? 'primary.main' : 'common.black',
+                    fontWeight: pathname === '/studio' ? 600 : 500,
                     cursor: 'pointer',
                     '&:hover': {
                       textDecoration: 'none',
-                      color: 'inherit',
+                      color: pathname === '/studio' ? 'primary.main' : 'common.black',
                     },
                   }}
                 >
                   Studio
                 </Typography>
+                {/* </Badge> */}
                 <Button
                   LinkComponent={Link}
                   href="/contact-us"
