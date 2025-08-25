@@ -57,37 +57,26 @@ export default function RightSectionContactForm() {
           height: 'calc(100%)',
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'space-between', // push top and bottom apart
+          justifyContent: 'space-between',
           padding: '20px',
         }}
       >
-        {/* Top Section - Text */}
         <Typography
           variant="h3"
           sx={{
             fontFamily: 'var(--font-clash-display), sans-serif',
             fontWeight: 600,
-            paddingBlockStart: '110px',
             color: 'primary.main',
           }}
         >
           {displayText}
-          <span
-            style={{
-              borderRight: '2px solid black',
-              marginLeft: '2px',
-            }}
-          />
         </Typography>
 
-        {/* Bottom Section - Images stacked */}
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
-          {/* First Image */}
           <Box sx={{ width: '100%', aspectRatio: '1.4 / 1', position: 'relative' }}>
             <Image src={img} alt="logo" fill style={{ objectFit: 'contain' }} />
           </Box>
 
-          {/* Second Image */}
           <Box sx={{ paddingInline: 8 }}>
             <Box
               sx={{

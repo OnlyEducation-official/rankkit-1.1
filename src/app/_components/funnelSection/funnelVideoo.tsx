@@ -9,7 +9,7 @@ export default function FunnelVideoo() {
   return (
     <Stack>
       <Box
-        style={{
+        sx={{
           pointerEvents: 'none',
         }}
       >
@@ -23,6 +23,8 @@ export default function FunnelVideoo() {
             height: isMobile ? '35dvh' : '55dvh',
             aspectRatio: isMobile ? 4 / 5 : 16 / 9,
             objectFit: 'cover',
+            boxShadow: '2px 1px 10px 1px #6338ffff',
+            borderRadius: '15px',
           }}
         >
           <source src="/videos/funnelv.webm" type="video/webm" />
