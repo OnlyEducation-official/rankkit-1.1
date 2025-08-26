@@ -4,7 +4,7 @@
 
 'use client';
 
-import { Box, Stack, Typography } from '@mui/material';
+import { Box, Grid, Stack, Typography } from '@mui/material';
 import Panorama from '../MyPanoramaComponent';
 
 export default function StudioTop() {
@@ -15,15 +15,8 @@ export default function StudioTop() {
   ];
 
   return (
-    <Stack
-      sx={{
-        display: 'flex',
-        flexDirection: { xs: 'column', md: 'row' },
-        gap: 5,
-        alignItems: { xs: 'stretch', md: 'flex-start' },
-      }}
-    >
-      <Box sx={{ width: { xs: '100%', md: '38%' } }}>
+    <Grid spacing={2} container>
+      <Grid size={{ xs: 12, md: 5 }}>
         <Typography variant="h2" sx={{ fontWeight: 600, color: 'error.main' }}>
           <Box component="span" sx={{ color: 'primary.main' }}>
             Our
@@ -63,35 +56,20 @@ export default function StudioTop() {
             ))}
           </Box>
         </Box>
-      </Box>
+      </Grid>
 
-      <Box
-        sx={{
-          width: { xs: '100%', md: '62%' },
-          borderRadius: 3,
-          overflow: 'hidden',
-          boxShadow: '0 8px 24px rgba(0,0,0,0.15)',
-          position: 'relative',
-
-          // Responsive sizing rules:
-          // - On phones, use a wide aspect (16/9) with a sensible min height
-          // - On tablets, slightly taller
-          // - On desktops, balanced portrait-ish 5/4 with max-height guard
-          aspectRatio: { xs: '16 / 9', sm: '4 / 3', md: '5 / 4' },
-          minHeight: { xs: 260, sm: 360, md: 420 },
-          maxHeight: { md: 620 },
-        }}
-      >
-        {/* Panorama will fill this frame (height: 100%) */}
-        <Panorama
-          src="https://cdn.rawgit.com/mistic100/Photo-Sphere-Viewer/3.1.0/example/Bryce-Canyon-National-Park-Mark-Doliner.jpg"
-          caption="Studio — 360° view"
-          height="100%"
-          rounded={0}
-          navbar={['move', 'fullscreen', 'caption']}
-          lockZoom
-        />
-      </Box>
-    </Stack>
+      <Grid size={{ xs: 12, md: 7 }} sx={{ flex: 1 }}>
+        <Box sx={{ height: { xs: '500px', md: 1 }, width: 1 }}>
+          <Panorama
+            src="/videos/studio_360.jpg"
+            caption="Rankkit Studio +1200sqft"
+            height="100%"
+            rounded={0}
+            navbar={['move', 'fullscreen', 'caption']}
+            lockZoom
+          />
+        </Box>
+      </Grid>
+    </Grid>
   );
 }
