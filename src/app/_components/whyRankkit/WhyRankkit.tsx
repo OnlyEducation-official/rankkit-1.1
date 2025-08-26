@@ -5,7 +5,7 @@ import RightSection from './RightSection';
 
 export default function WhyRankkit() {
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="lg" sx={{ paddingBlock: { xs: 6, md: 12 } }}>
       <Box>
         <Grid container spacing={5}>
           <Grid size={{ xs: 12, md: 6 }} sx={{ display: 'flex', flexDirection: 'column' }}>

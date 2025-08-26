@@ -1,11 +1,10 @@
 import React from 'react';
-import { Box, Typography, Link } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
 import { v4 as uuidv4 } from 'uuid';
 import { Link as ScrollLink } from 'react-scroll';
 
 const MotionBox = motion(Box);
-const MotionLink = motion(Link);
 
 function FacilitiesOverview() {
   const facilities = [
@@ -107,14 +106,14 @@ function FacilitiesOverview() {
             gap: '24px',
           }}
         >
-          {facilities.map((facility, index) => (
+          {facilities.map((facility) => (
             <ScrollLink key={uuidv4()} to={facility.anchor} smooth duration={500} offset={-60}>
-              <MotionLink
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -8, scale: 1.02 }}
+              <Box
+                // initial={{ opacity: 0, y: 50 }}
+                // whileInView={{ opacity: 1, y: 0 }}
+                // transition={{ delay: index * 0.1, duration: 0.6 }}
+                // viewport={{ once: true }}
+                // whileHover={{ y: -8, scale: 1.02 }}
                 sx={{
                   display: 'block',
                   backgroundColor: 'white',
@@ -190,7 +189,7 @@ function FacilitiesOverview() {
                 >
                   →
                 </MotionBox>
-              </MotionLink>
+              </Box>
             </ScrollLink>
           ))}
         </Box>

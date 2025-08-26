@@ -73,84 +73,86 @@ const gaps = {
 
 export default function OurServicesCards() {
   return (
-    <Container maxWidth="lg">
-      <Grid size={12}>
-        <Typography
-          variant="h1"
-          fontWeight={600}
-          textAlign="start"
-          sx={{ color: 'primary.main', marginBlockEnd: { xs: '30px', md: 5 } }}
-        >
-          Our Services
-        </Typography>
-      </Grid>
-      <Grid container spacing={{ xs: gaps.xs.max, md: gaps.md.max }}>
-        {serviceCards.map((card) => (
-          <Grid
-            component={Link}
-            href={card.href}
-            sx={{ textDecoration: 'none' }}
-            size={{ xs: 12, sm: 6, md: 4 }}
-            key={card.title[0]}
+    <Box sx={{ paddingBlock: { xs: 6, md: 12 } }}>
+      <Container maxWidth="lg">
+        <Grid size={12}>
+          <Typography
+            variant="h1"
+            fontWeight={600}
+            textAlign="start"
+            sx={{ color: 'primary.main', marginBlockEnd: { xs: '30px', md: 5 } }}
           >
-            <Card
-              elevation={0}
-              sx={{
-                borderRadius: '20px',
-                backgroundColor: 'grey.200',
-                p: 3,
-                boxShadow: '0px 0px 12px rgba(0, 0, 0, 0.1)',
-                border: '1px solid #00000066',
-                display: 'flex',
-                flexDirection: 'column',
-                // justifyContent: 'space-between',
-                gap: gaps.md.med,
-                height: { sm: 1 },
-                cursor: 'pointer',
-                transition: 'all 0.3s ease-in-out',
-                '&:hover': {
-                  background: 'linear-gradient(90deg, #FC5A4A 0%, #021266 100%)',
-                  scale: '1.03',
-                  '& *': {
-                    color: '#fff',
-                    filter: 'brightness(0) invert(1)',
-                  },
-                },
-              }}
+            Our Services
+          </Typography>
+        </Grid>
+        <Grid container spacing={{ xs: gaps.xs.max, md: gaps.md.max }}>
+          {serviceCards.map((card) => (
+            <Grid
+              component={Link}
+              href={card.href}
+              sx={{ textDecoration: 'none' }}
+              size={{ xs: 12, sm: 6, md: 4 }}
+              key={card.title[0]}
             >
-              <Box>
-                <Stack
-                  direction={{ xs: 'column', md: 'row' }}
-                  rowGap={{ xs: 1, md: 1 }}
-                  columnGap={{ xs: 1, md: 1.5 }}
-                >
-                  <Box position="relative">
-                    <Image
-                      src={card.icon}
-                      alt="icon"
-                      //   fill
-                      height={75}
-                      width={75}
-                      style={{ width: 60, height: 60 }}
-                    />
-                  </Box>
-                  <Typography
-                    variant="h6"
-                    fontWeight="600"
-                    sx={{ lineHeight: 1.2, color: 'primary.main' }}
+              <Card
+                elevation={0}
+                sx={{
+                  borderRadius: '20px',
+                  backgroundColor: 'grey.200',
+                  p: 3,
+                  boxShadow: '0px 0px 12px rgba(0, 0, 0, 0.1)',
+                  border: '1px solid #00000066',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  // justifyContent: 'space-between',
+                  gap: gaps.md.med,
+                  height: { sm: 1 },
+                  cursor: 'pointer',
+                  transition: 'all 0.3s ease-in-out',
+                  '&:hover': {
+                    background: 'linear-gradient(90deg, #FC5A4A 0%, #021266 100%)',
+                    scale: '1.03',
+                    '& *': {
+                      color: '#fff',
+                      filter: 'brightness(0) invert(1)',
+                    },
+                  },
+                }}
+              >
+                <Box>
+                  <Stack
+                    direction={{ xs: 'column', md: 'row' }}
+                    rowGap={{ xs: 1, md: 1 }}
+                    columnGap={{ xs: 1, md: 1.5 }}
                   >
-                    {card.title[0]} <Box sx={{ color: 'error.main' }}>{card.title[1]}</Box>
-                  </Typography>
-                </Stack>
-              </Box>
+                    <Box position="relative">
+                      <Image
+                        src={card.icon}
+                        alt="icon"
+                        //   fill
+                        height={75}
+                        width={75}
+                        style={{ width: 60, height: 60 }}
+                      />
+                    </Box>
+                    <Typography
+                      variant="h6"
+                      fontWeight="600"
+                      sx={{ lineHeight: 1.2, color: 'primary.main' }}
+                    >
+                      {card.title[0]} <Box sx={{ color: 'error.main' }}>{card.title[1]}</Box>
+                    </Typography>
+                  </Stack>
+                </Box>
 
-              <Typography variant="body1" sx={{ color: 'grey.900' }}>
-                {card.description}
-              </Typography>
-            </Card>
-          </Grid>
-        ))}
-      </Grid>
-    </Container>
+                <Typography variant="body1" sx={{ color: 'grey.900' }}>
+                  {card.description}
+                </Typography>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
+    </Box>
   );
 }

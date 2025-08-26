@@ -33,7 +33,7 @@ export default function AllInOneSection() {
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="lg" sx={{ paddingBlock: { xs: 6, md: 12 } }}>
       <Stack
         sx={{
           borderRadius: '16px',
