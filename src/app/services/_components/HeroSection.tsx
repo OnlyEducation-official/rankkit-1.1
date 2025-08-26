@@ -216,6 +216,8 @@ export default function HeroSection() {
             </Button>
 
             <Button
+              LinkComponent={Link}
+              href="/studio"
               sx={{
                 backgroundColor: 'white',
                 border: '2px solid #021266',
@@ -238,7 +240,7 @@ export default function HeroSection() {
               }}
             >
               <Play size={20} style={{ transition: 'transform 0.3s ease' }} />
-              Watch Our Story
+              Explore Our Studio
             </Button>
           </Stack>
         </Box>
