@@ -61,7 +61,7 @@ export default function StudioTop() {
       <Grid size={{ xs: 12, md: 7 }} sx={{ flex: 1 }}>
         <Box sx={{ height: { xs: '500px', md: 1 }, width: 1 }}>
           <Panorama
-            src="/videos/studio_360.jpg"
+            src="/videos/studioOverview.png"
             caption="Rankkit Studio +1200sqft"
             height="100%"
             rounded={0}

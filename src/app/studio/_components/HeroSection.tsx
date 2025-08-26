@@ -261,7 +261,7 @@ function HeroSection() {
             }}
           >
             <Panorama
-              src="/videos/studio_360.jpg"
+              src="/videos/studioOverview.png"
               caption="Rankkit Studio +1200sqft"
               height="100%"
               rounded={0}
