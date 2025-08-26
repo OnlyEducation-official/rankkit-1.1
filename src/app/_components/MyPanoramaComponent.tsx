@@ -21,7 +21,7 @@ export default function Panorama({
   src,
   caption,
   height = 500,
-  rounded = 12,
+  rounded = 120,
   navbar = ['move', 'fullscreen', 'caption'],
   lockZoom = false,
 }: Props) {
@@ -34,13 +34,15 @@ export default function Panorama({
       container: ref.current,
       panorama: src,
       caption,
+      minFov: 3, // you can adjust these ranges
+      maxFov: 9,
       navbar: lockZoom ? navbar : [...new Set(['zoom', ...navbar])],
       mousewheelCtrlKey: true,
       touchmoveTwoFingers: false,
       ...(lockZoom
         ? {
-            minFov: 60,
-            maxFov: 60,
+            minFov: 80, // lock to same value if zoom is disabled
+            maxFov: 80,
             mousewheel: false,
           }
         : {}),
