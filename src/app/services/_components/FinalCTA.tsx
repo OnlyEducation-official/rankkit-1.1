@@ -5,6 +5,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { Box, Typography, Container, Grid, Button } from '@mui/material';
 import { ArrowRight, MessageCircle, Calendar } from 'lucide-react';
+import { getWhatsAppInfo } from '@/components/whatsappInfo';
 
 export default function FinalCTA() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -43,14 +44,17 @@ export default function FinalCTA() {
     };
   }, []);
 
+  const whatsappInfo = getWhatsAppInfo({ btnName: 'quote' });
+
   const cards = [
     {
       icon: MessageCircle,
       title: 'Free Consultation',
       description:
         "Let's discuss your brand goals and create a custom strategy that delivers results.",
-      buttonText: 'Book Free Call',
+      buttonText: 'Call us',
       color: 'linear-gradient(135deg, #021266 0%, rgba(2, 18, 102, 0.8) 100%)',
+      href: `tel:${getWhatsAppInfo({ btnName: 'Check Availability' }).number}`,
     },
     {
       icon: Calendar,
@@ -59,6 +63,8 @@ export default function FinalCTA() {
         'Get a detailed proposal tailored to your specific needs and budget requirements.',
       buttonText: 'Get Quote',
       color: 'linear-gradient(135deg, #e62d3e 0%, rgba(230, 45, 62, 0.8) 100%)',
+      href: `https://wa.me/${whatsappInfo.number}?text=${encodeURIComponent(whatsappInfo.message)}`,
+      component: 'a',
     },
   ];
 
@@ -262,30 +268,65 @@ export default function FinalCTA() {
                     {card.description}
                   </Typography>
 
-                  <Button
-                    className="card-button"
-                    sx={{
-                      background: card.color,
-                      color: 'white',
-                      border: 'none',
-                      borderRadius: '22px',
-                      px: 4,
-                      py: 2,
-                      fontSize: '18px',
-                      fontWeight: 700,
-                      cursor: 'pointer',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      gap: 1,
-                      mx: 'auto',
-                      transition: 'all 0.3s ease',
-                      fontFamily: 'var(--font-clash-display, sans-serif)',
-                    }}
-                  >
-                    {card.buttonText}
-                    <ArrowRight size={20} style={{ transition: 'transform 0.3s ease' }} />
-                  </Button>
+                  {!card.component && (
+                    <Button
+                      href={card.href}
+                      className="card-button"
+                      sx={{
+                        background: card.color,
+                        color: 'white',
+                        border: 'none',
+                        borderRadius: '22px',
+                        px: 4,
+                        py: 2,
+                        fontSize: '18px',
+                        fontWeight: 700,
+                        cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: 1,
+                        mx: 'auto',
+                        transition: 'all 0.3s ease',
+                        fontFamily: 'var(--font-clash-display, sans-serif)',
+                        width: 'fit-content',
+                      }}
+                    >
+                      {card.buttonText}
+                      <ArrowRight size={20} style={{ transition: 'transform 0.3s ease' }} />
+                    </Button>
+                  )}
+                  {card.component && (
+                    <Button
+                      LinkComponent="a"
+                      href={card.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="card-button"
+                      sx={{
+                        background: card.color,
+                        color: 'white',
+                        border: 'none',
+                        borderRadius: '22px',
+                        px: 4,
+                        py: 2,
+                        fontSize: '18px',
+                        fontWeight: 700,
+                        cursor: 'pointer',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: 1,
+                        mx: 'auto',
+                        transition: 'all 0.3s ease',
+                        fontFamily: 'var(--font-clash-display, sans-serif)',
+                        width: 'fit-content',
+                      }}
+                    >
+                      {card.buttonText}
+                      <ArrowRight size={20} style={{ transition: 'transform 0.3s ease' }} />
+                    </Button>
+                  )}
                 </Box>
               </Grid>
             );

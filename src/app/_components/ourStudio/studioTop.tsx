@@ -4,7 +4,7 @@
 
 'use client';
 
-import { Box, Grid, Stack, Typography } from '@mui/material';
+import { Box, Grid, Typography } from '@mui/material';
 import Panorama from '../MyPanoramaComponent';
 
 export default function StudioTop() {

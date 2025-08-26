@@ -73,7 +73,7 @@ export default function ReadyToConnext() {
               <motion.div whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.95 }}>
                 <Button
                   component="a"
-                  href="mailto:akber6335@gmail.com?subject=Inquiry&body=Hello Ali,"
+                  href="mailto:rankkitmedia@gmail.com?subject=Inquiry&body=I would like to know your services,"
                   variant="outlined"
                   size="large"
                   startIcon={<Mail />}

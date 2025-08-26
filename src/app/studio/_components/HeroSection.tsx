@@ -1,6 +1,6 @@
 /* eslint-disable react/jsx-boolean-value */
 import React from 'react';
-import { Box, Typography, Button, Chip, Grid } from '@mui/material';
+import { Box, Typography, Button, Chip } from '@mui/material';
 import { motion } from 'framer-motion';
 import { v4 as uuidv4 } from 'uuid';
 import { Link } from 'react-scroll';

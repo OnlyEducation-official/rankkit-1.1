@@ -22,7 +22,7 @@ const packages = [
   {
     icon: <Star size={32} color="white" />,
     name: 'CreatorNest Starter',
-    price: '₹25K',
+    price: '₹30K',
     color: 'linear-gradient(135deg, #021266 0%, rgba(2, 18, 102, 0.8) 100%)',
     bgColor: 'rgba(2, 18, 102, 0.1)',
     borderColor: 'rgba(2, 18, 102, 0.3)',
@@ -52,7 +52,7 @@ const packages = [
   {
     icon: <Rocket size={32} color="white" />,
     name: 'Social Media + 5 Reels',
-    price: '₹50K',
+    price: '₹40K',
     color: 'linear-gradient(135deg, #021266 0%, rgba(2, 18, 102, 0.8) 100%)',
     bgColor: 'rgba(2, 18, 102, 0.1)',
     borderColor: 'rgba(2, 18, 102, 0.3)',
