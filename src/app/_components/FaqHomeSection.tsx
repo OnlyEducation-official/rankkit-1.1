@@ -12,7 +12,7 @@ import MuiAccordionSummary, {
 } from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
-import { Container } from '@mui/material';
+import { Box, Container } from '@mui/material';
 
 const faqData = [
   {
@@ -127,44 +127,46 @@ export default function FaqHomeSection() {
   };
 
   return (
-    <Container maxWidth="lg">
-      <Typography variant="h1" fontWeight={600} color="primary.main" paddingBlockEnd={4}>
-        Frequently Asked Questions
-      </Typography>
-      {faqData.map((obj) => (
-        <Accordion
-          key={obj.title}
-          expanded={expanded === obj.title}
-          onChange={() => handleChange(obj.title)}
-          sx={{ borderRadius: 3 }}
-        >
-          <AccordionSummary
-            slotProps={{
-              expandIconWrapper: {
-                sx: {
-                  color: expanded === obj.title ? '#fff' : '#0000008a',
-                },
-              },
-            }}
-            aria-controls="panel1d-content"
-            id="panel1d-header"
-            sx={[
-              { borderRadius: 3 },
-              expanded === obj.title && {
-                background: 'linear-gradient(90deg, #FC5A4A 0%, #021266 100%)',
-                color: '#fff',
-              },
-            ]}
+    <Box sx={{ paddingBlock: { xs: 6, md: 12 }, bgcolor: 'grey.300' }}>
+      <Container maxWidth="lg">
+        <Typography variant="h1" fontWeight={600} color="primary.main" paddingBlockEnd={4}>
+          Frequently Asked Questions
+        </Typography>
+        {faqData.map((obj) => (
+          <Accordion
+            key={obj.title}
+            expanded={expanded === obj.title}
+            onChange={() => handleChange(obj.title)}
+            sx={{ borderRadius: 3 }}
           >
-            <Typography variant="subtitle1" fontWeight={500}>
-              {obj.title}
-            </Typography>
-          </AccordionSummary>
-          <AccordionDetails>
-            <Typography variant="subtitle2">{obj.description}</Typography>
-          </AccordionDetails>
-        </Accordion>
-      ))}
-    </Container>
+            <AccordionSummary
+              slotProps={{
+                expandIconWrapper: {
+                  sx: {
+                    color: expanded === obj.title ? '#fff' : '#0000008a',
+                  },
+                },
+              }}
+              aria-controls="panel1d-content"
+              id="panel1d-header"
+              sx={[
+                { borderRadius: 3 },
+                expanded === obj.title && {
+                  background: 'linear-gradient(90deg, #FC5A4A 0%, #021266 100%)',
+                  color: '#fff',
+                },
+              ]}
+            >
+              <Typography variant="subtitle1" fontWeight={500}>
+                {obj.title}
+              </Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+              <Typography variant="subtitle2">{obj.description}</Typography>
+            </AccordionDetails>
+          </Accordion>
+        ))}
+      </Container>
+    </Box>
   );
 }

@@ -25,7 +25,7 @@ const StudioMain = lazy(() => import('./studioMain'));
 
 export default function Index() {
   return (
-    <Stack gap={20} sx={{ marginBlockEnd: '160px' }}>
+    <Stack>
       <Box sx={{ height: { xs: '80dvh', md: '100dvh' }, marginBlockStart: { xs: '85px', md: 0 } }}>
         {/* <Header /> */}
 

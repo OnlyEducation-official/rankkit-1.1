@@ -1,149 +1,183 @@
-import { Box, Container, Typography } from '@mui/material';
+import { Box, Container, Typography, useMediaQuery } from '@mui/material';
 import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
+
+const offerDataLists = [
+  'High-end product reveals that captivate audiences.',
+  'Immersive architectural walkthroughs for real estate and design.',
+  '3D animations to simplify complex concepts.',
+  'Photorealistic renders that blend beauty with strategy.',
+  'Cross-industry solutions to market faster and stand out.',
+];
 
 export default function ThreeD() {
+  const mediaMdSizeFrom900To1100 = useMediaQuery('(min-width: 900px) and (max-width: 1100px)');
+  const mediaMdSizeFrom1100To1200 = useMediaQuery('(min-width: 1100px) and (max-width: 1200px)');
+  const mediaMdSizeFrom900To1000 = useMediaQuery('(min-width: 900px) and (max-width: 1000px)');
   return (
-    <Container maxWidth="lg">
-      <Typography
-        variant="h1"
-        fontWeight={600}
-        color="primary.main"
-        sx={{ marginBlockEnd: { xs: '30px', md: 5 } }}
-      >
-        Our 3D designers impacts
-      </Typography>
-      {/* grid */}
-      <Box
-        sx={{
-          display: 'grid',
-          gridTemplateColumns: { xs: 'auto', sm: 'repeat(2, 1fr)' },
-          gridTemplateRows: {
-            xs: 'auto repeat(4, 250px)',
-            sm: 'auto repeat(3, 300px)',
-            md: 'repeat(4, 320px)',
-          },
-          gap: 5,
-        }}
-      >
-        <Box
-          sx={{
-            gridRow: '1',
-            gridColumn: { xs: '1', sm: '1 / span 2', md: '1' },
-            textAlign: 'justify',
-          }}
+    <Box sx={{ paddingBlock: { xs: 6, md: 12 }, bgcolor: 'grey.300' }}>
+      <Container maxWidth="lg">
+        <Typography
+          variant="h1"
+          fontWeight={600}
+          color="primary.main"
+          sx={{ marginBlockEnd: { xs: '30px', md: 5 } }}
         >
-          We bring imagination to life through precision, creativity, and cutting-edge technology.
-          Our 3D design solutions help brands tell their story in the most engaging way — from
-          high-end product reveals to immersive architectural walkthroughs and animations that
-          simplify complex ideas. By blending photorealism with strategic storytelling, we create
-          visuals that not only look stunning but also drive results. Our work spans industries,
-          helping clients market products more effectively, accelerate approvals, and create
-          experiences that stand out in a crowded digital space. With every project, we push the
-          limits of digital visualization, turning ideas into impactful realities.
-        </Box>
-        {/* second */}
+          Our 3D designers impacts
+        </Typography>
+        {/* grid */}
         <Box
           sx={{
-            gridRow: { xs: '2 / span 2', sm: '2 / span 2', md: '1 / span 2' },
-            gridColumn: { xs: '1', sm: '1 / span 1', md: '2' },
+            display: 'grid',
+            gridTemplateColumns: { xs: 'auto', sm: 'repeat(2, 1fr)' },
+            gridTemplateRows: {
+              xs: 'auto repeat(4, 250px)',
+              sm: 'auto repeat(2, 300px)',
+              // eslint-disable-next-line no-nested-ternary
+              md: mediaMdSizeFrom1100To1200
+                ? 'repeat(4, 360px)'
+                : mediaMdSizeFrom900To1000
+                  ? 'repeat(4, 360px)'
+                  : 'repeat(4, 340px)',
+              lg: 'repeat(4, 320px)',
+            },
+            gap: 5,
           }}
         >
           <Box
             sx={{
-              flex: 1,
-              overflow: 'hidden',
-              borderRadius: 3,
-              width: 1,
-              height: 1,
-              aspectRatio: { md: 0.56 / 1 },
+              gridRow: '1',
+              gridColumn: { xs: '1', sm: '1 / span 2', md: '1' },
             }}
           >
-            <video
-              loop
-              style={{ height: '100%', width: '100%', objectFit: 'cover' }}
-              autoPlay
-              muted
-              playsInline
+            <Typography variant="body1">
+              We turn imagination into reality with precision, creativity and advanced 3D
+              technology. From product launches to architectural walkthroughs, our visuals combine
+              photorealism and storytelling to make ideas unforgettable.
+            </Typography>
+            <Typography
+              variant="subtitle1"
+              fontWeight={600}
+              sx={{ marginBlockStart: { xs: '10px', lg: '15px' } }}
             >
-              <source src="/videos/watch.webm" type="video/webm" />
-            </video>
+              What We Offer
+            </Typography>
+            <Box component="ul" sx={{ marginBlockStart: { xs: '10px', lg: '15px' } }}>
+              {(mediaMdSizeFrom900To1100 ? offerDataLists.slice(0, 4) : offerDataLists).map(
+                (item) => (
+                  <Box component="li" sx={{ marginBlockEnd: '5px' }} key={uuidv4()}>
+                    <Typography variant="body1">{item}</Typography>
+                  </Box>
+                ),
+              )}
+            </Box>
           </Box>
-        </Box>
-        {/* Third */}
-        <Box sx={{ gridRow: '2 / span 2', gridColumn: '1', display: { xs: 'none', md: 'block' } }}>
+          {/* second */}
           <Box
             sx={{
-              flex: 1,
-              overflow: 'hidden',
-              borderRadius: 3,
-              width: 1,
-              height: 1,
-              aspectRatio: 0.56 / 1,
+              gridRow: { xs: '2 / span 2', sm: '2 / span 2', md: '1 / span 2' },
+              gridColumn: { xs: '1', sm: '1 / span 1', md: '2' },
             }}
           >
-            <video
-              loop
-              style={{ height: '100%', width: '100%', objectFit: 'cover' }}
-              autoPlay
-              muted
-              playsInline
+            <Box
+              sx={{
+                flex: 1,
+                overflow: 'hidden',
+                borderRadius: 3,
+                width: 1,
+                height: 1,
+                aspectRatio: { md: 0.56 / 1 },
+              }}
             >
-              <source src="/videos/poster.webm" type="video/webm" />
-            </video>
+              <video
+                loop
+                style={{ height: '100%', width: '100%', objectFit: 'cover' }}
+                autoPlay
+                muted
+                playsInline
+              >
+                <source src="/videos/watch.webm" type="video/webm" />
+              </video>
+            </Box>
           </Box>
-        </Box>
-        {/* Fourth */}
-        <Box
-          sx={{
-            gridRow: { xs: '4 / span 2', sm: '2 / span 2', md: '3 / span 2' },
-            gridColumn: { xs: '1', sm: '2 / span 1', md: '2' },
-          }}
-        >
+          {/* Third */}
+          <Box
+            sx={{ gridRow: '2 / span 2', gridColumn: '1', display: { xs: 'none', md: 'block' } }}
+          >
+            <Box
+              sx={{
+                flex: 1,
+                overflow: 'hidden',
+                borderRadius: 3,
+                width: 1,
+                height: 1,
+                aspectRatio: 0.56 / 1,
+              }}
+            >
+              <video
+                loop
+                style={{ height: '100%', width: '100%', objectFit: 'cover' }}
+                autoPlay
+                muted
+                playsInline
+              >
+                <source src="/videos/poster.webm" type="video/webm" />
+              </video>
+            </Box>
+          </Box>
+          {/* Fourth */}
           <Box
             sx={{
-              flex: 1,
-              overflow: 'hidden',
-              borderRadius: 3,
-              width: 1,
-              height: 1,
-              aspectRatio: { md: 0.56 / 1 },
+              gridRow: { xs: '4 / span 2', sm: '2 / span 2', md: '3 / span 2' },
+              gridColumn: { xs: '1', sm: '2 / span 1', md: '2' },
             }}
           >
-            <video
-              loop
-              style={{ height: '100%', width: '100%', objectFit: 'cover' }}
-              autoPlay
-              muted
-              playsInline
+            <Box
+              sx={{
+                flex: 1,
+                overflow: 'hidden',
+                borderRadius: 3,
+                width: 1,
+                height: 1,
+                aspectRatio: { md: 0.56 / 1 },
+              }}
             >
-              <source src="/videos/comix-vertical.webm" type="video/webm" />
-            </video>
+              <video
+                loop
+                style={{ height: '100%', width: '100%', objectFit: 'cover' }}
+                autoPlay
+                muted
+                playsInline
+              >
+                <source src="/videos/comix-vertical.webm" type="video/webm" />
+              </video>
+            </Box>
+          </Box>
+          {/* Fifth */}
+          <Box sx={{ gridRow: '4', gridColumn: '1', display: { xs: 'none', md: 'block' } }}>
+            <Box
+              sx={{
+                flex: 1,
+                overflow: 'hidden',
+                borderRadius: 3,
+                width: 1,
+                height: 1,
+                aspectRatio: 0.56 / 1,
+              }}
+            >
+              <video
+                loop
+                style={{ height: '100%', width: '100%', objectFit: 'cover' }}
+                autoPlay
+                muted
+                playsInline
+              >
+                <source src="/videos/cosmix-landscape.webm" type="video/webm" />
+              </video>
+            </Box>
           </Box>
         </Box>
-        {/* Fifth */}
-        <Box sx={{ gridRow: '4', gridColumn: '1', display: { xs: 'none', md: 'block' } }}>
-          <Box
-            sx={{
-              flex: 1,
-              overflow: 'hidden',
-              borderRadius: 3,
-              width: 1,
-              height: 1,
-              aspectRatio: 0.56 / 1,
-            }}
-          >
-            <video
-              loop
-              style={{ height: '100%', width: '100%', objectFit: 'cover' }}
-              autoPlay
-              muted
-              playsInline
-            >
-              <source src="/videos/cosmix-landscape.webm" type="video/webm" />
-            </video>
-          </Box>
-        </Box>
-      </Box>
-    </Container>
+      </Container>
+    </Box>
   );
 }

@@ -73,6 +73,7 @@ export default function RightSection() {
             paddingInline: 4,
             paddingBlock: 5,
             backdropFilter: 'blur(50px)',
+            borderRight: 'outset',
           }}
         >
           <Stack direction="row" gap={2} alignItems="center">
