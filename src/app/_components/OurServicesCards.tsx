@@ -77,12 +77,13 @@ export default function OurServicesCards() {
       <Container maxWidth="lg">
         <Grid size={12}>
           <Typography
-            variant="h1"
-            fontWeight={600}
-            textAlign="start"
-            sx={{ color: 'primary.main', marginBlockEnd: { xs: '30px', md: 5 } }}
+            variant="h2"
+            sx={{ fontWeight: 600, color: 'error.main', marginBlockEnd: { xs: '30px', md: 4 } }}
           >
-            Our Services
+            Our{' '}
+            <Box component="span" sx={{ color: 'primary.main' }}>
+              Services
+            </Box>
           </Typography>
         </Grid>
         <Grid container spacing={{ xs: gaps.xs.max, md: gaps.md.max }}>

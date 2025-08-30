@@ -48,13 +48,13 @@ export default function AllInOneSection() {
           alignItems={isMobile ? 'flex-start' : 'end'}
           direction={{ xs: 'column', md: 'row' }}
         >
-          <Typography
-            component="p"
-            color="#0A1A67"
-            sx={{ typography: { xs: 'h3', md: 'h2' }, fontWeight: '600 !important' }}
-          >
-            Everything a Brand needs
+          <Typography variant="h2" sx={{ fontWeight: 600, color: 'error.main' }}>
+            Everything{' '}
+            <Box component="span" sx={{ color: 'primary.main' }}>
+              a Brand needs
+            </Box>
           </Typography>
+
           <Typography
             component="p"
             color="#0A1A67"

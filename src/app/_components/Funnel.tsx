@@ -1,4 +1,4 @@
-import { Stack, Box, Container, Typography } from '@mui/material';
+import { Stack, Box, Container, Typography, Grid } from '@mui/material';
 import FunnelInfo from './funnelSection/funnelInfo';
 import FunnelVideoo from './funnelSection/funnelVideoo';
 import SplideCarousel from './funnelSection/carouselFunnel';
@@ -9,30 +9,37 @@ export default function Funnel() {
       <Container maxWidth="lg">
         <Stack>
           <Typography
-            variant="h1"
-            fontWeight={600}
-            color="primary.main"
-            sx={{ marginBlockEnd: { xs: '30px', md: 5 } }}
+            variant="h2"
+            sx={{ fontWeight: 600, color: 'error.main', marginBlockEnd: { xs: '30px', md: 4 } }}
           >
-            Where Talent Meets Visual Impact
+            Our{' '}
+            <Box component="span" sx={{ color: 'primary.main' }}>
+              Services
+            </Box>
           </Typography>
-          <Box
+          <Grid
+            container
+            spacing={2}
             sx={{
-              display: 'flex',
-              flexDirection: { xs: 'column-reverse', sm: 'row', md: 'row' },
+              flexDirection: { xs: 'column-reverse', sm: 'row' },
               justifyContent: 'space-around',
-              // paddingTop: 5,
             }}
           >
-            <Box>
+            <Grid size={{ xs: 12, sm: 7 }}>
               <FunnelInfo />
-            </Box>
-            <Box
-              sx={{ display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 2 }}
-            >
-              <FunnelVideoo />
-            </Box>
-          </Box>
+            </Grid>
+            <Grid size={{ xs: 12, sm: 5 }} sx={{ flex: 1 }}>
+              <Box
+                sx={{
+                  height: '100%',
+                  boxShadow: '1px 1px 10px 0px #0800f321',
+                  borderRadius: '15px',
+                }}
+              >
+                <FunnelVideoo />
+              </Box>
+            </Grid>
+          </Grid>
 
           <Box sx={{ alignItems: 'center', textAlign: 'center' }}>
             <SplideCarousel />

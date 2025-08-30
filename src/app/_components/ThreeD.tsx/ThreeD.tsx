@@ -18,13 +18,15 @@ export default function ThreeD() {
     <Box sx={{ paddingBlock: { xs: 6, md: 12 }, bgcolor: 'grey.300' }}>
       <Container maxWidth="lg">
         <Typography
-          variant="h1"
-          fontWeight={600}
-          color="primary.main"
-          sx={{ marginBlockEnd: { xs: '30px', md: 5 } }}
+          variant="h2"
+          sx={{ fontWeight: 600, color: 'error.main', marginBlockEnd: { xs: '30px', md: 4 } }}
         >
-          Our 3D designers impacts
+          Our{' '}
+          <Box component="span" sx={{ color: 'primary.main' }}>
+            3D designers impacts
+          </Box>
         </Typography>
+
         {/* grid */}
         <Box
           sx={{

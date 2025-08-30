@@ -25,14 +25,16 @@ export default function LeftSection() {
       <Typography
         variant="h2"
         fontWeight={600}
-        sx={{ color: 'primary.main', paddingBlockEnd: gaps.md.max1 }}
+        sx={{ color: 'error.main', paddingBlockEnd: gaps.md.max1 }}
       >
         Why
-        <Box component="span" sx={{ color: 'error.main', display: { xs: 'block', sm: 'inline' } }}>
+        <Box
+          component="span"
+          sx={{ color: 'primary.main', display: { xs: 'block', sm: 'inline' } }}
+        >
           {' '}
-          Rankkit
+          Rankkit?
         </Box>
-        ?
       </Typography>
       <Stack
         gap={{ xs: gaps.xs.min, md: gaps.md.med }}

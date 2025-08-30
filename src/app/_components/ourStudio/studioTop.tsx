@@ -18,10 +18,10 @@ export default function StudioTop() {
     <Grid spacing={2} container>
       <Grid size={{ xs: 12, md: 5 }}>
         <Typography variant="h2" sx={{ fontWeight: 600, color: 'error.main' }}>
+          Our{' '}
           <Box component="span" sx={{ color: 'primary.main' }}>
-            Our
-          </Box>{' '}
-          Studio
+            Studio
+          </Box>
         </Typography>
 
         <Typography
@@ -61,7 +61,7 @@ export default function StudioTop() {
       <Grid size={{ xs: 12, md: 7 }} sx={{ flex: 1 }}>
         <Box sx={{ height: { xs: '500px', md: 1 }, width: 1 }}>
           <Panorama
-            src="/videos/studioOverview.png"
+            src="/videos/studioOverview.webp"
             caption="Rankkit Studio +1200sqft"
             height="100%"
             rounded={0}

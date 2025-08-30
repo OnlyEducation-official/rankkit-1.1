@@ -129,9 +129,16 @@ export default function FaqHomeSection() {
   return (
     <Box sx={{ paddingBlock: { xs: 6, md: 12 }, bgcolor: 'grey.300' }}>
       <Container maxWidth="lg">
-        <Typography variant="h1" fontWeight={600} color="primary.main" paddingBlockEnd={4}>
-          Frequently Asked Questions
+        <Typography
+          variant="h2"
+          sx={{ fontWeight: 600, color: 'error.main', marginBlockEnd: { xs: '30px', md: 4 } }}
+        >
+          Frequently{' '}
+          <Box component="span" sx={{ color: 'primary.main' }}>
+            Asked Questions
+          </Box>
         </Typography>
+
         {faqData.map((obj) => (
           <Accordion
             key={obj.title}
