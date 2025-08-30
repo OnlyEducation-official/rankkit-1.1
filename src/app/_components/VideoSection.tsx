@@ -46,7 +46,6 @@ export default function VideoSection() {
         width: '100%',
         height: isMobile ? '80dvh' : '100dvh',
         overflow: 'hidden',
-        borderRadius: 3,
       }}
     >
       {!isReady && <LoadingOverlay />}

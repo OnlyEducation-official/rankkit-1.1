@@ -1,7 +1,7 @@
 import { Box, Stack } from '@mui/material';
 import Image from 'next/image';
 import studioImg2 from '@/assets/images/studio_setup.png';
-import vanityRoom from '@/assets/images/vanity_room.png';
+import studioSectionHome from '@/assets/images/studio-img-home-sec.png';
 
 export default function StudioBottom() {
   return (
@@ -36,7 +36,7 @@ export default function StudioBottom() {
         }}
       >
         <Image
-          src={vanityRoom}
+          src={studioSectionHome}
           alt="studio"
           fill
           //   height={200}
