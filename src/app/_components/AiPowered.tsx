@@ -72,7 +72,7 @@ function CardButton({
         background:
           activeIndex === index ? 'linear-gradient(135deg, #FC5A4A, #021266)' : '#00000040',
         height: 1,
-        borderRadius: '25px',
+        borderRadius: '12px',
         padding: '3px',
       }}
     >
@@ -85,7 +85,7 @@ function CardButton({
           //     activeIndex === index ? 'linear-gradient(90deg, #FC5A4A 0%, #021266 100%)' : '#f5f5f5',
           backgroundColor: 'common.white',
           color: activeIndex === index ? 'text.primary' : 'text.primary',
-          borderRadius: '22px',
+          borderRadius: '9px',
           paddingBlock: 3,
           paddingInline: 2.5,
           height: 1,
@@ -277,7 +277,7 @@ export default function AiPowered() {
       </Box>
       <Box
         sx={{
-          borderRadius: '25px',
+          borderRadius: '12px',
           p: '3px', // this creates the gradient border width
           background: 'linear-gradient(135deg, #FC5A4A, #021266)',
           mt: 2,
@@ -285,7 +285,7 @@ export default function AiPowered() {
       >
         <Paper
           elevation={1}
-          sx={{ mt: 0, p: 3, backgroundColor: 'common.white', borderRadius: '22px' }}
+          sx={{ mt: 0, p: 3, backgroundColor: 'common.white', borderRadius: '9px' }}
         >
           <Typography variant="subtitle2">{features[activeIndex].content}</Typography>
         </Paper>

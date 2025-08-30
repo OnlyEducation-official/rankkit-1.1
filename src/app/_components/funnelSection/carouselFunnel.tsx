@@ -97,6 +97,7 @@ function SplideCarousel() {
               elevation={6}
               sx={{
                 transition: 'transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out',
+                borderRadius: '12px',
                 '&:hover': {
                   transform: 'translateY(-5px)',
                   boxShadow: theme.shadows[10],
@@ -142,7 +143,13 @@ function SplideCarousel() {
                       }}
                     />
                   </Box>
-                  <img src={card.coverImage} alt="Video poster" width="100%" height="100%" />
+                  <img
+                    src={card.coverImage}
+                    alt="Video poster"
+                    width="100%"
+                    height="100%"
+                    style={{ borderRadius: '12px' }}
+                  />
                 </a>
               </Box>
             </Paper>
