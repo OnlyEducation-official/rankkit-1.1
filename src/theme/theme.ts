@@ -29,6 +29,9 @@ const theme = createTheme({
     },
     h2: {
       fontSize: '44px',
+      '@media (max-width:1200px)': {
+        fontSize: '40px',
+      },
     },
     h3: {
       fontSize: '36px',
@@ -71,16 +74,18 @@ const theme = createTheme({
           props: { variant: 'contained' },
           style: {
             background: 'linear-gradient(90deg, #FC5A4A 0%, #021266 100%)',
-            borderRadius: '22px',
-            padding: '16px 32px',
+            borderRadius: '12px',
+            paddingInline: '28px',
+            paddingBlock: '12px',
             textTransform: 'none',
-            fontWeight: 700,
-            fontSize: '18px',
+            fontWeight: 600,
+            fontSize: '16px',
             color: '#fff',
             boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.25)',
             border: '2px solid white',
             textShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
             transition: 'transform 0.2s ease-in-out',
+            width: 'fit-content',
             '&:hover': {
               transform: 'scale(1.05)',
             },

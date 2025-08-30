@@ -17,7 +17,7 @@ export default function FunnelVideoo() {
           width: '100%',
           height: '100%',
           aspectRatio: isMobile ? 4 / 5 : 16 / 9,
-          objectFit: 'inherit',
+          objectFit: isMobile ? 'contain' : 'inherit',
           borderRadius: '15px',
         }}
       >

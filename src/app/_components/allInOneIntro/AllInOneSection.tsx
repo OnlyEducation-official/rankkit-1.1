@@ -36,7 +36,7 @@ export default function AllInOneSection() {
     <Container maxWidth="lg" sx={{ paddingBlock: { xs: 6, md: 12 } }}>
       <Stack
         sx={{
-          borderRadius: '16px',
+          borderRadius: 3,
           boxShadow: '0px 0px 12px rgba(0, 0, 0, 0.1)',
           padding: { xs: 2, sm: 3, md: 5 },
           backgroundColor: 'grey.200',
@@ -50,7 +50,7 @@ export default function AllInOneSection() {
         >
           <Typography variant="h2" sx={{ fontWeight: 600, color: 'error.main' }}>
             Everything{' '}
-            <Box component="span" sx={{ color: 'primary.main' }}>
+            <Box component="span" sx={{ color: 'primary.main', fontSize: 'inherit' }}>
               a Brand needs
             </Box>
           </Typography>
@@ -68,10 +68,10 @@ export default function AllInOneSection() {
           container
           direction={isMobile ? 'column' : 'row'}
           alignItems="flex-start"
-          gap={{ xs: gaps.xs.med, md: gaps.md.med }}
+          spacing={{ xs: gaps.xs.med, md: gaps.md.med }}
         >
           {/* Left Section: Bullet List */}
-          <Grid size={{ xs: 12, md: 'auto' }} sx={{ order: { xs: 2, md: 0 } }}>
+          <Grid size={{ xs: 12, sm: 'auto' }} sx={{ order: { xs: 2, sm: 0 } }}>
             <Stack spacing={{ xs: gaps.xs.min1, md: gaps.md.min1 }}>
               {[
                 'Web Development',
@@ -97,7 +97,7 @@ export default function AllInOneSection() {
           />
 
           {/* Right Section: Description */}
-          <Grid size={{ xs: 12, md: 7 }}>
+          <Grid size={{ xs: 12, sm: 'grow' }}>
             <Stack spacing={{ xs: gaps.xs.min1, md: gaps.md.min }}>
               <Typography variant="subtitle2">
                 We are a{' '}
@@ -117,21 +117,7 @@ export default function AllInOneSection() {
                 We handle every pixel, every frame and every click that your brand needs to grow.
               </Typography>
 
-              <Button
-                variant="contained"
-                sx={{
-                  alignSelf: isMobile ? 'stretch' : 'flex-start',
-                  borderRadius: '24px',
-                  padding: '12px 24px',
-                  fontWeight: 600,
-                  fontSize: '16px',
-                  background: 'linear-gradient(90deg, #FC5A4A 0%, #021266 100%)',
-                  textTransform: 'none',
-                  display: { xs: 'none', md: 'block' },
-                }}
-              >
-                Connect with Us
-              </Button>
+              <Button variant="contained">Connect with Us</Button>
             </Stack>
           </Grid>
           <Grid size={{ xs: 12 }} display={{ xs: 'block', md: 'none' }} sx={{ order: 3 }}>

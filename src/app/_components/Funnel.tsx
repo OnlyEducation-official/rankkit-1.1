@@ -21,19 +21,28 @@ export default function Funnel() {
             container
             spacing={2}
             sx={{
-              flexDirection: { xs: 'column-reverse', sm: 'row' },
+              flexDirection: { xs: 'column-reverse', md: 'row' },
               justifyContent: 'space-around',
             }}
           >
-            <Grid size={{ xs: 12, sm: 7 }}>
+            <Grid size={{ xs: 12, md: 7 }}>
               <FunnelInfo />
             </Grid>
-            <Grid size={{ xs: 12, sm: 5 }} sx={{ flex: 1 }}>
+            <Grid
+              size={{ xs: 12, md: 5 }}
+              sx={{
+                flex: 1,
+                height: { xs: '400px', md: 'auto' },
+                display: { sm: 'flex', md: 'block' },
+                justifyContent: 'center',
+              }}
+            >
               <Box
                 sx={{
                   height: '100%',
-                  boxShadow: '1px 1px 10px 0px #0800f321',
-                  borderRadius: '15px',
+                  boxShadow: { md: '1px 1px 10px 0px #0800f321' },
+                  borderRadius: 3,
+                  width: { xs: 1, sm: '450px', md: '100%' },
                 }}
               >
                 <FunnelVideoo />

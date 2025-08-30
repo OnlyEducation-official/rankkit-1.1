@@ -58,7 +58,7 @@ export default function Panorama({
       style={{
         width: '100%',
         height,
-        borderRadius: rounded,
+        borderRadius: '50px',
       }}
     />
   );

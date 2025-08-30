@@ -130,7 +130,7 @@ export default function Header() {
                   variant="contained"
                   sx={{
                     bgcolor: 'black',
-                    borderRadius: 2,
+                    borderRadius: 3,
                     px: 3.5,
                     py: 1.25,
                     typography: 'body1',

@@ -25,7 +25,7 @@ export default function StudioBottom() {
           fill
           //   height={200}
           //   width={200}
-          style={{ borderRadius: 20, objectFit: 'fill' }}
+          style={{ borderRadius: '12px', objectFit: 'fill' }}
         />
       </Box>
       <Box
@@ -41,7 +41,7 @@ export default function StudioBottom() {
           fill
           //   height={200}
           //   width={200}
-          style={{ borderRadius: 20, objectFit: 'fill' }}
+          style={{ borderRadius: '12px', objectFit: 'fill' }}
         />
       </Box>
     </Stack>

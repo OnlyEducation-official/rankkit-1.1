@@ -98,7 +98,7 @@ export default function OurServicesCards() {
               <Card
                 elevation={0}
                 sx={{
-                  borderRadius: '20px',
+                  borderRadius: 3,
                   backgroundColor: 'grey.200',
                   p: 3,
                   boxShadow: '0px 0px 12px rgba(0, 0, 0, 0.1)',
