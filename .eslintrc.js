@@ -19,6 +19,7 @@ module.exports = {
     'plugin:react/recommended',
     'plugin:jsx-a11y/recommended',
     'plugin:prettier/recommended',
+    'plugin:@next/next/recommended',
   ],
   plugins: ['@typescript-eslint', 'react', 'react-hooks', 'jsx-a11y'],
   rules: {
