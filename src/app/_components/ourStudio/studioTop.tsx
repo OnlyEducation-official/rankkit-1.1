@@ -63,8 +63,8 @@ export default function StudioTop() {
           <Panorama
             src="/videos/studioOverview.webp"
             caption="Rankkit Studio +1200sqft"
-            height="100%"
             rounded={0}
+            height="100%"
             navbar={['move', 'fullscreen', 'caption']}
             lockZoom
           />
