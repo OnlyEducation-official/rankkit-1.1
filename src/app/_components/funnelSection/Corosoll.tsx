@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable import/no-unresolved */
 /* eslint-disable import/extensions */
 

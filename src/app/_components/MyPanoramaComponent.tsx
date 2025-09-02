@@ -12,7 +12,6 @@ type Props = {
   src: string;
   caption?: string;
   height?: number | string;
-  rounded?: number;
   navbar?: Array<'zoom' | 'move' | 'autorotate' | 'fullscreen' | 'caption'>;
   lockZoom?: boolean;
 };
@@ -21,7 +20,6 @@ export default function Panorama({
   src,
   caption,
   height = 500,
-  rounded = 120,
   navbar = ['move', 'fullscreen', 'caption'],
   lockZoom = false,
 }: Props) {

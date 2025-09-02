@@ -18,7 +18,30 @@ import digiCover1 from '@/assets/images/services-logo/digi-cover-1.png';
 import digiCover2 from '@/assets/images/services-logo/digi-cover-2.png';
 import socialMediaCover1 from '@/assets/images/services-logo/socialMediaCover1.png';
 import socialMediaCover2 from '@/assets/images/services-logo/socialMediaCover2.png';
+import type { Metadata } from 'next';
 import DynamicService from './_components/DynamicService';
+
+const dynamicUrl = (slug: string) => {
+  return `${process.env.BACKEND_URL}services?filters[slug][$eq]=${slug}&populate[seo][fields]=metaTitle,metaDescription`;
+};
+
+type Props = {
+  params: Promise<{ slug: string }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  // read route params
+  const { slug } = await params;
+
+  // fetch data
+  const response = await fetch(dynamicUrl(slug)).then((res) => res.json());
+  const seoData = response.data[0].seo;
+
+  return {
+    title: seoData.metaTitle,
+    description: seoData.metaDescription,
+  };
+}
 
 export type ServiceType = {
   hero: {

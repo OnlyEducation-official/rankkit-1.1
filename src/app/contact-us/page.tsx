@@ -1,12 +1,20 @@
-'use client';
-
-import * as React from 'react';
 import { Box, Container, Paper, Stack, Typography, Divider, Button, Chip } from '@mui/material';
 import Grid from '@mui/material/Grid';
 import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 import ContactForm from './_components/ContactForm';
 import RightSectionContactForm from './_components/RightSection';
 import ContactMap from './_components/ContactMap';
+
+const url = `${process.env.BACKEND_URL}contact-uses?fields=id&populate[seo][fields]=metaTitle,metaDescription`;
+export async function generateMetadata() {
+  const response = await fetch(url).then((res) => res.json());
+  const seoData = response.data[0].seo;
+
+  return {
+    title: seoData.metaTitle,
+    description: seoData.metaDescription,
+  };
+}
 
 function Row({ label, value }: { label: string; value: React.ReactNode }) {
   return (

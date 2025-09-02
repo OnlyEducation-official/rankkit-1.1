@@ -12,9 +12,9 @@ export default function Funnel() {
             variant="h2"
             sx={{ fontWeight: 600, color: 'error.main', marginBlockEnd: { xs: '30px', md: 4 } }}
           >
-            Our{' '}
+            Where{' '}
             <Box component="span" sx={{ color: 'primary.main' }}>
-              Services
+              Talent Meets Visual Impact
             </Box>
           </Typography>
           <Grid

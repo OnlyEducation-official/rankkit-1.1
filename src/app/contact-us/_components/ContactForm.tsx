@@ -1,5 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
-
 'use client';
 
 import React from 'react';
@@ -51,7 +49,6 @@ export default function ContactForm() {
         display: 'flex',
         flexDirection: 'row',
         width: '100%',
-        // height: '100vh', // optional if you want full screen height
       }}
     >
       <Box
