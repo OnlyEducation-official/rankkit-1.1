@@ -1,5 +1,3 @@
-'use client';
-
 import { Box, Stack } from '@mui/material';
 import { lazy, Suspense } from 'react';
 import VideoSection from './VideoSection';
