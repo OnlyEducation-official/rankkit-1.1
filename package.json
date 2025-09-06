@@ -36,6 +36,7 @@
     "react-dom": "19.1.0",
     "react-hook-form": "^7.61.0",
     "react-scroll": "^1.9.3",
+    "resend": "^6.0.2",
     "three": "^0.179.1",
     "uuid": "^11.1.0",
     "zod": "^4.0.8"

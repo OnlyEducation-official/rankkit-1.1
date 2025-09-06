@@ -5,14 +5,16 @@
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import { v4 as uuidv4 } from 'uuid';
+import { useMediaQuery } from '@mui/material';
 import BackgroundYouTube from './BackgroundYouTube';
 // uuid
 
 type Props = {
-  shorts: { id: string; links: string }[]; // must be YouTube EMBED urls
+  shorts: { id: string; links: string }[] | undefined; // must be YouTube EMBED urls
 };
 
 export default function YouTubeCarousel({ shorts }: Props) {
+  const mediaUpload = useMediaQuery('(max-width: 600px)');
   const options = {
     type: 'loop',
     perPage: 4,
@@ -33,10 +35,14 @@ export default function YouTubeCarousel({ shorts }: Props) {
 
   return (
     <Splide aria-label="YouTube Videos" options={options}>
-      {shorts.map((src) => (
+      {shorts?.map((src) => (
         <SplideSlide
           key={uuidv4()}
-          style={{ width: '100%', aspectRatio: '9 / 16', borderRadius: '15px' }}
+          style={{
+            width: '100%',
+            aspectRatio: mediaUpload ? '12 / 16' : '9 / 16',
+            borderRadius: '15px',
+          }}
         >
           <BackgroundYouTube videoId={src.links} />
         </SplideSlide>

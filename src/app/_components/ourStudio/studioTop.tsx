@@ -20,7 +20,7 @@ export default function StudioTop() {
         <Typography variant="h2" sx={{ fontWeight: 600, color: 'error.main' }}>
           Our{' '}
           <Box component="span" sx={{ color: 'primary.main' }}>
-            Studio
+            studio
           </Box>
         </Typography>
 
@@ -29,11 +29,11 @@ export default function StudioTop() {
           sx={{ pl: { xs: 0, md: 3 }, fontWeight: 600, pt: 1.5, lineHeight: 1.25 }}
         >
           <Box component="span" sx={{ color: 'primary.main' }}>
-            Where Raw Ideas Meet{' '}
+            Where raw ideas meet{' '}
           </Box>
           <br />
           <Box component="span" sx={{ color: 'error.main' }}>
-            Real Execution.
+            real execution.
           </Box>
         </Typography>
 

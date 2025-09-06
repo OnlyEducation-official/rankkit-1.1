@@ -2,6 +2,7 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import type { Metadata } from 'next';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v15-appRouter';
+import { SnackbarProvider } from '@/components/SnackbarContext';
 import MuiThemeProvider from './_components/MuiThemeProvider';
 import clashDisplayFont from './fonts/clash-display';
 import '@splidejs/react-splide/css';
@@ -34,9 +35,11 @@ export default function RootLayout({
       >
         <AppRouterCacheProvider options={{ key: 'css', enableCssLayer: true }}>
           <MuiThemeProvider>
-            {header}
-            {children}
-            {footer}
+            <SnackbarProvider>
+              {header}
+              {children}
+              {footer}
+            </SnackbarProvider>
           </MuiThemeProvider>
         </AppRouterCacheProvider>
       </body>

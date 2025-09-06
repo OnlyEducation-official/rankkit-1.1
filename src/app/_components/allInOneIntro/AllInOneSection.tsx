@@ -48,10 +48,10 @@ export default function AllInOneSection() {
           alignItems={isMobile ? 'flex-start' : 'end'}
           direction={{ xs: 'column', md: 'row' }}
         >
-          <Typography variant="h2" sx={{ fontWeight: 600, color: 'error.main' }}>
+          <Typography variant="h1" sx={{ fontWeight: 600, color: 'error.main' }}>
             Everything{' '}
             <Box component="span" sx={{ color: 'primary.main', fontSize: 'inherit' }}>
-              a Brand needs
+              a brand needs
             </Box>
           </Typography>
 
@@ -60,7 +60,7 @@ export default function AllInOneSection() {
             color="#0A1A67"
             sx={{ typography: { xs: 'subtitle1', md: 'h6' }, fontWeight: '600 !important' }}
           >
-            - All in One Place.
+            - All in one place.
           </Typography>
         </Stack>
 
@@ -117,11 +117,15 @@ export default function AllInOneSection() {
                 We handle every pixel, every frame and every click that your brand needs to grow.
               </Typography>
 
-              <Button variant="contained">Connect with Us</Button>
+              <Button variant="contained" sx={{ display: { xs: 'none', md: 'block' } }}>
+                Connect with us
+              </Button>
             </Stack>
           </Grid>
           <Grid size={{ xs: 12 }} display={{ xs: 'block', md: 'none' }} sx={{ order: 3 }}>
-            <Button variant="contained">Connect with Us</Button>
+            <Button variant="contained" sx={{ display: { xs: 'block', md: 'none' } }}>
+              Connect with us
+            </Button>
           </Grid>
         </Grid>
       </Stack>

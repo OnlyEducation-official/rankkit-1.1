@@ -142,7 +142,7 @@ export default function AiPowered() {
           <Box component="span" sx={{ color: 'error.main' }}>
             AI
           </Box>
-          -Driven Digital Marketing
+          -driven digital marketing
         </Typography>
         <Grid container spacing={6} sx={{ paddingBlockEnd: 3 }}>
           <Grid

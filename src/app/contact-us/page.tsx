@@ -44,7 +44,7 @@ export default function ContactPage() {
           .
         </Typography>
 
-        <Stack direction="row" spacing={1} justifyContent="center" sx={{ mt: 2, flexWrap: 'wrap' }}>
+        <Stack direction="row" justifyContent="center" sx={{ mt: 2, flexWrap: 'wrap', gap: 1 }}>
           <Chip size="small" label="Google Partner" variant="outlined" />
           <Chip size="small" label="Meta Business Partner" variant="outlined" />
           <Chip size="small" label="200+ Successful Campaigns" variant="outlined" />
