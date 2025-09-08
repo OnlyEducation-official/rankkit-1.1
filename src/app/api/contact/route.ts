@@ -25,10 +25,18 @@ export async function POST(req: NextRequest) {
       ${message}
     `;
 
-    // Send the email using Resend
+    // Send email to user
     await resend.emails.send({
       from: 'connect@rankkit.in', // your sender email
       to: email, // recipient email
+      subject: 'New Contact Form Submission',
+      text: emailContent,
+    });
+
+    // Send email to rankkit
+    await resend.emails.send({
+      from: 'connect@rankkit.in', // your sender email
+      to: 'leads.rankkit@gmail.com', // recipient email
       subject: 'New Contact Form Submission',
       text: emailContent,
     });
