@@ -19,7 +19,7 @@ const contactFormSchema = z.object({
 
   hearAboutUs: z.array(z.string()).optional(),
 
-  message: z.string().min(4, 'Message must be at least 4 characters long'),
+  message: z.string().optional(),
 });
 
 export type ContactFormScehmaType = z.infer<typeof contactFormSchema>;
