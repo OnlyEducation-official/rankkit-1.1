@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
