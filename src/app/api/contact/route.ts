@@ -64,8 +64,7 @@ export async function POST(req: NextRequest) {
                 Thanks, ${name}! 👋
               </h1>
               <p style="margin:0;font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.7;color:#334155;">
-                We’ve received your request for
-                <b style="color:rgb(2, 18, 102);">${orgname}</b>. Our strategy team will get back to you within
+                We’ve received your request. Our strategy team will get back to you within
                 <b>24 hours</b> with a tailored plan, timelines, and transparent pricing.
               </p>
             </td>
