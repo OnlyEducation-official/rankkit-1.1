@@ -11,10 +11,14 @@ import useSnackBar from '@/components/SnackbarContext';
 import ServicesBtn from './ServicesBtn';
 
 const services = [
-  { id: 1, slug: 'seo', service: 'SEO' },
-  { id: 2, slug: 'smm', service: 'Social Media Marketing' },
-  { id: 3, slug: 'ppc', service: 'Google Ads' },
-  { id: 4, slug: 'content', service: 'Content Marketing' },
+  { id: 1, slug: 'seo', service: 'SEO Services ' },
+  { id: 2, slug: 'smm', service: 'Digital Marketing' },
+  { id: 3, slug: 'ppc', service: 'Social Media Marketing' },
+  { id: 4, slug: 'wd', service: 'Web Development' },
+  { id: 5, slug: 'b&m', service: 'Branding & Multimedia' },
+  { id: 6, slug: 'sn', service: 'CreatorNest' },
+  { id: 7, slug: 'mp', service: 'Media Production' },
+  { id: 8, slug: 'ot', service: 'Other' },
 ];
 
 const hear = [
@@ -100,10 +104,10 @@ export default function ContactForm() {
           <SimpleTextField control={control} name="email" label="Email" />
         </Stack>
 
-        <Typography variant="body1" sx={{ mb: 3, fontSize: 30, fontWeight: 'bold' }}>
-          Which services are you interested in?
+        <Typography variant="body1" sx={{ fontSize: 30, fontWeight: 'bold' }}>
+          Please Select Your Services.
         </Typography>
-        <Stack direction="row" gap={1.5} sx={{ flexWrap: 'wrap' }}>
+        <Stack direction="row" gap={1.5} sx={{ mb: 2, flexWrap: 'wrap' }}>
           {services.map((service) => (
             <ServicesBtn
               key={service.id}
@@ -115,8 +119,22 @@ export default function ContactForm() {
           ))}
         </Stack>
 
-        <SimpleTextField control={control} name="message" label="Message" multiline rows={3} />
+        <Typography variant="body1" sx={{ fontSize: 30, fontWeight: 'bold' }}>
+          Share What’s on Your Mind
+        </Typography>
 
+        <SimpleTextField
+          control={control}
+          name="message"
+          label="Message"
+          multiline
+          rows={3}
+          sx={{ mb: 2 }}
+        />
+
+        {/* <Typography variant="body1" sx={{ fontSize: 30, fontWeight: 'bold' }}>
+          How You Heard About Us
+        </Typography>
         <Stack direction="row" gap={1.5} sx={{ flexWrap: 'wrap' }}>
           {hear.map((obj) => (
             <ServicesBtn
@@ -127,7 +145,7 @@ export default function ContactForm() {
               name="hearAboutUs"
             />
           ))}
-        </Stack>
+        </Stack> */}
 
         <Button
           type="submit"
