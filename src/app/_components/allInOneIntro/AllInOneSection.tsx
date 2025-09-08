@@ -12,6 +12,7 @@ import {
   Grid,
   Container,
 } from '@mui/material';
+import Link from 'next/link';
 
 const gaps = {
   xs: {
@@ -117,13 +118,22 @@ export default function AllInOneSection() {
                 We handle every pixel, every frame and every click that your brand needs to grow.
               </Typography>
 
-              <Button variant="contained" sx={{ display: { xs: 'none', md: 'block' } }}>
+              <Button
+                href="/contact-us"
+                variant="contained"
+                sx={{ display: { xs: 'none', md: 'block' } }}
+              >
                 Connect with us
               </Button>
             </Stack>
           </Grid>
           <Grid size={{ xs: 12 }} display={{ xs: 'block', md: 'none' }} sx={{ order: 3 }}>
-            <Button variant="contained" sx={{ display: { xs: 'block', md: 'none' } }}>
+            <Button
+              LinkComponent={Link}
+              href="/contact-us"
+              variant="contained"
+              sx={{ display: { xs: 'block', md: 'none' } }}
+            >
               Connect with us
             </Button>
           </Grid>

@@ -44,7 +44,7 @@ export default function YouTubeCarousel({ shorts }: Props) {
             borderRadius: '15px',
           }}
         >
-          <BackgroundYouTube videoId={src.links} />
+          <BackgroundYouTube videoUrl={src.links} />
         </SplideSlide>
       ))}
     </Splide>

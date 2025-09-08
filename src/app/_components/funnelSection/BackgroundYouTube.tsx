@@ -5,10 +5,13 @@
 import { useMemo } from 'react';
 
 type Props = {
-  videoId: string; // e.g. "FikkQTfbaOs"
+  videoUrl: string; // e.g. "FikkQTfbaOs"
 };
 
-export default function BackgroundYouTube({ videoId }: Props) {
+export default function BackgroundYouTube({ videoUrl }: Props) {
+  const urlInstance = new URL(videoUrl);
+  urlInstance.search = '';
+  const videoId = urlInstance.toString().split('/')[4] ?? '';
   const src = useMemo(() => {
     // Build the embed URL with clean params
     const params = new URLSearchParams({
@@ -24,7 +27,7 @@ export default function BackgroundYouTube({ videoId }: Props) {
       loop: '1',
       playlist: videoId,
     });
-    return `https://www.youtube.com/embed/${videoId}?${params.toString()}`;
+    return `https://youtube.com/embed/${videoId}?${params.toString()}`;
   }, [videoId]);
 
   return (

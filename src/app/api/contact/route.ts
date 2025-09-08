@@ -5,6 +5,7 @@ import { Resend } from 'resend';
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 // The POST function to handle the incoming POST request
+// eslint-disable-next-line import/prefer-default-export
 export async function POST(req: NextRequest) {
   try {
     // Extract form data from the request body

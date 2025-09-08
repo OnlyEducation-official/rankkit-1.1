@@ -27,15 +27,13 @@ const hear = [
 ];
 
 export default function ContactForm() {
-  console.log('hello', process.env.RESEND_API_KEY);
-
   const {
     control,
     handleSubmit,
     watch,
     setValue,
     reset,
-    formState: { errors, isValid, isSubmitted, isSubmitting },
+    formState: { isValid, isSubmitted, isSubmitting },
   } = useForm<ContactFormScehmaType>({
     resolver: zodResolver(contactFormSchema),
     defaultValues: {
