@@ -35,11 +35,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   // fetch data
   const response = await fetch(dynamicUrl(slug)).then((res) => res.json());
-  const seoData = response.data[0].seo;
+  const seoData = response?.data?.[0]?.seo;
 
   return {
-    title: seoData.metaTitle,
-    description: seoData.metaDescription,
+    title: seoData?.metaTitle,
+    description: seoData?.metaDescription,
   };
 }
 

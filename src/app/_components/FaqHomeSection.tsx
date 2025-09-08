@@ -135,7 +135,7 @@ export default function FaqHomeSection() {
         >
           Frequently{' '}
           <Box component="span" sx={{ color: 'primary.main' }}>
-            Asked Questions
+            asked questions
           </Box>
         </Typography>
 

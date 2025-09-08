@@ -1,3 +1,5 @@
+'use client';
+
 import { Box, Container, Typography, useMediaQuery } from '@mui/material';
 import React from 'react';
 import { v4 as uuidv4 } from 'uuid';
@@ -62,7 +64,7 @@ export default function ThreeD() {
               fontWeight={600}
               sx={{ marginBlockStart: { xs: '10px', lg: '15px' } }}
             >
-              What We Offer
+              What we offer
             </Typography>
             <Box component="ul" sx={{ marginBlockStart: { xs: '10px', lg: '15px' } }}>
               {(mediaMdSizeFrom900To1100 ? offerDataLists.slice(0, 4) : offerDataLists).map(

@@ -26,7 +26,7 @@ const quickLinks = [
 ];
 
 const serviceLinks = [
-  { text: 'Web development', href: '/services/web-development' },
+  { text: 'Web Development', href: '/services/web-development' },
   { text: 'Branding & Multimedia', href: '/services/branding-and-multimedia' },
   { text: 'CreatorNest', href: '/services/creator-nest' },
   { text: 'Media Production', href: '/services/media-production' },

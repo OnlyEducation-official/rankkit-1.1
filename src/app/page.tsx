@@ -5,11 +5,11 @@ const url = `${process.env.BACKEND_URL}homes?fields=id&populate[seo][fields]=met
 
 export async function generateMetadata() {
   const response = await fetch(url).then((res) => res.json());
-  const seoData = response.data[0].seo;
+  const seoData = response.data?.[0].seo;
 
   return {
-    title: seoData.metaTitle,
-    description: seoData.metaDescription,
+    title: seoData?.metaTitle,
+    description: seoData?.metaDescription,
   };
 }
 

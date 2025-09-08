@@ -22,7 +22,7 @@ const theme = createTheme({
   typography: {
     fontFamily: 'var(--font-clash-display), sans-serif',
     h1: {
-      fontSize: '50px',
+      fontSize: '44px',
       '@media (max-width:900px)': {
         fontSize: '40px',
       },

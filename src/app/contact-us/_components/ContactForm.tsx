@@ -1,12 +1,13 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { Box, Button, Stack, Typography } from '@mui/material';
+import { Box, Button, CircularProgress, Stack, Typography } from '@mui/material';
 import { zodResolver } from '@hookform/resolvers/zod';
 import contactFormSchema, { ContactFormScehmaType } from '@/types/ContactForm';
 import SimpleTextField from '@/components/SimpleTextField';
 import PhoneInputField from '@/components/GlobalPhoneField';
+import useSnackBar from '@/components/SnackbarContext';
 import ServicesBtn from './ServicesBtn';
 
 const services = [
@@ -26,7 +27,14 @@ const hear = [
 ];
 
 export default function ContactForm() {
-  const { control, handleSubmit, watch, setValue } = useForm<ContactFormScehmaType>({
+  const {
+    control,
+    handleSubmit,
+    watch,
+    setValue,
+    reset,
+    formState: { isValid, isSubmitted, isSubmitting },
+  } = useForm<ContactFormScehmaType>({
     resolver: zodResolver(contactFormSchema),
     defaultValues: {
       name: '',
@@ -38,9 +46,33 @@ export default function ContactForm() {
       message: '',
     },
   });
+  const { openSnackbar } = useSnackBar();
 
-  const onSubmit = (data: ContactFormScehmaType) => {
-    console.log(data);
+  const onSubmit = async (data: ContactFormScehmaType) => {
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!res.ok) {
+        throw new Error('Something went wrong!');
+      }
+
+      openSnackbar({
+        snackMessage: 'Your message has been sent successfully!',
+        snackSeverity: 'success',
+      });
+      reset();
+    } catch (err) {
+      openSnackbar({
+        snackMessage: `Failed to send message. Please try again. ${err}`,
+        snackSeverity: 'error',
+      });
+    }
   };
 
   return (
@@ -59,8 +91,6 @@ export default function ContactForm() {
           flexDirection: 'column',
           gap: 3,
           flex: 1, // 50% width
-          paddingInlineEnd: 10,
-          borderRight: '1px solid #eee',
         }}
       >
         <Stack rowGap={5} sx={{ paddingBlockStart: '20px' }}>
@@ -104,7 +134,11 @@ export default function ContactForm() {
           variant="contained"
           color="primary"
           sx={{ typography: 'subtitle1', fontWeight: 600, marginBlockStart: 3 }}
+          disabled={(isSubmitted && !isValid) || isSubmitting}
         >
+          {isSubmitting && (
+            <CircularProgress size={20} sx={{ color: 'common.white', position: 'absolute' }} />
+          )}
           Submit
         </Button>
       </Box>

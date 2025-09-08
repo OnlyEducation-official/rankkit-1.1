@@ -8,11 +8,11 @@ import ContactMap from './_components/ContactMap';
 const url = `${process.env.BACKEND_URL}contact-uses?fields=id&populate[seo][fields]=metaTitle,metaDescription`;
 export async function generateMetadata() {
   const response = await fetch(url).then((res) => res.json());
-  const seoData = response.data[0].seo;
+  const seoData = response?.data?.[0]?.seo;
 
   return {
-    title: seoData.metaTitle,
-    description: seoData.metaDescription,
+    title: seoData?.metaTitle,
+    description: seoData?.metaDescription,
   };
 }
 
@@ -44,7 +44,7 @@ export default function ContactPage() {
           .
         </Typography>
 
-        <Stack direction="row" spacing={1} justifyContent="center" sx={{ mt: 2, flexWrap: 'wrap' }}>
+        <Stack direction="row" justifyContent="center" sx={{ mt: 2, flexWrap: 'wrap', gap: 1 }}>
           <Chip size="small" label="Google Partner" variant="outlined" />
           <Chip size="small" label="Meta Business Partner" variant="outlined" />
           <Chip size="small" label="200+ Successful Campaigns" variant="outlined" />

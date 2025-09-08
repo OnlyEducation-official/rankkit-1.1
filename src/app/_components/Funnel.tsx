@@ -1,9 +1,13 @@
 import { Stack, Box, Container, Typography, Grid } from '@mui/material';
 import FunnelInfo from './funnelSection/funnelInfo';
 import FunnelVideoo from './funnelSection/funnelVideoo';
-import SplideCarousel from './funnelSection/carouselFunnel';
+import YouTubeGrid from './funnelSection/YoutubeGrid';
 
-export default function Funnel() {
+const url = `${process.env.BACKEND_URL}homes?fields=id&populate[seo][fields]=metaTitle,metaDescription&populate[seo][populate][shareImage][fields]=url,alternativeText&populate[Hero][fields]=title&populate[Hero][populate][hero_video][fields]=url,alternativeText&populate[shorts]=*`;
+
+export default async function Funnel() {
+  const response = await fetch(url).then((res) => res.json());
+  const data = response?.data?.[0];
   return (
     <Box sx={{ paddingBlock: { xs: 6, md: 12 }, bgcolor: 'grey.300' }}>
       <Container maxWidth="lg">
@@ -14,7 +18,7 @@ export default function Funnel() {
           >
             Where{' '}
             <Box component="span" sx={{ color: 'primary.main' }}>
-              Talent Meets Visual Impact
+              talent meets visual impact
             </Box>
           </Typography>
           <Grid
@@ -50,8 +54,8 @@ export default function Funnel() {
             </Grid>
           </Grid>
 
-          <Box sx={{ alignItems: 'center', textAlign: 'center' }}>
-            <SplideCarousel />
+          <Box sx={{ marginBlockStart: { xs: '30px', md: '50px' } }}>
+            <YouTubeGrid shorts={data?.shorts} />
           </Box>
         </Stack>
       </Container>

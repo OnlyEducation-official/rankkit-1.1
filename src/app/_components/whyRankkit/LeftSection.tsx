@@ -33,7 +33,7 @@ export default function LeftSection() {
           sx={{ color: 'primary.main', display: { xs: 'block', sm: 'inline' } }}
         >
           {' '}
-          Rankkit?
+          rankkit?
         </Box>
       </Typography>
       <Stack
@@ -41,11 +41,11 @@ export default function LeftSection() {
         sx={{ paddingInlineStart: { xs: 0, sm: 5 } }}
       >
         <Box>
-          <Typography variant="h4" fontWeight={600} sx={{ color: { md: 'primary.main' } }}>
-            Unlock the Power of
+          <Typography variant="h5" fontWeight={600} sx={{ color: { md: 'primary.main' } }}>
+            Unlock the power of
           </Typography>
-          <Typography variant="h4" fontWeight={600} sx={{ color: { md: 'error.main' } }}>
-            Full-Suite Digital Innovation
+          <Typography variant="h5" fontWeight={600} sx={{ color: { md: 'error.main' } }}>
+            full-suite digital innovation
           </Typography>
         </Box>
         <Typography variant="body1">

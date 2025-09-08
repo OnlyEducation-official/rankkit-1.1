@@ -82,7 +82,7 @@ export default function OurServicesCards() {
           >
             Our{' '}
             <Box component="span" sx={{ color: 'primary.main' }}>
-              Services
+              services
             </Box>
           </Typography>
         </Grid>

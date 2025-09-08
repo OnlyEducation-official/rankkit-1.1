@@ -39,10 +39,10 @@ export default function FunnelInfo() {
   return (
     <Stack>
       <Box>
-        <Typography variant="h4" fontWeight={600} marginBlockEnd={1}>
+        <Typography variant="h5" fontWeight={600} marginBlockEnd={1}>
           Professional Models, Powerful Brand Stories
         </Typography>
-        <Typography sx={{ paddingLeft: 0, paddingBlockEnd: 1 }}>
+        <Typography variant="body1" sx={{ paddingLeft: 0, paddingBlockEnd: 1 }}>
           We collaborate with a diverse roster of professional models to bring brands to life
           through authentic, captivating visuals. Our talent partnerships ensure every campaign
           connects with the right audience and leaves a lasting impression.
