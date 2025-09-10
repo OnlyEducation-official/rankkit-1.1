@@ -1,7 +1,4 @@
 User-agent: *
-Disallow: /api/
-Disallow: /admin/
-Disallow: /dashboard/
 Allow: /
 
 # Point search engines to your sitemap
