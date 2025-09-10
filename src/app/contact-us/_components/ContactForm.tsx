@@ -16,7 +16,7 @@ const services = [
   { id: 3, slug: 'ppc', service: 'Social Media Marketing' },
   { id: 4, slug: 'wd', service: 'Web Development' },
   { id: 5, slug: 'b&m', service: 'Branding & Multimedia' },
-  { id: 6, slug: 'sn', service: 'CreatorNest' },
+  { id: 6, slug: 'sn', service: 'CreatorsNest' },
   { id: 7, slug: 'mp', service: 'Media Production' },
   { id: 8, slug: 'ot', service: 'Other' },
 ];

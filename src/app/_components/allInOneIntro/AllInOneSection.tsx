@@ -78,7 +78,7 @@ export default function AllInOneSection() {
                 'Web Development',
                 'UX/UI Design',
                 'Branding & Multimedia',
-                'CreatorNest®',
+                'CreatorsNest®',
                 'Media Production',
                 'SEO Services',
                 'Digital Marketing',

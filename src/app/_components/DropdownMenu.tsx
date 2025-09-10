@@ -1,7 +1,8 @@
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
 import { Box, Paper, Typography } from '@mui/material';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import React from 'react';
+import React, { useState } from 'react';
 
 export default function DropdownMenu({
   lists,
@@ -32,7 +33,14 @@ export default function DropdownMenu({
   };
 
   return (
-    <Box sx={{ position: 'relative' }}>
+    <Box
+      sx={{
+        position: 'relative',
+        '&:hover .rotateTarget': {
+          transform: 'rotate(90deg)',
+        },
+      }}
+    >
       <Typography
         component={Link}
         href="/services"
@@ -44,9 +52,21 @@ export default function DropdownMenu({
           textDecoration: 'none',
           color: pathname === '/services' ? 'primary.main' : 'common.black',
           fontWeight: pathname === '/services' ? 600 : 500,
+          display: 'flex',
+          alignItems: 'center',
         }}
       >
-        Services
+        <Box>Services</Box>
+        <Box
+          className="rotateTarget"
+          sx={{
+            paddingTop: 1,
+            transition: 'transform 0.3s ease',
+            display: 'inline-block',
+          }}
+        >
+          <KeyboardArrowRightIcon />
+        </Box>
       </Typography>
 
       {open && (
@@ -68,7 +88,6 @@ export default function DropdownMenu({
               width: 'max-content',
               display: 'flex',
               flexDirection: 'column',
-              //   gap: 2,
               borderRadius: 2,
               paddingBlock: 1.5,
             }}
@@ -80,13 +99,10 @@ export default function DropdownMenu({
                 href={item.href}
                 variant="body1"
                 sx={{
-                  //   width: 'max-content',
                   cursor: 'pointer',
-
                   paddingBlock: 1.25,
                   paddingInline: 2.5,
                   fontWeight: pathname === item.href ? 600 : 500,
-                  //   paddingBlock: 1,
                   width: 1,
                   textDecoration: 'none',
                   color: pathname === item.href ? 'primary.main' : 'common.black',

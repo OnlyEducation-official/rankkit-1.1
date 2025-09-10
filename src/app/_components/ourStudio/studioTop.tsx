@@ -62,7 +62,7 @@ export default function StudioTop() {
         <Box sx={{ height: { xs: '500px', md: 1 }, width: 1 }}>
           <Panorama
             src="/videos/studioOverview.webp"
-            caption="Rankkit Studio +1200sqft"
+            caption="Rankkit Studio 1200+ sqft"
             height="100%"
             navbar={['move', 'fullscreen', 'caption']}
             lockZoom

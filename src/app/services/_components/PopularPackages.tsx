@@ -21,7 +21,7 @@ import Link from 'next/link';
 const packages = [
   {
     icon: <Star size={32} color="white" />,
-    name: 'CreatorNest Starter',
+    name: 'CreatorsNest Starter',
     price: '₹30K',
     color: 'linear-gradient(135deg, #021266 0%, rgba(2, 18, 102, 0.8) 100%)',
     bgColor: 'rgba(2, 18, 102, 0.1)',
