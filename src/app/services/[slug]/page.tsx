@@ -222,7 +222,7 @@ const service: Service = {
   'creator-nest': {
     hero: {
       title: {
-        blue: 'CreatorNest',
+        blue: 'CreatorsNest',
         red: '(Exclusive)',
       },
       description: [

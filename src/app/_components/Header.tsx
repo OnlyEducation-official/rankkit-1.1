@@ -84,7 +84,7 @@ export default function Header() {
                   lists={[
                     { text: 'Web development', href: '/services/web-development' },
                     { text: 'Branding & Multimedia', href: '/services/branding-and-multimedia' },
-                    { text: 'CreatorNest', href: '/services/creator-nest' },
+                    { text: 'CreatorsNest', href: '/services/creator-nest' },
                     { text: 'Media Production', href: '/services/media-production' },
                     { text: 'SEO Services', href: '/services/seo-services' },
                     { text: 'Digital Marketing', href: '/services/digital-marketing' },

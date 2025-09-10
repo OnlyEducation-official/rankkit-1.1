@@ -38,13 +38,13 @@ const services: MultiServices[] = [
   },
   {
     icon: Users,
-    title: 'CreatorNest',
+    title: 'CreatorsNest',
     href: 'creator-nest',
     badge: 'Exclusive',
     color: 'linear-gradient(135deg, #e62d3e 0%, rgba(230, 45, 62, 0.8) 100%)',
     bgColor: 'rgba(230, 45, 62, 0.1)',
     description:
-      "Whether you're starting from scratch or stuck at 10K – CreatorNest gives you everything to build a personal brand. From strategy to shoot, we help you create, grow, and monetize your content with clarity and confidence.",
+      "Whether you're starting from scratch or stuck at 10K – CreatorsNest gives you everything to build a personal brand. From strategy to shoot, we help you create, grow, and monetize your content with clarity and confidence.",
   },
   {
     icon: Video,

@@ -9,17 +9,17 @@ const MotionCard = motion(Card);
 function ValueSnapshot() {
   const stats = [
     {
-      title: '+1200 sq.ft pillarless open space',
+      title: '1200+ sq.ft pillarless open space',
       description: 'Spacious environment for any shoot setup',
       icon: '📐',
     },
     {
-      title: '+8 creative wall setups incl. movable walls',
+      title: '8+ creative wall setups incl. movable walls',
       description: 'Versatile backdrops for every creative vision',
       icon: '🎨',
     },
     {
-      title: '+8 roll-down backdrops + green screen',
+      title: '8+ roll-down backdrops + green screen',
       description: 'Professional seamless backgrounds',
       icon: '🎬',
     },

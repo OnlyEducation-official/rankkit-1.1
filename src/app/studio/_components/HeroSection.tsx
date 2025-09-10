@@ -150,7 +150,7 @@ function HeroSection() {
               },
             }}
           >
-            {['+1200 sq.ft', '+8 wall setups', '+8 paper backdrops', 'Vanity room', 'Pantry'].map(
+            {['1200+ sq.ft', '8+ wall setups', '8+ paper backdrops', 'Vanity room', 'Pantry'].map(
               (badge) => (
                 <Chip
                   key={uuidv4()}
@@ -262,7 +262,7 @@ function HeroSection() {
           >
             <Panorama
               src="/videos/studioOverview.webp"
-              caption="Rankkit Studio +1200sqft"
+              caption="Rankkit Studio 1200+ sqft"
               height="100%"
               navbar={['move', 'fullscreen', 'caption']}
               lockZoom

@@ -27,11 +27,11 @@ const serviceCards = [
       'Your brand isn’t just a logo. It’s the story people remember. We craft cohesive visual identities that make your brand stand out – from logos and typography to packaging and social media. Every detail we design builds recognition and trust at every touchpoint.',
   },
   {
-    title: ['CreatorNest', '(Exclusive)'],
+    title: ['CreatorsNest', '(Exclusive)'],
     icon: creatorNestIcon,
     href: '/services/creator-nest',
     description:
-      'Whether you’re starting from scratch or stuck at 10K – CreatorNest gives you everything to build a personal brand. From strategy to shoot, we help you create, grow, and monetize your content with clarity and confidence.',
+      'Whether you’re starting from scratch or stuck at 10K – CreatorsNest gives you everything to build a personal brand. From strategy to shoot, we help you create, grow, and monetize your content with clarity and confidence.',
   },
   {
     title: ['Media', 'Production'],
