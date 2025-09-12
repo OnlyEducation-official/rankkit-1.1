@@ -5,23 +5,19 @@
 
 import {
   Box,
-  Button,
   Typography,
   Paper,
   Stack,
-  ButtonGroup,
-  Chip,
   Pagination,
   PaginationItem,
   Container,
-  Divider,
   Backdrop,
   CircularProgress,
 } from '@mui/material';
-import { MouseEvent, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import ArrowBackRoundedIcon from '@mui/icons-material/ArrowBackRounded';
 import ArrowForwardRoundedIcon from '@mui/icons-material/ArrowForwardRounded';
-import ArticleAll, { Data, Paginnation } from './ArticleAll';
+import ArticleAll, { Data } from './ArticleAll';
 
 export default function ArticleBody() {
   const [data, setData] = useState<Data>([]);
@@ -42,7 +38,7 @@ export default function ArticleBody() {
         setPageSize(response.meta.pagination.pageSize);
         setCurrentPage(response.meta.pagination.page);
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.log('Error fetching data:', error);
       }
     };
 

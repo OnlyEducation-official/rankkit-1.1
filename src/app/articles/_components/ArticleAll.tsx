@@ -8,18 +8,11 @@ import {
   CardActionArea,
   CardContent,
   CardMedia,
-  Chip,
   Grid,
-  ListItem,
   Skeleton,
-  Stack,
   Typography,
 } from '@mui/material';
-import { number } from 'zod';
-import { id } from 'zod/v4/locales';
 import Link from 'next/link';
-import ArticleHeader from './ArticleHeader';
-import FeaturedArticle from './FeaturedArticle';
 
 export type Paginnation = {
   page: number;

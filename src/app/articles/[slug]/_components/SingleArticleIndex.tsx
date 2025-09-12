@@ -14,7 +14,6 @@ import {
 } from '@mui/material';
 import AccessTimeRoundedIcon from '@mui/icons-material/AccessTimeRounded';
 import ShareRoundedIcon from '@mui/icons-material/ShareRounded';
-import VisibilityRoundedIcon from '@mui/icons-material/VisibilityRounded';
 import PersonIcon from '@mui/icons-material/Person';
 import Image from 'next/image';
 import { useState } from 'react';
@@ -29,7 +28,7 @@ export default function SingleArticleIndex({ article }: { article: Article }) {
       await navigator.clipboard.writeText(link);
       setOpen(true); // show feedback
     } catch (err) {
-      console.error('Failed to copy:', err);
+      console.log('Failed to copy:', err);
     }
   };
   return (
