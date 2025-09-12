@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import { useForm } from 'react-hook-form';
 import { Box, Button, CircularProgress, Stack, Typography } from '@mui/material';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -19,15 +19,6 @@ const services = [
   { id: 6, slug: 'sn', service: 'CreatorsNest' },
   { id: 7, slug: 'mp', service: 'Media Production' },
   { id: 8, slug: 'ot', service: 'Other' },
-];
-
-const hear = [
-  { id: 1, slug: 'referral', hear: 'Referral' },
-  { id: 2, slug: 'media', hear: 'Media & News' },
-  { id: 3, slug: 'instagram', hear: 'Instagram' },
-  { id: 4, slug: 'facebook', hear: 'Facebook' },
-  { id: 5, slug: 'search', hear: 'Search' },
-  { id: 6, slug: 'linkedin', hear: 'LinkedIn' },
 ];
 
 export default function ContactForm() {

@@ -1,7 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
-import logo from '@/assets/images/logo2.png';
 
 // Create a Resend instance with your API key
 const resend = new Resend(process.env.RESEND_API_KEY);
@@ -11,7 +10,7 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 export async function POST(req: NextRequest) {
   try {
     // Extract form data from the request body
-    const { name, email, phone, orgname, services, hearAboutUs, message } = await req.json();
+    const { name, email, phone, orgname, services, message } = await req.json();
 
     // Construct the email content dynamically
     const html = `<!DOCTYPE html>
