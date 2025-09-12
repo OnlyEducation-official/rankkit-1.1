@@ -23,6 +23,10 @@ const quickLinks = [
     text: 'Contact us',
     href: '/contact-us',
   },
+  {
+    text: 'Articles',
+    href: '/articles',
+  },
 ];
 
 const serviceLinks = [

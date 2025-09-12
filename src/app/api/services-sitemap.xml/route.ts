@@ -26,7 +26,7 @@ const services: Entry[] = serviceSlugs.map((slug) => ({
 
 // 3) Helpers
 function getBaseUrl(req: Request) {
-  const env = 'https://api.rankkit.in/';
+  const env = 'https://www.rankkit.in/';
   if (env) return env.replace(/\/+$/, '');
   const host = req.headers.get('x-forwarded-host') || req.headers.get('host') || 'localhost:3000';
   const proto = req.headers.get('x-forwarded-proto') || 'http';
