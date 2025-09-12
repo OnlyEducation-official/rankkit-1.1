@@ -18,7 +18,7 @@ type StrapiItem = {
 type StrapiResp = { data: StrapiItem[] };
 
 function getBaseUrl(req: Request) {
-  const env = 'https://api.rankkit.in';
+  const env = 'https://rankkit.in/';
   if (env) return env.replace(/\/+$/, '');
   const host = req.headers.get('x-forwarded-host') || req.headers.get('host') || 'localhost:3000';
   const proto = req.headers.get('x-forwarded-proto') || 'http';
@@ -67,12 +67,11 @@ async function fetchArticleSlugs(limit: number): Promise<{ path: string; lastmod
     const batch = json.data ?? [];
     if (batch.length === 0) break;
 
-    console.log(batch[0].slug);
     for (const item of batch) {
       const slug = item?.slug;
       if (!slug) continue;
       const lastmod = item?.updatedAt || item?.createdAt;
-      out.push({ path: `/articles/post/${slug}`, lastmod });
+      out.push({ path: `/articles/${slug}`, lastmod });
       if (out.length >= limit) break;
     }
 
