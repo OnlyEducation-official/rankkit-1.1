@@ -1,4 +1,4 @@
-import { Box, Typography, Button, Container, Stack } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 
 export default function ArticleHeader() {
   return (
