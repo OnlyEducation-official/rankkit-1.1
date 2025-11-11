@@ -101,10 +101,14 @@ export default function HeroSection() {
         sx={{
           position: 'absolute',
           zIndex: 20,
-          bgcolor: 'red',
+          // bgcolor: 'red',
           transform: 'translate(-50%, -50%)',
           top: '50%',
           left: '50%',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
         }}
       >
         <motion.div
@@ -114,12 +118,21 @@ export default function HeroSection() {
             justifyContent: 'center',
             alignItems: 'center',
             height: '100%',
-            gap: '2.5rem',
+            gap: '1.5rem',
             position: 'absolute',
           }}
         >
           {/* --- Title + Subtitle --- */}
-          <Box sx={{ px: { xs: 2, sm: 0 } }}>
+          <Box
+            sx={{
+              px: { xs: 2, sm: 0 },
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: '0.5rem',
+            }}
+          >
             <motion.div>
               <Typography
                 variant="h2"
@@ -158,7 +171,7 @@ export default function HeroSection() {
                     md: '1.1rem',
                     lg: '1.15rem',
                   },
-                  mt: { xs: 2, sm: 3 },
+                  // mt: { xs: 2, sm: 3 },
                 }}
               >
                 “From 3D walkthroughs to cinematic property films, RankKit helps real estate brands

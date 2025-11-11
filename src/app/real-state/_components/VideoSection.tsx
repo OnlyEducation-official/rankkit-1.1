@@ -19,7 +19,7 @@ function LoadingOverlay() {
       }}
     >
       <CircularProgress sx={{ mb: 2 }} />
-      <Typography variant="h6">Loading, please wait...</Typography>
+      <Typography variant="h6">Loading, please wait...</Typography>\
     </Box>
   );
 }
