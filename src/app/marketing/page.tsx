@@ -1,11 +1,12 @@
+import { MarketingServices } from '@/components/marketing/Services';
 import { Container, Grid, Typography } from '@mui/material';
 import React from 'react';
 
 function page() {
   return (
-    <Container>
+    <Container maxWidth="xl">
       <Grid container>
-        <Grid size={{ xs: 12, md: 6 }} sx={{ height: '100dvh' }}>
+        <Grid size={{ xs: 12, md: 6 }}>
           <Typography variant="h2">
             <Typography variant="inherit">Drive 3.5X Growth</Typography>
             <Typography variant="inherit">With 360 Marketing</Typography>
@@ -19,6 +20,7 @@ function page() {
         </Grid>
         <Grid size={{ xs: 12, md: 6 }} />
       </Grid>
+        <MarketingServices />
     </Container>
   );
 }
