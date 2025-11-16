@@ -11,7 +11,7 @@ type SimpleTextFieldProps<TFieldValues extends FieldValues> = {
   label: string;
 } & TextFieldProps;
 
-function SimpleTextField<TFieldValues extends FieldValues>({
+function SimpleTextFieldNew<TFieldValues extends FieldValues>({
   name,
   control,
   label,
@@ -35,7 +35,6 @@ function SimpleTextField<TFieldValues extends FieldValues>({
         return (
           <TextField
             {...field}
-            {...textFieldProps}
             label={label}
             fullWidth
             variant="outlined"
@@ -43,6 +42,7 @@ function SimpleTextField<TFieldValues extends FieldValues>({
             error={!!fieldState.error}
             helperText={fieldState.error?.message}
             sx={mergedSx}
+            {...textFieldProps}
           />
         );
       }}
@@ -50,4 +50,4 @@ function SimpleTextField<TFieldValues extends FieldValues>({
   );
 }
 
-export default SimpleTextField;
+export default SimpleTextFieldNew;
