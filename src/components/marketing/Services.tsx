@@ -55,14 +55,13 @@ export default function MarketingServices() {
         <Typography
           sx={{
             fontSize: '45px',
-            lineHeight: '65px',
           }}
         >
           How Can We Help You ?
         </Typography>
       </Grid>
 
-      <Grid container spacing={2} size={{ xs: 12 }} sx={{ marginTop: '117px' }}>
+      <Grid container spacing={2} size={{ xs: 12 }} sx={{ marginTop: '50px' }}>
         {services.map((s, i) => (
           <Grid
             key={i}
@@ -92,7 +91,7 @@ export default function MarketingServices() {
               <Typography
                 variant="inherit"
                 sx={{
-                  fontSize: '18px',
+                  fontSize: '20px',
                   color: '#000',
                   fontWeight: 600,
                   lineHeight: '28px',
@@ -107,7 +106,7 @@ export default function MarketingServices() {
               variant="inherit"
               sx={{
                 color: '#3d4c5e',
-                fontSize: '13px',
+                fontSize: '14px',
                 fontWeight: 400,
                 width: 0.75,
                 zIndex: 2,
@@ -144,6 +143,7 @@ export default function MarketingServices() {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
+            marginBottom:'40px'
           }}
         >
           GET IN TOUCH

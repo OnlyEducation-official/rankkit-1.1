@@ -31,7 +31,7 @@ export default function MarketingForm() {
         paddingBlock: 5,
         background: 'rgba(255, 255, 255, 0.12)',
         backdropFilter: 'blur(50px)', // main blur effect
-        WebkitBackdropFilter: 'blur(10px)', // Safari support
+        WebkitBackdropFilter: 'blur(40px)', // Safari support
         boxShadow: '0 4px 30px rgba(0,0,0,0.1)',
       }}
       gap={2}
@@ -52,9 +52,19 @@ export default function MarketingForm() {
         label="Message"
         multiline
         rows={3}
-        sx={{ mb: 2 }}
       />
-      <Button variant="contained" sx={{ width: 1, paddingBlock: 2, borderRadius: 10 }}>
+      <Button 
+        sx={{ 
+          width: 1, 
+          paddingBlock: 2, 
+          borderRadius: "71px", 
+          backgroundColor:"#ff0000cc" ,
+          fontWeight:600,
+          color:"#fff",
+          border:0,
+          textTransform:"uppercase"
+        }}
+      >
         Submit
       </Button>
     </Stack>

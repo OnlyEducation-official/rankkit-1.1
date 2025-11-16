@@ -33,35 +33,12 @@ export default function SimpleAutocomplete({
       }}
       renderInput={(params) => {
         const mergedSx = {
-          // spacing + layout
-          my: 1,
-          // Label
           '& .MuiInputLabel-root': {
-            fontWeight: 600,
+            fontWeight: 500,
           },
-          // Input style
           '& .MuiOutlinedInput-root': {
             bgcolor: 'grey.50',
             borderRadius: 2,
-            transition: 'box-shadow .2s ease, border-color .2s ease, background-color .2s ease',
-            '& .MuiOutlinedInput-input': {
-              py: 1.5, // taller tap target
-            },
-            // borders
-            '& fieldset': { borderColor: 'divider' },
-            '&:hover fieldset': { borderColor: 'text.secondary' },
-            '&.Mui-focused fieldset': { borderColor: 'primary.main' },
-            // focus ring
-            '&.Mui-focused': {
-              boxShadow: '0 0 0 3px rgba(43,92,255,0.15)', // subtle ring
-              bgcolor: 'background.paper',
-            },
-            // error state
-            '&.Mui-error fieldset': { borderColor: 'error.main' },
-          },
-          // Helper text
-          '& .MuiFormHelperText-root': {
-            mt: 0.75,
           },
         };
 
