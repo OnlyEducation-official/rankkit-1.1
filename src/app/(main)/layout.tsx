@@ -1,22 +1,21 @@
-import React from 'react'
+import React from 'react';
 
 function Layout({
-    children,
-    header,
-    footer,
+  children,
+  header,
+  footer,
 }: Readonly<{
-    children: React.ReactNode;
-    header: React.ReactNode;
-    footer: React.ReactNode;
+  children: React.ReactNode;
+  header: React.ReactNode;
+  footer: React.ReactNode;
 }>) {
-    return (
-        <>
-
-            {header}
-            {children}
-            {footer}
-        </>
-    )
+  return (
+    <>
+      {header}
+      {children}
+      {footer}
+    </>
+  );
 }
 
-export default Layout
+export default Layout;

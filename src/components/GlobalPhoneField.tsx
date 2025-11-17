@@ -11,7 +11,7 @@ import { MuiTelInput, MuiTelInputCountry } from 'mui-tel-input';
 type PhoneInputFieldProps<T extends FieldValues> = {
   name: Path<T>;
   control: Control<T>;
-  label: string;
+  label?: string;
   placeholder?: string;
   defaultCountry?: MuiTelInputCountry;
   onlyCountries?: MuiTelInputCountry[];
@@ -90,6 +90,7 @@ function PhoneInputField<T extends FieldValues>({
               // keep typography consistent; avoid dynamic font-size jumps
               style: { fontSize: 16 },
             },
+
             // country select menu (optional tweaks)
           }}
         />

@@ -1,5 +1,7 @@
 /* eslint-disable react/no-array-index-key */
-'use client'
+
+'use client';
+
 import { Grid, Typography } from '@mui/material';
 import { Link } from 'react-scroll';
 
@@ -130,7 +132,8 @@ export default function MarketingServices() {
       >
         <Typography
           component={Link}
-          to='banner' smooth
+          to="banner"
+          smooth
           variant="button"
           sx={{
             backgroundColor: '#ff0000',
@@ -148,7 +151,7 @@ export default function MarketingServices() {
             justifyContent: 'center',
             alignItems: 'center',
             marginBottom: '40px',
-            cursor:"pointer"
+            cursor: 'pointer',
           }}
         >
           GET IN TOUCH
