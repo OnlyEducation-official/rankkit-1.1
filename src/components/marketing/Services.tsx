@@ -1,5 +1,7 @@
 /* eslint-disable react/no-array-index-key */
+'use client'
 import { Grid, Typography } from '@mui/material';
+import { Link } from 'react-scroll';
 
 export default function MarketingServices() {
   const services = [
@@ -127,6 +129,8 @@ export default function MarketingServices() {
         }}
       >
         <Typography
+          component={Link}
+          to='banner' smooth
           variant="button"
           sx={{
             backgroundColor: '#ff0000',
@@ -143,7 +147,8 @@ export default function MarketingServices() {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            marginBottom:'40px'
+            marginBottom: '40px',
+            cursor:"pointer"
           }}
         >
           GET IN TOUCH

@@ -2,19 +2,18 @@
 import { Box, Container, Grid, Typography } from '@mui/material';
 import React from 'react';
 import MarketingServices from '@/components/marketing/Services';
-import MarketingForm from './_components/MarketingForm';
+import MarketingForm from '../_components/MarketingForm';
+import { Link } from 'react-scroll';
 
 function page() {
   return (
     <Box
-        sx={{
-        background: "radial-gradient(circle,rgba(238, 174, 202, 1) 45%, rgba(148, 187, 233, 1) 100%)"
-      }} 
+
     >
-      <Container
-        maxWidth="xl"
-      >
-        <Box sx={{ height: '100dvh', display: 'flex', alignItems: 'center' }}>
+      <Box id="banner" sx={{ height: '100dvh', display: 'flex', alignItems: 'center', background: "radial-gradient(circle,rgba(238, 174, 202, 1) 45%, rgba(148, 187, 233, 1) 100%)" }}>
+        <Container
+          maxWidth="xl"
+        >
           <Grid container sx={{ display: 'flex', alignItems: 'center' }}>
             <Grid
               size={{ xs: 12, md: 6 }}
@@ -23,8 +22,8 @@ function page() {
               }}
             >
               <Typography variant="h1">
-                <Typography variant="inherit" sx={{fontWeight:500}}>Drive 3.5X Growth</Typography>
-                <Typography variant="inherit" sx={{fontWeight:500}}>With 360 Marketing</Typography>
+                <Typography variant="inherit" sx={{ fontWeight: 500 }}>Drive 3.5X Growth</Typography>
+                <Typography variant="inherit" sx={{ fontWeight: 500 }}>With 360 Marketing</Typography>
               </Typography>
               <Typography variant="subtitle1" sx={{ maxWidth: 0.75, marginBlockStart: 5 }}>
                 Built for Growth. Backed by 10+ Years of Expertise. 100+ brands have scaled faster
@@ -48,9 +47,14 @@ function page() {
               <Grid />
             </Grid>
           </Grid>
-        </Box>
-        <MarketingServices />
-      </Container>
+        </Container>
+
+      </Box>
+      <Box sx={{background: "linear-gradient(77deg,rgba(180, 207, 224, 1) 0%, rgba(255, 255, 255, 1) 50%, rgba(237, 237, 237, 1) 98%)", paddingTop:"100px"}}>
+        <Container maxWidth={'xl'}>
+          <MarketingServices />
+        </Container>
+      </Box>
     </Box>
   );
 }
