@@ -34,10 +34,6 @@ export default function SimpleAutocomplete({
   // For the "+N selected" popover
   const [anchorEl, setAnchorEl] = React.useState<HTMLElement | null>(null);
 
-  const handleOpenSummary = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
-  };
-
   const handleCloseSummary = () => {
     setAnchorEl(null);
   };

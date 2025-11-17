@@ -21,12 +21,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-  header,
-  footer,
 }: Readonly<{
   children: React.ReactNode;
-  header: React.ReactNode;
-  footer: React.ReactNode;
 }>) {
   return (
     <html lang="en" className={`${clashDisplayFont.variable}`} suppressHydrationWarning>
