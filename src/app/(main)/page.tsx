@@ -1,5 +1,5 @@
 // import Homes from './_components/Home';
-import Index from './_components/Index';
+import Index from '../_components/Index';
 
 const url = `${process.env.BACKEND_URL}homes?fields=id&populate[seo][fields]=metaTitle,metaDescription&populate[seo][populate][shareImage][fields]=url,alternativeText&populate[Hero][fields]=title&populate[Hero][populate][hero_video][fields]=url,alternativeText`;
 

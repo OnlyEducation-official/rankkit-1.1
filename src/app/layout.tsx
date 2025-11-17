@@ -72,9 +72,9 @@ export default function RootLayout({
         <AppRouterCacheProvider options={{ key: 'css', enableCssLayer: true }}>
           <MuiThemeProvider>
             <SnackbarProvider>
-              {header}
+              {/* {header} */}
               {children}
-              {footer}
+              {/* {footer} */}
             </SnackbarProvider>
           </MuiThemeProvider>
         </AppRouterCacheProvider>
