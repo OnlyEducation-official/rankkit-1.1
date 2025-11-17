@@ -12,11 +12,25 @@ import MarketingForm from '../_components/MarketingForm';
 
 function page() {
   return (
-    <Box>
+    <Box sx={{ position: 'relative' }}>
+      <Box
+        sx={{
+          position: 'absolute',
+          top: { xs: '40px', md: '60px', lg: '60px', xl: '60px' },
+          left: { xs: '20px', sm: '35px', md: '48px', lg: '88px', xl: '95px' },
+          // top: { xs: '25px', sm: '35px', md: '-25px', xl: '-70px' },
+          // left: { sm: '10px', md: '32px', lg: '64px' },
+          zIndex: 2,
+        }}
+      >
+        <Box sx={{ position: 'relative', width: '135px', aspectRatio: 4.2 / 1 }}>
+          <Image src={logo} fill alt="RankKit Logo" style={{ objectFit: 'contain' }} />
+        </Box>
+      </Box>
       <Box
         id="banner"
         sx={{
-          height: { md: '100dvh' },
+          minHeight: { md: '100dvh' },
           display: 'flex',
           alignItems: 'center',
           background:
@@ -29,23 +43,12 @@ function page() {
             sx={{
               display: 'flex',
               alignItems: 'center',
-              paddingInline: { md: 4, lg: 8 },
-              position: 'relative',
+              paddingInline: { md: 3, lg: 8 },
+              // position: 'relative',
             }}
             spacing={{ xs: 7, md: 0 }}
           >
             {/* Header img */}
-            <Box
-              sx={{
-                position: 'absolute',
-                top: { xs: '25px', sm: '35px', md: '-40px', xl: '-40px' },
-                left: { sm: '10px', md: '32px', lg: '64px' },
-              }}
-            >
-              <Box sx={{ position: 'relative', width: '135px', aspectRatio: 4.2 / 1 }}>
-                <Image src={logo} fill alt="RankKit Logo" style={{ objectFit: 'contain' }} />
-              </Box>
-            </Box>
             {/*  */}
             <Grid
               size={{ xs: 12, md: 6 }}
@@ -55,7 +58,7 @@ function page() {
                 paddingBlockEnd: { xs: 10, md: 0 },
               }}
             >
-              <Typography variant="h1" sx={{ typography: { xs: 'h4', md: 'h1' } }}>
+              <Typography variant="h1" sx={{ typography: { xs: 'h5', md: 'h3', lg: 'h1' } }}>
                 <Typography variant="inherit" sx={{ fontWeight: 500 }}>
                   Drive 3.5X Growth
                 </Typography>
@@ -65,7 +68,11 @@ function page() {
               </Typography>
               <Typography
                 variant="subtitle1"
-                sx={{ maxWidth: { md: 1, lg: 0.85, xl: 0.75 }, marginBlockStart: 5 }}
+                sx={{
+                  maxWidth: { md: 1, lg: 0.85, xl: 0.75 },
+                  marginBlockStart: 5,
+                  lineHeight: 1.5,
+                }}
               >
                 Built for Growth. Backed by 10+ Years of Expertise. 100+ brands have scaled faster
                 with our full-stack marketing solutions: spanning strategy, creative, media, social,
@@ -76,15 +83,16 @@ function page() {
             <Grid
               size={{ xs: 12, md: 6 }}
               sx={{
-                height: { xs: '100dvh', md: 1 },
+                minHeight: { xs: '100dvh', md: 1 },
                 display: { xs: 'flex', md: 'block' },
-                justifyContent: 'center',
-                alignItems: 'center',
+                justifyContent: { xs: 'center', md: 'end' },
+                // alignItems: 'center',
+                paddingBlockStart: { xs: 15, md: 0 },
               }}
             >
               <Grid container>
-                <Grid size={{ xs: 0, md: 2, lg: 3 }} />
-                <Grid size={{ xs: 12, md: 10, lg: 9 }}>
+                <Grid size={{ xs: 0, md: 1.5, lg: 3 }} />
+                <Grid size={{ xs: 12, md: 10.5, lg: 9 }}>
                   <MarketingForm />
                 </Grid>
               </Grid>

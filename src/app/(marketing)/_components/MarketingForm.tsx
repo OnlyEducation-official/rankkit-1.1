@@ -5,7 +5,7 @@ import SimpleAutocomplete from '@/components/SimpleAutocomplete';
 import SimpleTextFieldNew from '@/components/SimpleTextFieldNew';
 import contactFormSchema, { ContactFormScehmaType } from '@/types/ContactForm';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Button, Stack, Typography } from '@mui/material';
+import { Box, Button, Stack, Typography } from '@mui/material';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
@@ -28,11 +28,12 @@ export default function MarketingForm() {
         border: '3px solid white',
         boxShadow: '3px 3px 6px 1px rgba(0,0,0,0.35)',
         borderRadius: 10,
-        paddingInline: { xs: 2, md: 4.5 },
+        paddingInline: { xs: 2, md: 3, lg: 4.5 },
         paddingBlock: { xs: 3, md: 5 },
         background: 'rgba(255, 255, 255, 0.12)',
         backdropFilter: 'blur(50px)', // main blur effect
         WebkitBackdropFilter: 'blur(40px)', // Safari support
+        maxWidth: { xs: 350, sm: 400, md: 800 },
         // boxShadow: '0 4px 30px rgba(0,0,0,0.1)',
       }}
       gap={2}
@@ -46,7 +47,9 @@ export default function MarketingForm() {
       <SimpleTextFieldNew control={control} name="name" label="Your Name" size="small" />
       <PhoneInputField control={control} name="phone" />
       <SimpleTextFieldNew control={control} name="email" label="Email" size="small" />
-      <SimpleAutocomplete setValue={setValue} watch={watch} />
+      <Box sx={{ maxWidth: { xs: 350, md: 800 } }}>
+        <SimpleAutocomplete setValue={setValue} watch={watch} />
+      </Box>
       <SimpleTextFieldNew control={control} name="message" label="Message" multiline rows={3} />
       <Button
         sx={{
