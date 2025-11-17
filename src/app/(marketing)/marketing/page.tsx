@@ -5,7 +5,6 @@
 import { Box, Container, Grid, Typography } from '@mui/material';
 import React from 'react';
 import MarketingServices from '@/components/marketing/Services';
-import { Link } from 'react-scroll';
 import Image from 'next/image';
 import logo from '@/assets/images/logo2.png';
 import MarketingForm from '../_components/MarketingForm';
