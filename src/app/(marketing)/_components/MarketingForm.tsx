@@ -3,27 +3,60 @@
 import PhoneInputField from '@/components/GlobalPhoneField';
 import SimpleAutocomplete from '@/components/SimpleAutocomplete';
 import SimpleTextFieldNew from '@/components/SimpleTextFieldNew';
-import contactFormSchema, { ContactFormScehmaType } from '@/types/ContactForm';
+import useSnackbar from '@/components/SnackbarContext';
+import contactFormSchema, {
+  ContactFormScehmaType,
+  marketingFormScehmaType,
+  marketingFormSchema,
+} from '@/types/ContactForm';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Box, Button, Stack, Typography } from '@mui/material';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
 export default function MarketingForm() {
-  const { control, watch, setValue } = useForm<ContactFormScehmaType>({
-    resolver: zodResolver(contactFormSchema),
+  const { control, watch, setValue, handleSubmit, reset } = useForm<ContactFormScehmaType>({
+    resolver: zodResolver(marketingFormSchema),
     defaultValues: {
       name: '',
       phone: '',
-      orgname: '',
       email: '',
       services: [],
-      hearAboutUs: [],
       message: '',
     },
   });
+  const { openSnackbar } = useSnackbar();
+
+  const onSubmit = async (data: marketingFormScehmaType) => {
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
+
+      if (!res.ok) {
+        throw new Error('Something went wrong!');
+      }
+
+      openSnackbar({
+        snackMessage: 'Your message has been sent successfully!',
+        snackSeverity: 'success',
+      });
+      reset();
+    } catch (err) {
+      openSnackbar({
+        snackMessage: `Failed to send message. Please try again. ${err}`,
+        snackSeverity: 'error',
+      });
+    }
+  };
   return (
     <Stack
+      component="form"
+      onSubmit={handleSubmit(onSubmit)}
       sx={{
         border: '3px solid white',
         boxShadow: '6px 2px 14px 3px rgba(0, 0, 0, 0.27)',
@@ -52,6 +85,7 @@ export default function MarketingForm() {
       </Box>
       <SimpleTextFieldNew control={control} name="message" label="Message" multiline rows={3} />
       <Button
+        type="submit"
         sx={{
           width: 1,
           paddingBlock: 2,
