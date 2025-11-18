@@ -8,40 +8,40 @@ import { Link } from 'react-scroll';
 export default function MarketingServices() {
   const services = [
     {
-      name: 'Paid Advertising',
+      name: 'Website Development',
       content:
-        'Launch and scale high-impact ad campaigns across Google, Meta, and YouTube. We manage targeting, creative, bidding, and optimization to ensure your brand reaches the right audience at the right time.',
-      image: 'https://marketing.buzzzworth.com/image/service1.png',
-    },
-    {
-      name: 'PPC & Lead Generation',
-      content:
-        'Drive qualified leads instantly through performance-driven PPC campaigns. From keyword research to lead capture and budget optimization, we focus on measurable conversions and maximum ROI.',
+        'We build high-performance digital platforms that reflect your brand, engage your audience, and deliver measurable results. From custom-coded websites to seamless CMS and e-commerce solutions, every website we create is fast, functional, and future-ready.',
       image: 'https://marketing.buzzzworth.com/image/service2.svg',
     },
     {
-      name: 'Social Media & Creative',
+      name: 'Branding & Multimedia',
       content:
-        'Engage and connect with your audience on social media platforms with our result-driven SMM strategies.',
-      image: 'https://marketing.buzzzworth.com/image/service3.svg',
-    },
-    {
-      name: 'Media & Conversion Optimization',
-      content:
-        'Expand reach through display, native, and video media placements. Our team continually optimizes campaigns using data insights to increase conversions and reduce cost per result.',
+        'Your brand is more than a logo — it’s the story people remember. We craft visual identities that build trust and recognition, including logos, typography, packaging, and social media design. Every detail is purpose-driven to strengthen your brand across all touchpoints.',
       image: 'https://marketing.buzzzworth.com/image/service4.svg',
     },
     {
-      name: 'SEO & Organic Growth',
+      name: 'CreatorsNest (Exclusive)',
       content:
-        'Improve visibility and attract steady organic traffic with advanced SEO strategies. Our technical and on-page optimization enhances ranking, authority, and long-term brand performance.',
+        "Whether you're starting from scratch or scaling your personal brand, CreatorsNest equips you with everything you need — from strategy and scripting to shoots and monetization. We help you create meaningful content with clarity, confidence, and authenticity.",
+      image: 'https://marketing.buzzzworth.com/image/service6.svg',
+    },
+    {
+      name: 'Digital Marketing',
+      content:
+        'We combine creativity with data to deliver campaigns that convert. From Meta to Google, our performance-driven strategies are designed to engage, scale, and drive revenue. We don’t just run ads — we build consistent, results-focused growth engines.',
       image: 'https://marketing.buzzzworth.com/image/service5.svg',
     },
     {
-      name: 'Content Strategy',
+      name: 'Media Production',
       content:
-        'Unify your content, ads, and SEO under one strategy. We plan, create, and analyze campaigns end-to-end to deliver cohesive communication and measurable business growth.',
-      image: 'https://marketing.buzzzworth.com/image/service6.svg',
+        'Your visuals are your brand’s first impression. We produce cinematic, scroll-stopping content — from studio shoots and corporate films to reels, podcasts, and advertisements. Every frame is crafted to inspire emotion, creativity, and conversions.',
+      image: 'https://marketing.buzzzworth.com/image/service3.svg',
+    },
+    {
+      name: 'SEO Services',
+      content:
+        'Visibility begins with search. Our research-driven SEO strategies help you rank higher on Google, grow organic traffic, and convert leads without relying solely on ads. We optimize for performance, authority, and long-term sustainable growth.',
+      image: 'https://marketing.buzzzworth.com/image/service1.png',
     },
   ];
 
@@ -61,7 +61,7 @@ export default function MarketingServices() {
             fontSize: '45px',
           }}
         >
-          How Can We Help You ?
+          GET A FREE CONSULTATION
         </Typography>
       </Grid>
 

@@ -26,12 +26,12 @@ export default function MarketingForm() {
     <Stack
       sx={{
         border: '3px solid white',
-        boxShadow: '3px 3px 6px 1px rgba(0,0,0,0.35)',
-        borderRadius: 10,
+        boxShadow: '6px 2px 14px 3px rgba(0, 0, 0, 0.27)',
+        borderRadius: 8,
         paddingInline: { xs: 2, md: 3, lg: 4.5 },
         paddingBlock: { xs: 3, md: 5 },
         background: 'rgba(255, 255, 255, 0.12)',
-        backdropFilter: 'blur(50px)', // main blur effect
+        backdropFilter: 'blur(10px)', // main blur effect
         WebkitBackdropFilter: 'blur(40px)', // Safari support
         maxWidth: { xs: 350, sm: 400, md: 800 },
         // boxShadow: '0 4px 30px rgba(0,0,0,0.1)',

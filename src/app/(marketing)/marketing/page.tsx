@@ -59,10 +59,10 @@ function page() {
             >
               <Typography variant="h1" sx={{ typography: { xs: 'h5', md: 'h3', lg: 'h1' } }}>
                 <Typography variant="inherit" sx={{ fontWeight: 500 }}>
-                  Drive 3.5X Growth
+                  THE SOCIAL MEDIA SYSTEM
                 </Typography>
                 <Typography variant="inherit" sx={{ fontWeight: 500 }}>
-                  With 360 Marketing
+                  THAT HELPS BRANDS GROW 3X FASTER
                 </Typography>
               </Typography>
               <Typography
@@ -73,10 +73,10 @@ function page() {
                   lineHeight: 1.5,
                 }}
               >
-                Built for Growth. Backed by 10+ Years of Expertise. 100+ brands have scaled faster
-                with our full-stack marketing solutions: spanning strategy, creative, media, social,
-                SEO, content production, and more. We craft integrated campaigns that deliver
-                stronger ROI, higher engagement, and lasting brand value.
+                Today, your audience lives online. If your brand isn’t visible, engaging, and
+                strategically positioned, you’re losing customers every single day. At RankKit, we
+                combine strategy, creativity, content production, and performance marketing into a
+                single, powerful system designed to help your brand scale faster and smarter.
               </Typography>
             </Grid>
             <Grid
