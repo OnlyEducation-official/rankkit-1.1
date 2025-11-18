@@ -89,10 +89,11 @@ export async function POST(req: NextRequest) {
         <td style="padding:14px 16px;font-family:Arial,Helvetica,sans-serif;color:#0f172a;font-size:14px;">
           <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
             ${
-              orgname &&
-              `<tr>
+              orgname
+                ? `<tr>
               <td style="padding:6px 0;"><b>Organization:</b> <span style="color:#334155;">${orgname}</span></td>
             </tr>`
+                : null
             }
             <tr>
               <td style="padding:6px 0;"><b>Phone:</b> <span style="color:#334155;">${phone}</span></td>
