@@ -93,7 +93,7 @@ export async function POST(req: NextRequest) {
                 ? `<tr>
               <td style="padding:6px 0;"><b>Organization:</b> <span style="color:#334155;">${orgname}</span></td>
             </tr>`
-                : null
+                : ''
             }
             <tr>
               <td style="padding:6px 0;"><b>Phone:</b> <span style="color:#334155;">${phone}</span></td>
