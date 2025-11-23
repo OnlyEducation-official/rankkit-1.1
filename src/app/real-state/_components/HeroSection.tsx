@@ -35,18 +35,9 @@ export default function HeroSection() {
     controls.start('visible');
   }, [controls]);
 
-  const fadeUp = {
-    hidden: { opacity: 0, y: 60 },
-    visible: { opacity: 1, y: 0, transition: { duration: 1, ease: [0.22, 1, 0.36, 1] } },
-  };
-
-  const scaleIn = {
-    hidden: { opacity: 0, scale: 0.9 },
-    visible: { opacity: 1, scale: 1, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } },
-  };
-
   // Start NOT ready; show loader until video can play.
   const [isReady, setIsReady] = useState(false);
+  console.log('isReady: ', isReady);
   // Hydration gate (SSR safety): start false and flip true on client.
   const [hydrated, setHydrated] = useState(false);
 
@@ -72,6 +63,9 @@ export default function HeroSection() {
         // py: { xs: 8, md: 10 },
       }}
     >
+      {/* SHOW LOADER WHEN VIDEO IS NOT READY */}
+      {!isReady && <LoadingOverlay />}
+
       <Box sx={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0 }}>
         <video
           ref={videoRef}
