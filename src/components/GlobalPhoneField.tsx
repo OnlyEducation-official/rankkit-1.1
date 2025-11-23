@@ -48,7 +48,7 @@ function PhoneInputField<T extends FieldValues>({
           forceCallingCode
           focusOnSelectCountry
           variant="outlined"
-          size="medium"
+          size="small"
           autoComplete="tel"
           inputMode="tel"
           error={!!error}
@@ -60,29 +60,29 @@ function PhoneInputField<T extends FieldValues>({
             },
           }}
           // Overall look & feel (same style language as the previous answer)
-          sx={{
-            my: 1,
-            '& .MuiOutlinedInput-root': {
-              bgcolor: 'grey.50',
-              borderRadius: 2,
-              transition: 'box-shadow .2s ease, border-color .2s ease, background-color .2s ease',
-              '& fieldset': { borderColor: 'divider' },
-              '&:hover fieldset': { borderColor: 'text.secondary' },
-              '&.Mui-focused fieldset': { borderColor: 'primary.main' },
-              '&.Mui-focused': {
-                boxShadow: '0 0 0 3px rgba(43,92,255,0.15)', // subtle focus ring
-                bgcolor: 'background.paper',
-              },
-              // input height & padding for comfortable tapping
-              '& .MuiOutlinedInput-input': {
-                py: 1.5,
-              },
-            },
-            '& .MuiFormHelperText-root': {
-              mt: 0.75,
-            },
-            ...sx,
-          }}
+          // sx={{
+          //   my: 1,
+          //   '& .MuiOutlinedInput-root': {
+          //     bgcolor: 'grey.50',
+          //     borderRadius: 2,
+          //     transition: 'box-shadow .2s ease, border-color .2s ease, background-color .2s ease',
+          //     '& fieldset': { borderColor: 'divider' },
+          //     '&:hover fieldset': { borderColor: 'text.secondary' },
+          //     '&.Mui-focused fieldset': { borderColor: 'primary.main' },
+          //     '&.Mui-focused': {
+          //       boxShadow: '0 0 0 3px rgba(43,92,255,0.15)', // subtle focus ring
+          //       bgcolor: 'background.paper',
+          //     },
+          //     // input height & padding for comfortable tapping
+          //     '& .MuiOutlinedInput-input': {
+          //       py: 1.5,
+          //     },
+          //   },
+          //   '& .MuiFormHelperText-root': {
+          //     mt: 0.75,
+          //   },
+          //   ...sx,
+          // }}
           // Fine-tune the inner input element
           slotProps={{
             // native <input>

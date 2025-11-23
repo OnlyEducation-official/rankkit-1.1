@@ -82,17 +82,23 @@ export default function SimpleAutocomplete({
           ];
         }}
         renderInput={(params) => {
-          const mergedSx = {
-            '& .MuiInputLabel-root': {
-              fontWeight: 500,
-            },
-            '& .MuiOutlinedInput-root': {
-              bgcolor: 'grey.50',
-              borderRadius: 2,
-            },
-          };
+          // const mergedSx = {
+          //   '& .MuiInputLabel-root': {
+          //     fontWeight: 500,
+          //   },
+          //   '& .MuiOutlinedInput-root': {
+          //     bgcolor: 'grey.50',
+          //     borderRadius: 2,
+          //   },
+          // };
 
-          return <TextField {...params} label="Services" sx={mergedSx} />;
+          return (
+            <TextField
+              {...params}
+              label="Services"
+              // sx={mergedSx}
+            />
+          );
         }}
       />
 

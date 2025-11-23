@@ -22,16 +22,6 @@ function SimpleTextFieldNew<TFieldValues extends FieldValues>({
       name={name}
       control={control}
       render={({ field, fieldState }) => {
-        const mergedSx = {
-          '& .MuiInputLabel-root': {
-            fontWeight: 500,
-          },
-          '& .MuiOutlinedInput-root': {
-            bgcolor: 'grey.50',
-            borderRadius: 2,
-          },
-        };
-
         return (
           <TextField
             {...field}
@@ -41,7 +31,6 @@ function SimpleTextFieldNew<TFieldValues extends FieldValues>({
             size="medium"
             error={!!fieldState.error}
             helperText={fieldState.error?.message}
-            sx={mergedSx}
             {...textFieldProps}
           />
         );
