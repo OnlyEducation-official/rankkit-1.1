@@ -6,12 +6,14 @@ import CountingSection from './CountingSection';
 
 import BrandCta from './BrandCta';
 import ProvenProcess from './ProvenProcess';
+import CustomizedSteppers from './Stepper';
 
 export default function MarketingIndex() {
   return (
     <Box>
       <HeroSectionMarketing />
       {/* <BentoGrid /> */}
+      <CustomizedSteppers />
       <CountingSection />
       <CoreServices />
       <BrandCta />
