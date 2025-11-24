@@ -39,7 +39,7 @@ function PhoneInputField<T extends FieldValues>({
           value={field.value ?? ''}
           onChange={field.onChange}
           label={label}
-          placeholder={placeholder}
+          // placeholder={placeholder}
           fullWidth
           defaultCountry={defaultCountry}
           onlyCountries={onlyCountries}

@@ -95,7 +95,7 @@ export default function SimpleAutocomplete({
           return (
             <TextField
               {...params}
-              label="Services"
+              // label="Services"
               // sx={mergedSx}
             />
           );

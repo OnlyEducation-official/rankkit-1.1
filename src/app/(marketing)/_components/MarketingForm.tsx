@@ -14,6 +14,15 @@ import { Box, Button, Stack, Typography } from '@mui/material';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
+function ReusableComp({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <Stack gap={0.5}>
+      <Typography variant="body1">{title}</Typography>
+      {children}
+    </Stack>
+  );
+}
+
 export default function MarketingForm() {
   const { control, watch, setValue, handleSubmit, reset } = useForm<ContactFormScehmaType>({
     resolver: zodResolver(marketingFormSchema),
@@ -69,7 +78,7 @@ export default function MarketingForm() {
         maxWidth: { xs: 350, sm: 400, md: 440 },
         // boxShadow: '0 4px 30px rgba(0,0,0,0.1)',
       }}
-      gap={2}
+      gap={2.5}
     >
       <Typography variant="subtitle1" fontWeight={500}>
         Get Free
@@ -77,13 +86,27 @@ export default function MarketingForm() {
           {` Consultation`}
         </Typography>
       </Typography>
-      <SimpleTextFieldNew control={control} name="name" label="Your Name" size="small" />
-      <PhoneInputField control={control} name="phone" />
-      <SimpleTextFieldNew control={control} name="email" label="Email" size="small" />
-      <Box sx={{ maxWidth: { xs: 350, md: 800 } }}>
-        <SimpleAutocomplete setValue={setValue} watch={watch} />
-      </Box>
-      <SimpleTextFieldNew control={control} name="message" label="Message" multiline rows={3} />
+
+      <ReusableComp title="Your Name">
+        <SimpleTextFieldNew control={control} name="name"  size="small" />
+      </ReusableComp>
+      <ReusableComp title="Phone">
+        <PhoneInputField control={control} name="phone" />
+      </ReusableComp>
+      <ReusableComp title="Email">
+        <SimpleTextFieldNew control={control} name="email"  size="small" />
+      </ReusableComp>
+      <ReusableComp title="Services">
+        <Box sx={{ maxWidth: { xs: 350, md: 800 } }}>
+          <SimpleAutocomplete setValue={setValue} watch={watch} />
+        </Box>
+      </ReusableComp>
+
+      <ReusableComp title="Message">
+        <SimpleTextFieldNew control={control} name="message"   multiline rows={3} />
+      </ReusableComp>
+
+      {/* <SimpleTextFieldNew control={control} name="message" label="Message" multiline rows={3} /> */}
       <Button
         type="submit"
         sx={{
