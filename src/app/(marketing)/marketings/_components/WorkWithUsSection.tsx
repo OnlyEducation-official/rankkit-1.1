@@ -2,7 +2,7 @@
 
 import { Grid } from '@mui/material';
 import React from 'react';
-import imgOne from '@/assets/images/gallery/gallery1.png';
+import imgOne from '@/assets/Logo/commix.png';
 import MovingLogo from './MovingLogo';
 import LogoSlider from './LogoSlider';
 
