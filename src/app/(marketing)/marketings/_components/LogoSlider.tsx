@@ -1,11 +1,12 @@
 'use client';
 
 import { Box } from '@mui/material';
+import { log } from 'console';
 import Image from 'next/image';
-import { useId } from 'react';
-
+import { v4 as uuidv4 } from 'uuid';
+// import { }
 interface LogoSliderProps {
-  logos: { src: string; alt: string }[];
+  logos: { src: string; alt: string; ratio: string }[];
   speed?: number; // animation duration
   height?: number; // logo height
   gap?: number; // spacing between logos
@@ -13,7 +14,6 @@ interface LogoSliderProps {
 
 export default function LogoSlider({ logos, speed = 25, height = 80, gap = 48 }: LogoSliderProps) {
   const animationDuration = `${speed}s`;
-  const id = useId();
   return (
     <Box
       sx={{
@@ -75,7 +75,7 @@ export default function LogoSlider({ logos, speed = 25, height = 80, gap = 48 }:
       >
         {[...logos, ...logos, ...logos, ...logos].map((logo) => (
           <Box
-            key={id}
+            key={uuidv4()}
             sx={{
               mx: `${gap / 16}rem`,
               height,
@@ -88,9 +88,11 @@ export default function LogoSlider({ logos, speed = 25, height = 80, gap = 48 }:
             <Box
               sx={{
                 position: 'relative',
-                // width: '100%',
-                height: '100%',
-                aspectRatio: '18/17',
+                width: 80,
+                // height: '100%',
+
+                // aspectRatio: '18/17',
+                aspectRatio: logo.ratio,
                 // aspectRatio: '12/10',
                 objectFit: 'contain',
               }}

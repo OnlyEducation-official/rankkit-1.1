@@ -18,16 +18,16 @@ import LogoSlider from './LogoSlider';
 
 export default function WorkWithUsSection() {
   const logos = [
-    { src: commix.src, alt: 'commix' },
-    { src: eduniaaLogo.src, alt: 'eduniaaLogo' },
-    { src: gutwrench.src, alt: 'gutwrench' },
-    { src: kalp.src, alt: 'kalp' },
-    { src: madhuban.src, alt: 'madhuban' },
-    { src: onlyEdu.src, alt: 'onlyEdu' },
-    { src: theDesiOrganics.src, alt: 'theDesiOrganics' },
-    { src: tkt.src, alt: 'tkt' },
-    { src: vijayIndiaPro.src, alt: 'vijayIndiaPro' },
-    { src: zeroDegree.src, alt: 'zeroDegree' },
+    { src: commix.src, alt: 'commix', ratio: '4/5' },
+    { src: eduniaaLogo.src, alt: 'eduniaaLogo', ratio: '4/5' },
+    { src: gutwrench.src, alt: 'gutwrench', ratio: '3/4' },
+    { src: kalp.src, alt: 'kalp', ratio: '4/5' },
+    { src: madhuban.src, alt: 'madhuban', ratio: '4/5' },
+    { src: onlyEdu.src, alt: 'onlyEdu', ratio: '4/5' },
+    { src: theDesiOrganics.src, alt: 'theDesiOrganics', ratio: '4/5' },
+    { src: tkt.src, alt: 'tkt', ratio: '4/5' },
+    { src: vijayIndiaPro.src, alt: 'vijayIndiaPro', ratio: '4/5' },
+    { src: zeroDegree.src, alt: 'zeroDegree', ratio: '4/5' },
   ];
   return (
     <Container>
