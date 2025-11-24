@@ -33,7 +33,7 @@ export default function WorkWithUsSection() {
     <Container>
       <Grid
         container
-        sx={{ paddingInline: { xs: '15px', md: '24px', lg: '36px' } }}
+        sx={{ paddingInline: { xs: '10px', md: '24px', lg: '36px' } }}
         //   sx={{ paddingInline: { xs: '15px' } }}
         spacing={2}
         justifyContent="center"

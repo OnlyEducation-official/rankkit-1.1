@@ -146,7 +146,7 @@ export default function CustomizedSteppers() {
   const connector = isXs ? <ColorlibConnectorVertical /> : <ColorlibConnectorHorizontal />;
 
   return (
-    <Container maxWidth="lg" sx={{ paddingBlock: 10 }}>
+    <Container maxWidth="lg" sx={{ paddingBlock: { xs: 6, lg: 8 } }}>
       <Box sx={{ marginBlockEnd: { xs: 4, md: 12 } }}>
         <Typography variant="h3" sx={{ fontWeight: 600, marginBlockEnd: 1 }}>
           Smart Advertising Starts Here
@@ -158,7 +158,7 @@ export default function CustomizedSteppers() {
       </Box>
       <Stack sx={{ alignItems: { xs: 'center', md: 'center' } }}>
         <Stack
-          spacing={4}
+          spacing={{ xs: 2, md: 8 }}
           sx={{ justifyContent: 'center', maxWidth: { xs: 320, md: '100%' }, width: '100%' }}
         >
           <Stepper

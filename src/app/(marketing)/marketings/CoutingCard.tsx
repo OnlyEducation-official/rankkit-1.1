@@ -20,7 +20,7 @@ export default function CoutingCard({ endCount, title, sign }: CoutingCardProps)
   }, [endCount]); //
 
   useEffect(() => {
-    const controls = animate(motionValue, 150, {
+    const controls = animate(motionValue, endCount, {
       duration: 2.8,
       ease: [0.16, 1, 0.3, 1], // smoother cubic-bezier ease
     });

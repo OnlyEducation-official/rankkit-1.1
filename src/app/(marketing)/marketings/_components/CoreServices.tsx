@@ -32,7 +32,7 @@ const services = [
 export default function CoreServices() {
   return (
     <Container maxWidth="lg">
-      <Grid container sx={{ justifyContent: 'center', paddingBlock: { xs: 8, md: 18 } }}>
+      <Grid container sx={{ justifyContent: 'center', paddingBlock: { xs: 3, md: 8 } }}>
         <Box sx={{ marginBlockEnd: { xs: 4, md: 4 } }}>
           <Typography
             variant="h3"
