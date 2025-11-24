@@ -88,13 +88,13 @@ export default function MarketingForm() {
       </Typography>
 
       <ReusableComp title="Your Name">
-        <SimpleTextFieldNew control={control} name="name"  size="small" />
+        <SimpleTextFieldNew control={control} name="name" size="small" />
       </ReusableComp>
       <ReusableComp title="Phone">
         <PhoneInputField control={control} name="phone" />
       </ReusableComp>
       <ReusableComp title="Email">
-        <SimpleTextFieldNew control={control} name="email"  size="small" />
+        <SimpleTextFieldNew control={control} name="email" size="small" />
       </ReusableComp>
       <ReusableComp title="Services">
         <Box sx={{ maxWidth: { xs: 350, md: 800 } }}>
@@ -103,7 +103,7 @@ export default function MarketingForm() {
       </ReusableComp>
 
       <ReusableComp title="Message">
-        <SimpleTextFieldNew control={control} name="message"   multiline rows={3} />
+        <SimpleTextFieldNew control={control} name="message" multiline rows={3} />
       </ReusableComp>
 
       {/* <SimpleTextFieldNew control={control} name="message" label="Message" multiline rows={3} /> */}

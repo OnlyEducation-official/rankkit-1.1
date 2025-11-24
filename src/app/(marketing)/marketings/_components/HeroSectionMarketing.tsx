@@ -2,6 +2,7 @@ import { Box, Container, Grid, Typography } from '@mui/material';
 import React from 'react';
 import Image from 'next/image';
 import logo from '@/assets/images/logo2.png';
+import bannerImg from '@/assets/images/bannerContactUs.jpg';
 import MarketingForm from '../../_components/MarketingForm';
 
 export default function HeroSectionMarketing() {
@@ -17,6 +18,17 @@ export default function HeroSectionMarketing() {
         // paddingBlockStart: { xs: '105px', md: 0 },
       }}
     >
+      <Box
+        sx={{
+          height: '100%',
+          width: '100%',
+          position: 'absolute',
+          backgroundImage: `url(${bannerImg.src})`,
+          backgroundSize: 'cover',
+          filter: 'blur(7px)',
+          opacity: 1,
+        }}
+      />
       <Box
         sx={{
           position: 'absolute',
