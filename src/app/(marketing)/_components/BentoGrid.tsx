@@ -1,7 +1,6 @@
 import { Box, Container, Typography } from '@mui/material';
 import Image from 'next/image';
 import React from 'react';
-import metaAds1 from '@/assets/images/marketing/meta_ads_1.jpg';
 import metaAds3 from '@/assets/images/marketing/meta_ads_3.png';
 import metaAds4 from '@/assets/images/marketing/meta_ads_4.png';
 import metaAds5 from '@/assets/images/marketing/meta_ads_5.png';

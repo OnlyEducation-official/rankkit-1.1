@@ -2,16 +2,16 @@
 
 import React, { useEffect, useState } from 'react';
 import { useMotionValue, animate } from 'framer-motion';
-import { Grid, Box, Typography } from '@mui/material';
-import Image, { StaticImageData } from 'next/image';
+import { Box, Typography } from '@mui/material';
+// import { StaticImageData } from 'next/image';
 // Path to the trophy image (provided by you)
 export interface CoutingCardProps {
   title: string;
   endCount: number;
-  image: StaticImageData;
+  // image: StaticImageData;
   sign: string;
 }
-export default function CoutingCard({ endCount, image, title, sign }: CoutingCardProps) {
+export default function CoutingCard({ endCount, title, sign }: CoutingCardProps) {
   const motionValue = useMotionValue(0);
   const [count, setCount] = useState(0);
 

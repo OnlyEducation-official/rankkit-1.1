@@ -40,3 +40,46 @@ a {
     color-scheme: dark;
   }
 }
+
+/* ---------- Swiper Navigation Buttons (Clean, Consistent) ---------- */
+.swiper-button-next,
+.swiper-button-prev {
+  width: 42px !important;
+  height: 42px !important;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.12);
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  color: #1e40af; /* Blue tone matching your design */
+  transition: 0.2s ease;
+  top: 55% !important;
+}
+
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+  background: #1e40af;
+  color: #ffffff;
+}
+
+/* Proper arrow icon size */
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 16px !important;
+  font-weight: 700;
+}
+
+/* Hide on very small screens */
+@media (max-width: 480px) {
+  .swiper-button-next,
+  .swiper-button-prev {
+    width: 34px !important;
+    height: 34px !important;
+  }
+}
+
+.service-swiper .swiper-button-next,
+.service-swiper .swiper-button-prev {
+  top: 125px !important; /* adjust to match your card height */
+}

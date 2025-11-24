@@ -28,7 +28,6 @@ function PhoneInputField<T extends FieldValues>({
   defaultCountry = 'IN',
   onlyCountries,
   preferredCountries,
-  sx,
 }: PhoneInputFieldProps<T>) {
   return (
     <Controller
