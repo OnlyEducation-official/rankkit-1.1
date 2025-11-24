@@ -4,7 +4,7 @@ import CoreServices from './CoreServices';
 import HeroSectionMarketing from './HeroSectionMarketing';
 import CountingSection from './CountingSection';
 import BrandCta from './BrandCta';
-import ProvenProcess from './ProvenProcess';
+// import ProvenProcess from './ProvenProcess';
 import CustomizedSteppers from './Stepper';
 import WorkWithUsSection from './WorkWithUsSection';
 
@@ -13,12 +13,12 @@ export default function MarketingIndex() {
     <Box>
       <HeroSectionMarketing />
       {/* <BentoGrid /> */}
-      <CustomizedSteppers />
       <CountingSection />
       <CoreServices />
+      <CustomizedSteppers />
       <WorkWithUsSection />
       <BrandCta />
-      <ProvenProcess />
+      {/* <ProvenProcess /> */}
     </Box>
   );
 }
