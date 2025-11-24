@@ -10,7 +10,7 @@ export default function BrandCta() {
       <Box
         sx={{
           py: { xs: 4, md: 8 },
-          px: { xs: 2, md: 4 },
+          // px: { xs: 2, md: 4 },
           display: 'flex',
           justifyContent: 'center',
           width: '100%',

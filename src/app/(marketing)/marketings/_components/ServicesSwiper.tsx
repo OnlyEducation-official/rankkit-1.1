@@ -32,29 +32,29 @@ interface ServicesSwiperProps {
 const swiperConfig: SwiperOptions = {
   spaceBetween: 24,
   slidesPerView: 1,
-  pagination: { clickable: true },
-  navigation: {
-    enabled: true,
-  },
+  // pagination: { clickable: true },
+  // navigation: {
+  //   enabled: true,
+  // },
   autoplay: {
-    delay: 5000,
+    delay: 3000,
     disableOnInteraction: false,
   },
   loop: true,
-  breakpoints: {
-    0: {
-      navigation: false, // hide on mobile
-    },
-    768: {
-      navigation: true, // show on desktop
-    },
-  },
+  // breakpoints: {
+  //   0: {
+  //     navigation: false, // hide on mobile
+  //   },
+  //   768: {
+  //     navigation: true, // show on desktop
+  //   },
+  // },
 };
 
 function ServicesSwiper({ services }: ServicesSwiperProps) {
   return (
     <Swiper
-      modules={[Navigation, Pagination, Autoplay]}
+      modules={[Navigation, Autoplay]}
       {...swiperConfig}
       style={{
         boxShadow: '0 18px 45px rgba(15, 23, 42, 0.12)',
