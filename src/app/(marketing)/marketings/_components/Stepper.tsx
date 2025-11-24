@@ -131,7 +131,7 @@ const steps = [
 
 export default function CustomizedSteppers() {
   const theme = useTheme();
-  const isXs = useMediaQuery(theme.breakpoints.down('mdp-')); // xs: vertical, sm+ : horizontal
+  const isXs = useMediaQuery(theme.breakpoints.down('md')); // xs: vertical, sm+ : horizontal
 
   const orientation = isXs ? 'vertical' : 'horizontal';
   const connector = isXs ? <ColorlibConnectorVertical /> : <ColorlibConnectorHorizontal />;

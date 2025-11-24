@@ -6,18 +6,35 @@ import MarketingForm from '../../_components/MarketingForm';
 
 export default function HeroSectionMarketing() {
   return (
-    <Box sx={{ minHeight: { md: '100dvh' } }}>
+    <Box
+      sx={{
+        minHeight: { md: '100dvh' },
+        display: { xs: 'block', md: 'flex' },
+        flexDirection: 'row',
+        justifyContent: 'center',
+        alignItems: 'center',
+        position: 'relative',
+        // paddingBlockStart: { xs: '105px', md: 0 },
+      }}
+    >
+      <Box
+        sx={{
+          position: 'absolute',
+          top: { xs: '10px', md: '60px' },
+          left: { xs: '20px', md: '48px' },
+        }}
+      >
+        <Box
+          sx={{ position: 'relative', width: { xs: '115px', md: '135px' }, aspectRatio: 4.2 / 1 }}
+        >
+          <Image src={logo} alt="logo" fill />
+        </Box>
+      </Box>
       {/* Logo */}
       {/*  */}
       <Container maxWidth="lg" sx={{ position: 'relative' }}>
-        <Box sx={{ position: 'absolute', top: { xs: '40px', md: '60px' } }}>
-          <Box
-            sx={{ position: 'relative', width: { xs: '115px', md: '135px' }, aspectRatio: 4.2 / 1 }}
-          >
-            <Image src={logo} alt="logo" fill />
-          </Box>
-        </Box>
-        <Grid container spacing={3} sx={{ paddingBlockStart: '105px' }}>
+        {/* sx={{ paddingBlockStart: '105px' }} */}
+        <Grid container spacing={3} sx={{ paddingBlockStart: '50px' }}>
           <Grid
             size={{ xs: 12, md: 6 }}
             sx={{
@@ -32,7 +49,7 @@ export default function HeroSectionMarketing() {
               <Typography
                 variant="h3"
                 sx={{
-                  typography: { xs: 'h6', md: 'h5', lg: 'h3' },
+                  typography: { xs: 'h6', md: 'h5', lg: 'h1' },
                   textAlign: { xs: 'center', md: 'start' },
                   color: 'text.primary',
                   lineHeight: { xs: 1.3, sm: 1.6 },
@@ -62,7 +79,10 @@ export default function HeroSectionMarketing() {
           </Grid>
           <Grid
             size={{ xs: 12, md: 6 }}
-            sx={{ display: 'flex', justifyContent: { xs: 'center', md: 'end' } }}
+            sx={{
+              display: 'flex',
+              justifyContent: { xs: 'center', md: 'end' },
+            }}
           >
             <MarketingForm />
           </Grid>

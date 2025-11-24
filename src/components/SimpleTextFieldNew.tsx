@@ -8,7 +8,7 @@ import { TextField, TextFieldProps } from '@mui/material';
 type SimpleTextFieldProps<TFieldValues extends FieldValues> = {
   name: FieldPath<TFieldValues>;
   control: Control<TFieldValues>;
-  label: string;
+  label?: string;
 } & TextFieldProps;
 
 function SimpleTextFieldNew<TFieldValues extends FieldValues>({
