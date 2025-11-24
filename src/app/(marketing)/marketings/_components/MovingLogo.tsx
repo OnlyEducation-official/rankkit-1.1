@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useId } from 'react';
 import Image from 'next/image';
 import { Box } from '@mui/material';
 
@@ -28,6 +28,7 @@ export default function MovingLogo({
   speed = 18,
   reverse = false,
 }: MovingLogoProps) {
+  const id = useId();
   // We'll create 2 identical tracks side-by-side and animate translateX to create a continuous marquee.
   // CSS approach keeps it smooth and GPU-accelerated.
 
@@ -62,7 +63,7 @@ export default function MovingLogo({
 
   // We'll render 8 logos per track by default — adjust by repeating more or less as desired.
   const logos = new Array(8).fill(0).map((_, i) => (
-    <Box key={i} sx={logoBoxStyle}>
+    <Box key={id} sx={logoBoxStyle}>
       <Image
         src={src}
         alt={alt}
@@ -75,6 +76,7 @@ export default function MovingLogo({
 
   // A small inline style block for the keyframes and animation.
   // We move the track by -50% so the second (duplicated) track starts exactly when the first finishes.
+  /* eslint-disable react/no-unknown-property */
   const styleTag = (
     <style jsx>{`
       .moving-track {
