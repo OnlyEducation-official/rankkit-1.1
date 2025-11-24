@@ -23,44 +23,73 @@ export default function BentoGrid() {
         <Box
           sx={{
             display: 'grid',
-            gridTemplateColumns: '2fr 1fr 1fr',
-            gridTemplateRows: 'repeat(3, 200px)',
+            gridTemplateColumns: {
+              xs: '1fr', // 1 per row → 4 rows
+              sm: '1fr 1fr', // 2 per row → 2 rows
+              md: '2fr 1fr 1fr', // your desktop layout
+            },
+            gridTemplateRows: {
+              xs: 'repeat(4, 200px)', // 4 rows
+              sm: 'repeat(2, 200px)', // 2 rows
+              md: 'repeat(3, 200px)', // your original
+            },
             gap: 2,
             paddingBlock: 4,
-            // bgcolor: 'grey.100',
           }}
         >
-          <Box sx={{ gridRowStart: 1, gridRowEnd: 4, position: 'relative' }}>
+          {/* Big left image */}
+          <Box
+            sx={{
+              gridRow: { xs: 'auto', sm: 'auto', md: '1 / 4' },
+              gridColumn: { xs: 'auto', sm: 'auto', md: '1 / 2' },
+              position: 'relative',
+            }}
+          >
             <Image
               src={metaAds3}
               alt="meta img"
               fill
-              style={{ objectFit: 'fill', borderRadius: '10px' }}
+              style={{ objectFit: 'cover', borderRadius: '10px' }}
             />
           </Box>
-          <Box sx={{ position: 'relative' }}>
+
+          {/* Top-right 1 */}
+          <Box
+            sx={{
+              gridRow: { xs: 'auto', sm: 'auto', md: '1 / 2' },
+              gridColumn: { xs: 'auto', sm: 'auto', md: '2 / 3' },
+              position: 'relative',
+            }}
+          >
             <Image
               src={metaAds5}
               alt="meta img"
               fill
-              style={{ objectFit: 'fill', borderRadius: '10px' }}
+              style={{ objectFit: 'cover', borderRadius: '10px' }}
             />
           </Box>
-          <Box sx={{ position: 'relative' }}>
+
+          {/* Top-right 2 */}
+          <Box
+            sx={{
+              gridRow: { xs: 'auto', sm: 'auto', md: '1 / 2' },
+              gridColumn: { xs: 'auto', sm: 'auto', md: '3 / 4' },
+              position: 'relative',
+            }}
+          >
             <Image
               src={metaAds4}
               alt="meta img"
               fill
-              style={{ objectFit: 'fill', borderRadius: '10px' }}
+              style={{ objectFit: 'cover', borderRadius: '10px' }}
             />
           </Box>
+
+          {/* Bottom-right big */}
           <Box
             sx={{
-              // bgcolor: 'red',
-              gridRowStart: 2,
-              gridRowEnd: 4,
-              gridColumnStart: 2,
-              gridColumnEnd: 4,
+              gridRow: { xs: 'auto', sm: 'auto', md: '2 / 4' },
+              gridColumn: { xs: 'auto', sm: 'auto', md: '2 / 4' },
               position: 'relative',
             }}
           >
@@ -68,7 +97,7 @@ export default function BentoGrid() {
               src={metaAds6}
               alt="meta img"
               fill
-              style={{ aspectRatio: 1 / 1, borderRadius: '10px' }}
+              style={{ objectFit: 'cover', borderRadius: '10px' }}
             />
           </Box>
         </Box>
