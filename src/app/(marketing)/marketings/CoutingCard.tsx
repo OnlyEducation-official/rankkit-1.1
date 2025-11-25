@@ -33,7 +33,7 @@ export default function CoutingCard({ endCount, title, sign }: CoutingCardProps)
       controls.stop();
       unsubscribe();
     };
-  }, [motionValue]);
+  }, [motionValue, endCount]);
 
   return (
     // <Box

@@ -78,7 +78,7 @@ export default function MarketingForm() {
         maxWidth: { xs: 350, sm: 400, md: 440 },
         // boxShadow: '0 4px 30px rgba(0,0,0,0.1)',
       }}
-      gap={2.5}
+      gap={{ xs: 0.5, sm: 2 }}
     >
       <Typography variant="subtitle1" fontWeight={500}>
         Get Free

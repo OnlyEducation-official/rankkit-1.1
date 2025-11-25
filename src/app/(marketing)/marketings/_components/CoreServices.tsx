@@ -1,38 +1,49 @@
 import { Box, Container, Grid, Typography } from '@mui/material';
 import c from '@/assets/images/c.jpg';
+import webDevCover from '@/assets/images/services-logo/web-dev-cover.png';
+import brandCover1 from '@/assets/images/services-logo/brand-cover-1.png';
+import brandCover2 from '@/assets/images/services-logo/brand-cover-2.png';
+import cnestCover from '@/assets/images/services-logo/creator-nest-cover.png';
+import seoCover1 from '@/assets/images/services-logo/seo-cover-1.png';
+import seoCover2 from '@/assets/images/services-logo/seo-cover-2.png';
+import socialMediaCover1 from '@/assets/images/services-logo/socialMediaCover1.png';
+import brandingService from '@/assets/images/services-logo/branding-services.png';
+import mediaProductionCover from '@/assets/images/services-logo/media-production-service.png';
+import SocialMediaService from '@/assets/images/services-logo/digital-marketing-service.png';
+import digitalMarketingService from '@/assets/images/services-logo/seo-service.png';
 import ServicesSwiper from './ServicesSwiper';
 
 const services = [
   {
-    title: 'Digital Marketing',
+    title: 'Media Production',
     description:
-      'Crafting memorable brand experiences that resonate with your audience and stand out in the market.',
-    image: c,
+      'Whether it’s professional product photography, immersive 360° views, or full-scale event coverage, our production team delivers with cinematic quality. Studio shoots, podcasts, and webinars are handled end-to-end.',
+    image: mediaProductionCover.src,
   },
   {
     title: 'Digital Marketing',
     description:
-      'Building high-performance, visually stunning websites that convert visitors into customers.',
-    image: c,
+      'Visibility starts with search. We help your brand rank higher on Google, drive organic traffic, and convert leads Without relying solely on ads.',
+    image: digitalMarketingService.src,
   },
   {
-    title: 'Digital Marketing',
+    title: 'Social Media Management',
     description:
-      'Driving targeted traffic and maximizing your ROI through strategic, data-driven marketing campaigns.',
-    image: c,
+      'From content calendars to creative design, ad management, and community building, we ensure your brand voice connects, engages, and grows across every platform.',
+    image: SocialMediaService.src,
   },
   {
-    title: 'Digital Marketing',
+    title: 'Branding & Multimedia',
     description:
-      'Driving targeted traffic and maximizing your ROI through strategic, data-driven marketing campaigns.',
-    image: c,
+      'From logos and style guides to marketing collateral and motion graphics, our designs ensure consistency and recognition. Every visual we craft tells your brand’s story.',
+    image: brandingService.src,
   },
 ];
 
 export default function CoreServices() {
   return (
-    <Container maxWidth="lg">
-      <Grid container sx={{ justifyContent: 'center', paddingBlock: { xs: 3, md: 8 } }}>
+    <Container maxWidth="xl">
+      <Grid container sx={{ justifyContent: 'center', paddingBlock: { xs: 4.5, md: 8 } }}>
         <Box sx={{ marginBlockEnd: { xs: 4, md: 4 } }}>
           <Typography
             variant="h3"
@@ -40,6 +51,7 @@ export default function CoreServices() {
               fontWeight: '600 !important',
               marginBlockEnd: 1,
               typography: { xs: 'h5', md: 'h3' },
+              textAlign: 'center',
             }}
           >
             Your Growth, Delivered End-to-End
@@ -47,13 +59,27 @@ export default function CoreServices() {
           <Typography
             variant="subtitle2"
             sx={{
-              width: { xs: 1, sm: 0.6 },
               typography: { xs: 'body1', md: 'subtitle2' },
               color: 'text.secondary',
+              fontWeight: 500,
+              textAlign: 'center',
             }}
           >
-            We combine creative storytelling with data-driven execution to offer complete
-            support—ads, content, strategy, design, SEO, and media production.
+            From ads and content to {/* &nbsp; */}
+            <Box component="span" sx={{ fontWeight: 600, color: 'text.primary' }}>
+              SEO
+            </Box>
+            ,{' '}
+            <Box component="span" sx={{ fontWeight: 600, color: 'text.primary' }}>
+              design
+            </Box>
+            , and{' '}
+            <Box component="span" sx={{ fontWeight: 600, color: 'text.primary' }}>
+              media production
+            </Box>
+            <Box component="span" sx={{ fontWeight: 600, color: 'text.primary' }}>
+              we handle everything.
+            </Box>
           </Typography>
         </Box>
         <ServicesSwiper services={services} />

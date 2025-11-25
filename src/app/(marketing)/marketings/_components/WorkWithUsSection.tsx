@@ -1,6 +1,6 @@
 'use client';
 
-import { Container, Grid } from '@mui/material';
+import { Box, Container, Grid, Typography } from '@mui/material';
 import React from 'react';
 import imgOne from '@/assets/images/gallery/gallery1.png';
 import commix from '@/assets/workusLogos/commix.png';
@@ -27,10 +27,27 @@ export default function WorkWithUsSection() {
     { src: theDesiOrganics.src, alt: 'theDesiOrganics' },
     { src: tkt.src, alt: 'tkt' },
     { src: vijayIndiaPro.src, alt: 'vijayIndiaPro' },
-    { src: zeroDegree.src, alt: 'zeroDegree' },
+    // { src: zeroDegree.src, alt: 'zeroDegree' },
   ];
   return (
-    <Container>
+    <Container maxWidth="xl">
+      <Box sx={{ textAlign: { xs: 'center', md: 'center' }, mb: 4 }}>
+        {/* Title */}
+        <Typography
+          variant="h3"
+          sx={{
+            typography: { xs: 'h5', md: 'h4', lg: 'h3' },
+            fontWeight: 700,
+            color: 'text.primary',
+            mb: 1.5,
+          }}
+        >
+          Brands That Trust{' '}
+          <Box component="span" sx={{ color: 'primary.main', fontWeight: 600 }}>
+            Rankkit Media
+          </Box>
+        </Typography>
+      </Box>
       <Grid
         container
         sx={{ paddingInline: { xs: '10px', md: '24px', lg: '36px' } }}

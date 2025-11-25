@@ -7,6 +7,9 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import type { SwiperOptions } from 'swiper/types';
 import type { StaticImageData } from 'next/image';
 // uuid
+import { Link } from 'react-scroll';
+
+import { ArrowRight } from '@mui/icons-material';
 import { v4 as uuidv4 } from 'uuid';
 
 // Swiper styles
@@ -16,7 +19,8 @@ import 'swiper/css/pagination';
 
 // Swiper modules
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-import { Grid, Box, Typography } from '@mui/material';
+import { Grid, Box, Typography, Button } from '@mui/material';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 type Service = {
@@ -50,7 +54,7 @@ const swiperConfig: SwiperOptions = {
   //   },
   // },
 };
-
+const MotionBox = motion(Box);
 function ServicesSwiper({ services }: ServicesSwiperProps) {
   return (
     <Swiper
@@ -58,7 +62,7 @@ function ServicesSwiper({ services }: ServicesSwiperProps) {
       {...swiperConfig}
       style={{
         boxShadow: '0 18px 45px rgba(15, 23, 42, 0.12)',
-        borderRadius: 10,
+        borderRadius: 25,
       }}
     >
       {services.map((s) => (
@@ -79,6 +83,7 @@ function ServicesSwiper({ services }: ServicesSwiperProps) {
                 size={{ xs: 12, md: 6 }}
                 sx={{
                   order: { xs: 0, md: 1 },
+                  padding: 2.5,
                 }}
               >
                 <Box
@@ -96,7 +101,8 @@ function ServicesSwiper({ services }: ServicesSwiperProps) {
                     alt={s.title}
                     fill
                     style={{
-                      objectFit: 'cover',
+                      objectFit: 'contain',
+                      padding: 2,
                     }}
                   />
                 </Box>
@@ -155,11 +161,53 @@ function ServicesSwiper({ services }: ServicesSwiperProps) {
                     fontSize: { xs: '0.95rem', md: '1rem' },
                     color: 'text.secondary',
                     lineHeight: 1.7,
-                    maxWidth: 420,
+                    // maxWidth: 420,
                   }}
                 >
                   {s.description}
                 </Typography>
+                <MotionBox
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.95 }}
+                  sx={{ display: { xs: 'none', md: 'block' } }}
+                >
+                  <Link
+                    to="servicesSection"
+                    smooth
+                    duration={500}
+                    offset={-10} // adjust if you have fixed navbar
+                  >
+                    <Button
+                      // LinkComponent={Link}
+                      // href="/contact-us"
+                      // onClick={() => handleConnectClick('consultation')}
+                      variant="contained"
+                      color="primary"
+                      size="large"
+                      endIcon={<ArrowRight />}
+                      sx={{
+                        marginBlockStart: 3,
+                        bgcolor: '#0c0c71',
+                        '&:hover': { bgcolor: '#0a0a5f' },
+                        px: 4,
+                        py: 2,
+                        borderRadius: '12px',
+                        '& .MuiButton-endIcon': {
+                          transition: 'transform 0.3s',
+                        },
+                        '&:hover .MuiButton-endIcon': {
+                          transform: 'translateX(4px)',
+                        },
+                      }}
+                      onClick={() => {
+                        const el = document.getElementById('servicesSection');
+                        el?.scrollIntoView({ behavior: 'smooth' });
+                      }}
+                    >
+                      Get Free Consultation
+                    </Button>
+                  </Link>
+                </MotionBox>
               </Grid>
             </Grid>
           </Grid>
