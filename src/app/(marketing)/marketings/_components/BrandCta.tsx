@@ -59,7 +59,7 @@ export default function BrandCta() {
             to="servicesSection"
             smooth
             duration={500}
-            offset={-100} // adjust if you have fixed navbar
+            offset={-10} // adjust if you have fixed navbar
           >
             <Button
               variant="contained"
