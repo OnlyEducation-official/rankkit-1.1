@@ -49,7 +49,7 @@ export default function MarketingForm() {
       if (!res.ok) {
         throw new Error('Something went wrong!');
       }
-
+      window.fbq?.('track', 'Lead');
       openSnackbar({
         snackMessage: 'Your message has been sent successfully!',
         snackSeverity: 'success',
