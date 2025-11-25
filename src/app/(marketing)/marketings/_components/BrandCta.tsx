@@ -3,10 +3,11 @@
 'use client';
 
 import { Box, Button, Container, Typography } from '@mui/material';
+import { Link } from 'react-scroll';
 
 export default function BrandCta() {
   return (
-    <Container maxWidth="lg">
+    <Container maxWidth="xl">
       <Box
         sx={{
           py: { xs: 4, md: 8 },
@@ -54,24 +55,31 @@ export default function BrandCta() {
           </Typography>
 
           {/* CTA button */}
-          <Button
-            variant="contained"
-            sx={{
-              mt: { xs: 3, md: 4 },
-              px: { xs: 3.5, md: 5 },
-              py: { xs: 1.1, md: 1.3 },
-              borderRadius: 999,
-              textTransform: 'none',
-              fontWeight: 600,
-              fontSize: { xs: '0.9rem', md: '1rem' },
-              backgroundColor: '#2563eb',
-              '&:hover': {
-                backgroundColor: '#1d4ed8',
-              },
-            }}
+          <Link
+            to="servicesSection"
+            smooth
+            duration={500}
+            offset={-10} // adjust if you have fixed navbar
           >
-            Contact Us!
-          </Button>
+            <Button
+              variant="contained"
+              sx={{
+                mt: { xs: 3, md: 4 },
+                px: { xs: 3.5, md: 5 },
+                py: { xs: 1.1, md: 1.3 },
+                borderRadius: 999,
+                textTransform: 'none',
+                fontWeight: 600,
+                fontSize: { xs: '0.9rem', md: '1rem' },
+                backgroundColor: '#2563eb',
+                '&:hover': {
+                  backgroundColor: '#1d4ed8',
+                },
+              }}
+            >
+              Contact Us!
+            </Button>
+          </Link>
         </Box>
       </Box>
     </Container>

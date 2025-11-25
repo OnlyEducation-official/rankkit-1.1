@@ -2,32 +2,33 @@
 
 import { Container, Grid } from '@mui/material';
 import React, { useEffect, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import CoutingCard, { CoutingCardProps } from '../CoutingCard';
 
 const stats: CoutingCardProps[] = [
   {
-    endCount: 200,
-    title: 'Web Development',
-    sign: '$',
-  },
-  {
-    endCount: 1200,
-    title: 'Branding  Multimedia',
-    sign: '%',
-  },
-  {
-    endCount: 1400,
-    title: 'Media Production',
-    sign: 'AE',
-  },
-  {
-    endCount: 14335,
-    title: 'Digital Marketing',
+    endCount: 572,
+    title: 'Podcast Shoot',
     sign: '+',
   },
   {
-    endCount: 143354,
-    title: 'Seo Services',
+    endCount: 898,
+    title: 'ADs Campaign',
+    sign: '+',
+  },
+  {
+    endCount: 126,
+    title: 'Clients',
+    sign: '+',
+  },
+  {
+    endCount: 169,
+    title: 'Client Satisfaction',
+    sign: '+',
+  },
+  {
+    endCount: 843,
+    title: 'Video Shoot',
     sign: '+',
   },
 ];
@@ -49,11 +50,16 @@ export default function CountingSection() {
   if (!visibleStats) return null;
 
   return (
-    <Container>
-      <Grid container spacing={{ xs: 0, md: 4 }} justifyContent="space-around" sx={{ mt: 2 }}>
+    <Container maxWidth="xl">
+      <Grid
+        container
+        spacing={{ xs: 0, md: 4 }}
+        justifyContent="space-around"
+        sx={{ paddingBlockStart: 2 }}
+      >
         {visibleStats.map((item) => (
-          <Grid size={{ xs: 6, sm: 2 }} key={item.title} sx={{}}>
-            <CoutingCard endCount={100} title={item.title} sign={item.sign} />
+          <Grid size={{ xs: 6, sm: 2 }} key={uuidv4()} sx={{}}>
+            <CoutingCard endCount={item.endCount} title={item.title} sign={item.sign} />
           </Grid>
         ))}
       </Grid>

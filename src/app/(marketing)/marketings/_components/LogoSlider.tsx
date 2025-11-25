@@ -1,8 +1,9 @@
 'use client';
 
+import theme from '@/theme/theme';
 import { Box } from '@mui/material';
 import Image from 'next/image';
-import { useId } from 'react';
+import { v4 as uuidv4 } from 'uuid';
 
 interface LogoSliderProps {
   logos: { src: string; alt: string }[];
@@ -13,7 +14,7 @@ interface LogoSliderProps {
 
 export default function LogoSlider({ logos, speed = 25, height = 80, gap = 48 }: LogoSliderProps) {
   const animationDuration = `${speed}s`;
-  const id = useId();
+  // const id = useId();
   return (
     <Box
       sx={{
@@ -34,13 +35,33 @@ export default function LogoSlider({ logos, speed = 25, height = 80, gap = 48 }:
           pointerEvents: 'none',
           zIndex: 5,
         },
-        '&:before': {
-          left: 0,
-          background: 'linear-gradient(to right, rgba(255, 255, 255, 1), rgba(182, 0, 0, 0))',
+        [theme.breakpoints.up('sm')]: {
+          '&:before': {
+            content: '""',
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            width: 80,
+            height: '100%',
+            background: 'linear-gradient(to right, rgba(243, 242, 242, 1), rgba(182, 0, 0, 0))',
+            zIndex: 2,
+          },
+          '&:after': {
+            content: '""',
+            position: 'absolute',
+            top: 0,
+            right: 0,
+            width: 80,
+            height: '100%',
+            background: 'linear-gradient(to left, rgba(243, 242, 242, 1), rgba(255,255,255,0))',
+            zIndex: 2,
+          },
         },
-        '&:after': {
-          right: 0,
-          background: 'linear-gradient(to left, rgba(255,255,255,1), rgba(255,255,255,0))',
+
+        // Remove on XS
+        [theme.breakpoints.down('sm')]: {
+          '&:before': { display: 'none' },
+          '&:after': { display: 'none' },
         },
       }}
       className="logo-slider"
@@ -75,7 +96,7 @@ export default function LogoSlider({ logos, speed = 25, height = 80, gap = 48 }:
       >
         {[...logos, ...logos, ...logos, ...logos].map((logo) => (
           <Box
-            key={id}
+            key={uuidv4()}
             sx={{
               mx: `${gap / 16}rem`,
               height,

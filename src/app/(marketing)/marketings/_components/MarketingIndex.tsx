@@ -13,10 +13,10 @@ export default function MarketingIndex() {
     <Box>
       <HeroSectionMarketing />
       {/* <BentoGrid /> */}
-      <CountingSection />
       <CoreServices />
       <CustomizedSteppers />
       <WorkWithUsSection />
+      <CountingSection />
       <BrandCta />
       {/* <ProvenProcess /> */}
     </Box>
