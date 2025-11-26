@@ -4,27 +4,49 @@ import PhoneInputField from '@/components/GlobalPhoneField';
 import SimpleAutocomplete from '@/components/SimpleAutocomplete';
 import SimpleTextFieldNew from '@/components/SimpleTextFieldNew';
 import useSnackbar from '@/components/SnackbarContext';
-import contactFormSchema, {
+import {
   ContactFormScehmaType,
   marketingFormScehmaType,
   marketingFormSchema,
 } from '@/types/ContactForm';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Box, Button, Stack, Typography } from '@mui/material';
+import { Box, Button, CircularProgress, Stack, Typography } from '@mui/material';
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
-function ReusableComp({ title, children }: { title: string; children: React.ReactNode }) {
+function ReusableComp({
+  title,
+  children,
+  required,
+}: {
+  title: string;
+  children: React.ReactNode;
+  required?: boolean;
+}) {
   return (
     <Stack gap={0.5}>
-      <Typography variant="body1">{title}</Typography>
+      <Stack direction="row" gap={0.5} alignItems="center">
+        <Typography variant="body1">{title}</Typography>
+        {required && (
+          <Typography variant="body1" component="span" color="red">
+            *
+          </Typography>
+        )}
+      </Stack>
       {children}
     </Stack>
   );
 }
 
 export default function MarketingForm() {
-  const { control, watch, setValue, handleSubmit, reset } = useForm<ContactFormScehmaType>({
+  const {
+    control,
+    watch,
+    setValue,
+    handleSubmit,
+    reset,
+    formState: { isSubmitting },
+  } = useForm<ContactFormScehmaType>({
     resolver: zodResolver(marketingFormSchema),
     defaultValues: {
       name: '',
@@ -37,13 +59,24 @@ export default function MarketingForm() {
   const { openSnackbar } = useSnackbar();
 
   const onSubmit = async (data: marketingFormScehmaType) => {
+    const payload = {
+      data: {
+        message: data.message,
+        name: data.name,
+        email: data.email,
+        service: data?.services?.map((item) => ({ title: item })),
+        phone: data?.phone.replace(/^\+91[\s-]*/, '').replace(/[^\d]/g, ''),
+      },
+    };
+
     try {
-      const res = await fetch('/api/contact', {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}client-leads-forms`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          Authorization: `Bearer ${process.env.NEXT_PUBLIC_STRAPI_BEARER_TOKEN}`,
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify(payload),
       });
 
       if (!res.ok) {
@@ -87,13 +120,13 @@ export default function MarketingForm() {
         </Typography>
       </Typography>
 
-      <ReusableComp title="Your Name">
+      <ReusableComp title="Your Name" required>
         <SimpleTextFieldNew control={control} name="name" size="small" />
       </ReusableComp>
-      <ReusableComp title="Phone">
+      <ReusableComp title="Phone" required>
         <PhoneInputField control={control} name="phone" />
       </ReusableComp>
-      <ReusableComp title="Email">
+      <ReusableComp title="Email" required>
         <SimpleTextFieldNew control={control} name="email" size="small" />
       </ReusableComp>
       <ReusableComp title="Services">
@@ -109,6 +142,7 @@ export default function MarketingForm() {
       {/* <SimpleTextFieldNew control={control} name="message" label="Message" multiline rows={3} /> */}
       <Button
         type="submit"
+        disabled={isSubmitting}
         sx={{
           width: 1,
           paddingBlock: 1.5,
@@ -119,9 +153,10 @@ export default function MarketingForm() {
           border: 0,
           textTransform: 'uppercase',
           letterSpacing: 1,
+          opacity: isSubmitting ? 0.7 : 1,
         }}
       >
-        Submit
+        {isSubmitting ? <CircularProgress size={24} sx={{ color: 'error.main' }} /> : 'Submit'}
       </Button>
     </Stack>
   );
