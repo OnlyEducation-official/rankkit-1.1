@@ -90,7 +90,7 @@ export default function MarketingForm() {
         message: data.message,
         name: data.name,
         email: data.email,
-        services: data?.services?.map((item) => ({ title: item })),
+        service: data?.services?.map((item) => ({ title: item })),
         phone: data?.phone.replace(/^\+91[\s-]*/, '').replace(/[^\d]/g, ''),
         minValue: data.minValue,
         maxValue: data.maxValue,
