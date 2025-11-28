@@ -1,4 +1,3 @@
-import { Search } from '@mui/icons-material';
 import { Box, Container, Grid, Typography } from '@mui/material';
 import DesignServicesIcon from '@mui/icons-material/DesignServices';
 import CodeIcon from '@mui/icons-material/Code';

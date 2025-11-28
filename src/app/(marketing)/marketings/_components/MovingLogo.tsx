@@ -62,7 +62,7 @@ export default function MovingLogo({
   } as const;
 
   // We'll render 8 logos per track by default — adjust by repeating more or less as desired.
-  const logos = new Array(8).fill(0).map((_, i) => (
+  const logos = new Array(8).fill(0).map(() => (
     <Box key={id} sx={logoBoxStyle}>
       <Image
         src={src}

@@ -8,7 +8,6 @@ import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import Typography from '@mui/material/Typography';
 import { UseFormSetValue, UseFormWatch } from 'react-hook-form';
-import { ContactFormScehmaType } from '@/types/ContactForm';
 
 const SERVICE_OPTIONS = [
   'SEO Services',
@@ -16,7 +15,10 @@ const SERVICE_OPTIONS = [
   'Social Media Marketing',
   'Web Development',
   'Branding & Multimedia',
-  'CreatorsNest',
+  // 'CreatorsNest',
+  'Studio',
+  'Pod Cast',
+  '3D',
   'Media Production',
   'Other',
 ];
@@ -25,8 +27,10 @@ export default function SimpleAutocomplete({
   setValue,
   watch,
 }: {
-  setValue: UseFormSetValue<ContactFormScehmaType>;
-  watch: UseFormWatch<ContactFormScehmaType>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  setValue: UseFormSetValue<any>;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  watch: UseFormWatch<any>;
 }) {
   // Selected values from RHF
   const selectedServices = (watch('services') || []) as string[];

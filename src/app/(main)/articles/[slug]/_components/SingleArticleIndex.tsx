@@ -28,6 +28,7 @@ export default function SingleArticleIndex({ article }: { article: Article }) {
       await navigator.clipboard.writeText(link);
       setOpen(true); // show feedback
     } catch (err) {
+      // eslint-disable-next-line no-console
       console.log('Failed to copy:', err);
     }
   };

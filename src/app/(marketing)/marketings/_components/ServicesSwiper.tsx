@@ -18,7 +18,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
 // Swiper modules
-import { Navigation, Pagination, Autoplay } from 'swiper/modules';
+import { Navigation, Autoplay } from 'swiper/modules';
 import { Grid, Box, Typography, Button } from '@mui/material';
 import { motion } from 'framer-motion';
 import Image from 'next/image';

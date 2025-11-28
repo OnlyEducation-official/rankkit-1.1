@@ -9,15 +9,11 @@ import Stepper from '@mui/material/Stepper';
 import Step from '@mui/material/Step';
 import StepLabel from '@mui/material/StepLabel';
 import SettingsIcon from '@mui/icons-material/Settings';
-import GroupAddIcon from '@mui/icons-material/GroupAdd';
-import VideoLabelIcon from '@mui/icons-material/VideoLabel';
 import StepConnector, { stepConnectorClasses } from '@mui/material/StepConnector';
 import { StepIconProps } from '@mui/material/StepIcon';
 import useMediaQuery from '@mui/material/useMediaQuery';
 import { Box, Button, Container, Typography } from '@mui/material';
 import Diversity2Icon from '@mui/icons-material/Diversity2';
-import DashboardIcon from '@mui/icons-material/Dashboard';
-import SourceIcon from '@mui/icons-material/Source';
 import CampaignIcon from '@mui/icons-material/Campaign';
 import PermMediaIcon from '@mui/icons-material/PermMedia';
 import DataExplorationIcon from '@mui/icons-material/DataExploration';
@@ -143,8 +139,6 @@ export default function CustomizedSteppers() {
   const theme = useTheme();
   const isXs = useMediaQuery(theme.breakpoints.down('md')); // xs: vertical, sm+ : horizontal
 
-  const orientation = isXs ? 'vertical' : 'horizontal';
-  const connector = isXs ? <ColorlibConnectorVertical /> : <ColorlibConnectorHorizontal />;
   return (
     <Container maxWidth="xl" sx={{ paddingBlock: { xs: 6, lg: 8 } }}>
       <Box sx={{ marginBlockEnd: { xs: 4, md: 8 } }}>

@@ -38,6 +38,7 @@ export default function ArticleBody() {
         setPageSize(response.meta.pagination.pageSize);
         setCurrentPage(response.meta.pagination.page);
       } catch (error) {
+        // eslint-disable-next-line no-console
         console.log('Error fetching data:', error);
       }
     };

@@ -270,6 +270,7 @@ export async function POST(req: NextRequest) {
     // Return a successful response
     return NextResponse.json({ message: 'Email sent successfully' }, { status: 200 });
   } catch (error) {
+    // eslint-disable-next-line no-console
     console.error(error);
     // Return an error response if something went wrong
     return NextResponse.json({ error: 'Failed to send email' }, { status: 500 });

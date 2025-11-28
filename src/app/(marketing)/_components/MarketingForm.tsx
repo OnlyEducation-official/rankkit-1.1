@@ -4,15 +4,19 @@ import PhoneInputField from '@/components/GlobalPhoneField';
 import SimpleAutocomplete from '@/components/SimpleAutocomplete';
 import SimpleTextFieldNew from '@/components/SimpleTextFieldNew';
 import useSnackbar from '@/components/SnackbarContext';
-import {
-  ContactFormScehmaType,
-  marketingFormScehmaType,
-  marketingFormSchema,
-} from '@/types/ContactForm';
+import { marketingFormLeadSchema, marketingFormLeadType } from '@/types/ContactForm';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Box, Button, CircularProgress, Stack, Typography } from '@mui/material';
+import {
+  Box,
+  Button,
+  CircularProgress,
+  FormHelperText,
+  Slider,
+  Stack,
+  Typography,
+} from '@mui/material';
 import React from 'react';
-import { useForm } from 'react-hook-form';
+import { Controller, useForm } from 'react-hook-form';
 
 function ReusableComp({
   title,
@@ -45,27 +49,51 @@ export default function MarketingForm() {
     setValue,
     handleSubmit,
     reset,
-    formState: { isSubmitting },
-  } = useForm<ContactFormScehmaType>({
-    resolver: zodResolver(marketingFormSchema),
+    formState: { isSubmitting, errors },
+  } = useForm<marketingFormLeadType>({
+    resolver: zodResolver(marketingFormLeadSchema),
     defaultValues: {
       name: '',
       phone: '',
       email: '',
       services: [],
       message: '',
+      maxValue: 20000,
+      minValue: 1500000,
     },
   });
   const { openSnackbar } = useSnackbar();
+  const minValue = watch('minValue');
+  const maxValue = watch('maxValue');
 
-  const onSubmit = async (data: marketingFormScehmaType) => {
+  const formatINR = (value: number) => {
+    const x = Math.round(value).toString();
+    const lastThree = x.slice(-3);
+    const other = x.slice(0, -3);
+    const formatted =
+      other !== '' ? `${other.replace(/\B(?=(\d{2})+(?!\d))/g, ',')},${lastThree}` : lastThree;
+    return `₹ ${formatted}`;
+  };
+  const DEFAULT_MIN = 20000;
+  const DEFAULT_MAX = 1500000;
+  const sliderValue: number[] = [
+    typeof minValue === 'number' ? minValue : DEFAULT_MIN,
+    typeof maxValue === 'number' ? maxValue : DEFAULT_MAX,
+  ];
+  const handleSliderChange = (_: Event, newValue: number | number[]) => {
+    setValue('minValue', Array.isArray(newValue) ? newValue[0] : newValue);
+    setValue('maxValue', Array.isArray(newValue) ? newValue[1] : newValue);
+  };
+  const onSubmit = async (data: marketingFormLeadType) => {
     const payload = {
       data: {
         message: data.message,
         name: data.name,
         email: data.email,
-        service: data?.services?.map((item) => ({ title: item })),
+        services: data?.services?.map((item) => ({ title: item })),
         phone: data?.phone.replace(/^\+91[\s-]*/, '').replace(/[^\d]/g, ''),
+        minValue: data.minValue,
+        maxValue: data.maxValue,
       },
     };
 
@@ -129,12 +157,31 @@ export default function MarketingForm() {
       <ReusableComp title="Email" required>
         <SimpleTextFieldNew control={control} name="email" size="small" />
       </ReusableComp>
-      <ReusableComp title="Services">
+      <ReusableComp title="Services" required>
         <Box sx={{ maxWidth: { xs: 350, md: 800 } }}>
           <SimpleAutocomplete setValue={setValue} watch={watch} />
+          {errors?.services && <FormHelperText error>{errors?.services?.message}</FormHelperText>}
         </Box>
       </ReusableComp>
 
+      <ReusableComp title="Price Range" required>
+        <Controller
+          name="minValue" // required for input registration
+          control={control}
+          render={() => (
+            <Slider
+              getAriaLabel={() => 'Price Range'}
+              value={sliderValue}
+              min={20000}
+              max={1500000}
+              onChange={handleSliderChange}
+              valueLabelDisplay="auto"
+              disableSwap
+              valueLabelFormat={(val: number) => formatINR(val)}
+            />
+          )}
+        />
+      </ReusableComp>
       <ReusableComp title="Message">
         <SimpleTextFieldNew control={control} name="message" multiline rows={3} />
       </ReusableComp>

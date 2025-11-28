@@ -1,12 +1,4 @@
 import { Box, Container, Grid, Typography } from '@mui/material';
-import c from '@/assets/images/c.jpg';
-import webDevCover from '@/assets/images/services-logo/web-dev-cover.png';
-import brandCover1 from '@/assets/images/services-logo/brand-cover-1.png';
-import brandCover2 from '@/assets/images/services-logo/brand-cover-2.png';
-import cnestCover from '@/assets/images/services-logo/creator-nest-cover.png';
-import seoCover1 from '@/assets/images/services-logo/seo-cover-1.png';
-import seoCover2 from '@/assets/images/services-logo/seo-cover-2.png';
-import socialMediaCover1 from '@/assets/images/services-logo/socialMediaCover1.png';
 import brandingService from '@/assets/images/services-logo/branding-services.png';
 import mediaProductionCover from '@/assets/images/services-logo/media-production-service.png';
 import SocialMediaService from '@/assets/images/services-logo/digital-marketing-service.png';

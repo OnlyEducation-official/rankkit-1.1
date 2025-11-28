@@ -2,7 +2,6 @@
 
 import { Box, Container, Grid, Typography } from '@mui/material';
 import React from 'react';
-import imgOne from '@/assets/images/gallery/gallery1.png';
 import commix from '@/assets/workusLogos/commix.png';
 import eduniaaLogo from '@/assets/workusLogos/eduniaaLogo.png';
 import gutwrench from '@/assets/workusLogos/gutwrench.png';
@@ -12,8 +11,6 @@ import onlyEdu from '@/assets/workusLogos/onlyEdu.png';
 import theDesiOrganics from '@/assets/workusLogos/theDesiOrganics.png';
 import tkt from '@/assets/workusLogos/tkt.png';
 import vijayIndiaPro from '@/assets/workusLogos/vijayIndiaPro..png';
-import zeroDegree from '@/assets/workusLogos/zeroDegree.png';
-import MovingLogo from './MovingLogo';
 import LogoSlider from './LogoSlider';
 
 export default function WorkWithUsSection() {

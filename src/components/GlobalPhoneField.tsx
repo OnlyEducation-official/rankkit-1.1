@@ -24,7 +24,7 @@ function PhoneInputField<T extends FieldValues>({
   name,
   control,
   label,
-  placeholder = 'Enter phone number',
+  // placeholder = 'Enter phone number',
   defaultCountry = 'IN',
   onlyCountries,
   preferredCountries,
