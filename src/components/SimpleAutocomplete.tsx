@@ -17,7 +17,7 @@ const SERVICE_OPTIONS = [
   'Branding & Multimedia',
   // 'CreatorsNest',
   'Studio',
-  'Pod Cast',
+  'Podcast',
   '3D',
   'Media Production',
   'Other',
