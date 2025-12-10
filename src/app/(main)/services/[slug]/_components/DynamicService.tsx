@@ -47,7 +47,7 @@ export default function DynamicService({
       {service.cover && slug !== 'media-production' && (
         <Container sx={{ marginBlock: 10 }}>
           {service.cover?.half && (
-            <Grid container spacing={2} sx={{ height: '80vh' }}>
+            <Grid container spacing={2} sx={{ height: { xs: 'auto', md: '80vh' } }}>
               <Grid size={{ xs: 12, md: 6 }} sx={{ height: 1 }}>
                 <Image
                   alt="Hello world"
@@ -77,7 +77,7 @@ export default function DynamicService({
           )}
         </Container>
       )}
-      {slug === 'media-production' && <CustomGridMedia />}
+      {/* {slug === 'media-production' && <CustomGridMedia />} */}
 
       {/* Services Section */}
       <ServiceSection subServices={service.subServices} />
