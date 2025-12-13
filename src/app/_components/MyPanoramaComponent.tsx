@@ -55,7 +55,7 @@ export default function Panorama({
       ref={ref}
       style={{
         width: '100%',
-        height,
+        height: '100%',
         borderRadius: '50px',
       }}
     />
