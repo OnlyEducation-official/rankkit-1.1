@@ -26,7 +26,7 @@ export default async function page({ params }: Props) {
     <Box sx={{ height: '100vh', width: 1 }}>
       <Panorama
         src="/videos/studioOverview.webp"
-        caption={data?.[0].caption || ''}
+        caption={data?.[0]?.caption || ''}
         navbar={data?.[0]?.panaroma_navoptions?.map((item: any) => item?.option_name) || []}
         lockZoom
       />
