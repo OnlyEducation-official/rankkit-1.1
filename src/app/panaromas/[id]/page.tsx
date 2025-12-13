@@ -1,13 +1,20 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import Panorama from '@/app/_components/MyPanoramaComponent';
 import { Box } from '@mui/material';
+import { Metadata } from 'next';
 import React from 'react';
 
-export default async function page({ params }: { params: { id: string } }) {
+type Props = {
+  params: Promise<{ id: string }>;
+};
+
+export default async function page({ params }: Props) {
+  const { id } = await params;
+
   const response = await fetch(
-    `${process.env.BACKEND_URL}panaromas?filters[documentId][$eq]=${params.id}&populate[panaroma_navoptions][fields][0]=option_name`,
+    `${process.env.BACKEND_URL}panaromas?filters[documentId][$eq]=${id}&populate[panaroma_navoptions][fields][0]=option_name`,
   );
-  console.log('process.env.BACKEND_URL: ', process.env.BACKEND_URL);
+  //   console.log('process.env.BACKEND_URL: ', process.env.BACKEND_URL);
   const { data } = await response.json();
 
   return (
