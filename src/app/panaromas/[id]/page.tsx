@@ -11,14 +11,16 @@ type Props = {
 
 export default async function page({ params }: Props) {
   const { id } = await params;
+  console.log('id: ', id);
 
   if (!id) notFound();
 
   const response = await fetch(
-    `${process.env.BACKEND_URL}panaromas?filters[documentId][$eq]=${id}&populate[panaroma_navoptions][fields][0]=option_name`,
+    `${process.env.BACKEND_URL}panaromas?filters[slug][$eq]=${id}&populate[panaroma_navoptions][fields][0]=option_name`,
   );
   //   console.log('process.env.BACKEND_URL: ', process.env.BACKEND_URL);
   const { data } = await response.json();
+  console.log('data: ', data);
 
   return (
     <Box sx={{ height: '100vh', width: 1 }}>

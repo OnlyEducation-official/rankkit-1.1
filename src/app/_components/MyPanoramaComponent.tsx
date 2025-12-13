@@ -11,7 +11,6 @@ import { AutorotatePlugin } from '@photo-sphere-viewer/autorotate-plugin';
 type Props = {
   src: string;
   caption?: string;
-  height?: number | string;
   navbar?: Array<'zoom' | 'move' | 'autorotate' | 'fullscreen' | 'caption'>;
   lockZoom?: boolean;
 };
@@ -19,7 +18,6 @@ type Props = {
 export default function Panorama({
   src,
   caption,
-  height = 500,
   navbar = ['move', 'fullscreen', 'caption'],
   lockZoom = false,
 }: Props) {
