@@ -30,50 +30,22 @@ export default function Panorama({
       container: ref.current,
       panorama: src,
       caption,
+      minFov: 3, // you can adjust these ranges
+      maxFov: 9,
       navbar: lockZoom ? navbar : [...new Set(['zoom', ...navbar])],
       mousewheelCtrlKey: true,
       touchmoveTwoFingers: false,
-      ...(lockZoom ? { minFov: 80, maxFov: 80, mousewheel: false } : {}),
+      ...(lockZoom
+        ? {
+            minFov: 80, // lock to same value if zoom is disabled
+            maxFov: 80,
+            mousewheel: false,
+          }
+        : {}),
       plugins: [[AutorotatePlugin, { autostartDelay: 1500, autorotateSpeed: '0.5rpm' }]],
     });
 
-    const el = ref.current;
-
-    // 1) Pointer capture: keeps drag events even if pointer goes outside iframe
-    const onPointerDown = (e: PointerEvent) => {
-      if (el && 'setPointerCapture' in el) {
-        el.setPointerCapture(e.pointerId);
-      }
-    };
-
-    // 2) Force release drag if mouseup happens outside iframe
-    const forceRelease = () => {
-      if (!el) return;
-
-      // Send synthetic "mouseup" so the viewer stops dragging
-      el.dispatchEvent(new MouseEvent('mouseup', { bubbles: true }));
-      el.dispatchEvent(new MouseEvent('mouseleave', { bubbles: true }));
-      el.dispatchEvent(new PointerEvent('pointerup', { bubbles: true }));
-      el.dispatchEvent(new PointerEvent('pointercancel', { bubbles: true }));
-    };
-
-    el.addEventListener('pointerdown', onPointerDown);
-
-    window.addEventListener('blur', forceRelease); // user clicked outside iframe
-    document.addEventListener('visibilitychange', () => {
-      if (document.hidden) forceRelease();
-    });
-    document.addEventListener('mouseleave', forceRelease);
-    window.addEventListener('pointercancel', forceRelease);
-
-    return () => {
-      el.removeEventListener('pointerdown', onPointerDown);
-      window.removeEventListener('blur', forceRelease);
-      window.removeEventListener('pointercancel', forceRelease);
-      document.removeEventListener('mouseleave', forceRelease);
-
-      viewer.destroy();
-    };
+    return () => viewer.destroy();
   }, [src, caption, navbar, lockZoom]);
 
   return (
