@@ -263,7 +263,6 @@ function HeroSection() {
             <Panorama
               src="/videos/studioOverview.webp"
               caption="Rankkit Studio 1200+ sqft"
-              height="100%"
               navbar={['move', 'fullscreen', 'caption']}
               lockZoom
             />
