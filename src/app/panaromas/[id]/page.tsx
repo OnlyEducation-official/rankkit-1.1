@@ -2,6 +2,7 @@
 import Panorama from '@/app/_components/MyPanoramaComponent';
 import { Box } from '@mui/material';
 import { Metadata } from 'next';
+import { notFound } from 'next/navigation';
 import React from 'react';
 
 type Props = {
@@ -10,6 +11,8 @@ type Props = {
 
 export default async function page({ params }: Props) {
   const { id } = await params;
+
+  if (!id) notFound();
 
   const response = await fetch(
     `${process.env.BACKEND_URL}panaromas?filters[documentId][$eq]=${id}&populate[panaroma_navoptions][fields][0]=option_name`,
