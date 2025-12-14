@@ -9,7 +9,7 @@ import { Viewer } from '@photo-sphere-viewer/core';
 import { AutorotatePlugin } from '@photo-sphere-viewer/autorotate-plugin';
 
 type Props = {
-  src: string;
+  src: string | null;
   caption?: string;
   navbar?: Array<'zoom' | 'move' | 'autorotate' | 'fullscreen' | 'caption'>;
   lockZoom?: boolean;

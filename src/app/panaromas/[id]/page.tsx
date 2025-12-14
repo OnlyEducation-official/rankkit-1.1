@@ -11,23 +11,25 @@ type Props = {
 
 export default async function page({ params }: Props) {
   const { id } = await params;
-  console.log('id: ', id);
 
   if (!id) notFound();
 
   const response = await fetch(
-    `${process.env.BACKEND_URL}panaromas?filters[slug][$eq]=${id}&populate[panaroma_navoptions][fields][0]=option_name`,
+    `${process.env.BACKEND_URL}panaromas?populate[img]=true&filters[slug][$eq]=${id}&populate[panaroma_navoptions][fields][0]=option_name`,
   );
-  //   console.log('process.env.BACKEND_URL: ', process.env.BACKEND_URL);
+
   const { data } = await response.json();
-  console.log('data: ', data);
+
+  if (!(data.length > 0)) notFound();
+
+  const panaromaData = data?.[0];
 
   return (
     <Box sx={{ height: '100vh', width: 1 }}>
       <Panorama
-        src="/videos/studioOverview.webp"
-        caption={data?.[0]?.caption || ''}
-        navbar={data?.[0]?.panaroma_navoptions?.map((item: any) => item?.option_name) || []}
+        src={panaromaData?.img?.url ? `https://api.rankkit.in${panaromaData?.img?.url}` : null}
+        caption={panaromaData?.caption || ''}
+        navbar={panaromaData?.panaroma_navoptions?.map((item: any) => item?.option_name) || []}
         lockZoom
       />
     </Box>
