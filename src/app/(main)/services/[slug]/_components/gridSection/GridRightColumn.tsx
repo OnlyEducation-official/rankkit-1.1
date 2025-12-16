@@ -44,7 +44,6 @@ const headings = [
 export default function GridRightColumn() {
   const mediaUptioSevenSixEight = useMediaQuery('(max-width:767px)');
   const mediaUptioEleven = useMediaQuery('(max-width:1100px)');
-  console.log('mediaUptioSevenSixEight: ', mediaUptioSevenSixEight);
   return (
     <Box sx={{ height: 400 }}>
       <Grid
