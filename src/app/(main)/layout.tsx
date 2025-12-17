@@ -2,7 +2,7 @@ import React from 'react';
 
 function Layout({
   children,
-  // header,
+  header,
   footer,
 }: Readonly<{
   children: React.ReactNode;
@@ -11,7 +11,7 @@ function Layout({
 }>) {
   return (
     <>
-      {/* {header} */}
+      {header}
       {children}
       {footer}
     </>
