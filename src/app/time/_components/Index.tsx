@@ -2,11 +2,12 @@
 
 import dynamic from 'next/dynamic';
 import React from 'react';
+import { Container } from '@mui/material';
 import HowWeWorkSection from './HowWeWorkSection';
 import SampleSection from './SampleSection';
 import HeroSection from './HeroSection';
 import SeoSection from './SeoSection';
-import { Container } from '@mui/material';
+import SwiperComponent from './SwiperComponent';
 // import OurDevelopmentProcess from './OurDevelopmentProcess';
 // dynamic import ssr false
 const OurDevelopmentProcess = dynamic(() => import('./OurDevelopmentProcess'), { ssr: false });
@@ -28,6 +29,7 @@ export default function Index() {
       </div> */}
       {/* <SampleSection /> */}
       <SeoSection />
+      <SwiperComponent />
       <HeroSection />
       {/* <ScrollProgressSection /> */}
       <OurDevelopmentProcess />
