@@ -20,7 +20,7 @@ const headings = ['Web development', 'Software', 'Ai/ml', 'Heading 3', 'Heading 
 export default function GridLeftColumn() {
   const [tech, setTech] = React.useState<string>('Web development');
   return (
-    <Box sx={{ backgroundColor: '#fa7878ff' }}>
+    <Box sx={{ backgroundColor: '#fa7878ff', borderRadius: 2 }}>
       <Box
         sx={{
           display: { xs: 'none', sm: 'flex' },
