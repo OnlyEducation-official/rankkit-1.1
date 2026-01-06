@@ -13,7 +13,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 
 const obj = [
   {
-    desc: 'I was struggling to find the right direction for my MBA applications. Only Education helped me discover my strengths and craft a compelling story.',
+    desc: 'I was struggling to find the right direction for my MBA Consectetur elit ex reprehenderit enim excepteur mollit. Commodo voluptate exercitation veniam esse voluptate excepteur. Duis veniam adipisicing dolore pariatur. Ut do consequat ut laborum Lorem do laborum tempor non sint tempor et. Sunt veniam proident excepteur excepteur eiusmod enim amet. Ex veniam id nulla sit elit dolor fugiat aliquip. Laborum proident esse enim qui eu dolor. applications. Only Education helped me excepteur  eiusmod enim amet. Ex veniam id nulla sit elit dolor fugiat aliquip. Laborum proident esse enim qui eu dolor. applications. Only Education helped me excepteur  eiusmod enim amet. Ex veniam id nulla sit elit dolor fugiat aliquip. Laborum proident esse enim qui eu dolor. applications. Only Education helped me excepteur eiusmod enim amet. Ex veniam id nulla sit elit dolor fugiat aliquip. Laborum proident esse enim qui eu dolor. applications. Only Education helped me eiusmod enim amet. Ex veniam id nulla sit elit dolor fugiat aliquip. Laborum proident esse enim qui eu dolor. applications. Only Education helped me discover my strengths and craft a compelling story.',
     personName: 'Saggam Praveena',
     stars: 4,
   },
@@ -133,7 +133,7 @@ export default function SwiperComponent() {
           <SwiperSlide key={uuidv4()}>
             <Box
               sx={{
-                height: { xs: 260, md: 300 }, // ✅ SAME HEIGHT FOR ALL
+                height: { xs: 260, md: 250 }, // ✅ SAME HEIGHT FOR ALL
                 borderRadius: 3,
                 boxShadow: '0 8px 24px rgba(0,0,0,0.08)',
                 p: 4,
@@ -152,6 +152,7 @@ export default function SwiperComponent() {
                   WebkitLineClamp: { xs: 4, md: 5 },
                   WebkitBoxOrient: 'vertical',
                   overflow: 'hidden',
+                  fontWeight: 700,
                 }}
               >
                 {item.desc}
@@ -167,7 +168,21 @@ export default function SwiperComponent() {
                   mt: 'auto', // ✅ KEY FIX
                 }}
               >
-                <Avatar>{item.personName.charAt(0)}</Avatar>
+                <Avatar
+                  sx={{
+                    aspectRatio: '1/1',
+                    width: 50,
+                    height: 50,
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    fontWeight: 600,
+                    fontSize: 28,
+                    pl: 0.2,
+                  }}
+                >
+                  {item.personName.charAt(0)}
+                </Avatar>
 
                 <Box>
                   <Typography variant="subtitle2" fontWeight={600}>

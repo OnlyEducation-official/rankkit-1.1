@@ -8,6 +8,10 @@ import SampleSection from './SampleSection';
 import HeroSection from './HeroSection';
 import SeoSection from './SeoSection';
 import SwiperComponent from './SwiperComponent';
+import InteractiveServices from './InteractiveServices';
+import Feature from './Feature';
+import FeatureSection from './FeatureSection';
+import HeroSec from './HeroSec';
 // import OurDevelopmentProcess from './OurDevelopmentProcess';
 // dynamic import ssr false
 const OurDevelopmentProcess = dynamic(() => import('./OurDevelopmentProcess'), { ssr: false });
@@ -28,9 +32,12 @@ export default function Index() {
         <h2>IntersectionObserver Trigger</h2>
       </div> */}
       {/* <SampleSection /> */}
+      <HeroSec />
+      <FeatureSection />
       <SeoSection />
       <SwiperComponent />
       <HeroSection />
+      <InteractiveServices />
       {/* <ScrollProgressSection /> */}
       <OurDevelopmentProcess />
       {/* <HowWeWorkSection /> */}
