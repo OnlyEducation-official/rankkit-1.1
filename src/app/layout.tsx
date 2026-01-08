@@ -13,19 +13,31 @@ import '@fancyapps/ui/dist/fancybox/fancybox.css';
 import '@photo-sphere-viewer/markers-plugin/index.css';
 import '@photo-sphere-viewer/core/index.css';
 import Script from 'next/script';
+import { Geist, Inter } from 'next/font/google';
 
 export const metadata: Metadata = {
   title: 'RankKit Media',
   description: 'Rankkit Media',
 };
+const geist = Geist({
+  subsets: ['latin'],
+  variable: '--font-geist',
+  weight: ['400', '500', '600', '700'],
+  preload: true,
+});
 
+const inter = Inter({
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-inter',
+});
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${clashDisplayFont.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${geist.className} ${inter.className}`} suppressHydrationWarning>
       <head>
         <meta
           name="google-site-verification"
@@ -82,7 +94,8 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body style={{ fontFamily: 'var(--font-clash-display), sans-serif' }}>
+      {/* style={{ fontFamily: 'var(--font-clash-display), sans-serif' }} */}
+      <body>
         <noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-KWQ2B6FX"
